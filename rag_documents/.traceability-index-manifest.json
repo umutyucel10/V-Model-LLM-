@@ -1,0 +1,24 @@
+{
+  "projects": {
+    "detayl-tid-deneme-b10cafc3": {
+      "document_path": "C:\\EHSİM\\gemma\\rag_documents\\existing_requirements\\traceability-detayl-tid-deneme-b10cafc3.txt",
+      "fingerprint": "a519800a5dd631f10a3544a814893289ae0cd3877331ff2fdf66c7f288aeae9b",
+      "indexed_at": "2026-08-09T15:10:09+03:00",
+      "traceability_revision": 1
+    },
+    "fren-3ac30dd0": {
+      "document_path": "C:\\EHSİM\\gemma\\rag_documents\\existing_requirements\\traceability-fren-3ac30dd0.txt",
+      "fingerprint": "8cb680f5ac5a94c2899df4c7a3e9056efd7218a79dcb6f5b7cd2f088be695a3b",
+      "indexed_at": "2026-08-16T21:09:31+03:00",
+      "traceability_revision": 17
+    },
+    "kahve-6009bb34": {
+      "document_path": "/Users/aliyigitkoc/Downloads/gemma/rag_documents/existing_requirements/traceability-kahve-6009bb34.txt",
+      "fingerprint": "0880a9f9613eb5440d44a4c9e5b25af2b4d499a7fb5fc3b5d82afbbde3d7cbe9",
+      "indexed_at": "2026-08-03T10:39:47+03:00",
+      "traceability_revision": 2
+    }
+  },
+  "schema_version": "1.0",
+  "updated_at": "2026-08-16T21:09:31+03:00"
+}

@@ -1,0 +1,782 @@
+PROJE: Detaylı TİD deneme
+PROJE_KIMLIGI: detayl-tid-deneme-b10cafc3
+IZLENEBILIRLIK_SURUMU: 2
+KAYNAK: Belge üretimindeki yapılandırılmış Python verisi
+
+ID: DOC-AST
+TUR: Teknik belge
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: Alt Sistem Testi (Subsystem Test)
+ACIKLAMA: 10 yapılandırılmış madde içerir.
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: 
+---
+ID: SST-001
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-001
+ACIKLAMA: Taşıyıcı sistem gövdesi, maksimum kalkış ağırlığı altında yapısal bütünlüğünü koruyup korumadığını doğrulamak için, sisteme aşamalı olarak artırılan bir yük profili uygulanacak ve bu yük altındaki en düşük kritik bileşen bağlantı noktalarından herhangi birinde yapısal çatlak veya kalıcı deformasyon gözlemlenip gözlemlenmediği kontrol edilecektir. GEÇTİ KRİTERİ: Yapısal bütünlükte, belirlenen maksimum kalkış ağırlığı altında hiçbir çatlak veya kabul edilebilir limitin üzerinde kalıcı deformasyon tespit edilmemelidir
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Taşıyıcı sistem gövdesi, maksimum kalkış ağırlığı altında yapısal bütünlüğünü koruyup korumadığını doğrulamak için, sisteme aşamalı olarak artırılan bir yük profili uygulanacak ve bu yük altındaki en düşük kritik bileşen bağlantı noktalarından herhangi birinde yapısal çatlak veya kalıcı deformasyon gözlemlenip gözlemlenmediği kontrol edilecektir. GEÇTİ KRİTERİ: Yapısal bütünlükte, belirlenen maksimum kalkış ağırlığı altında hiçbir çatlak veya kabul edilebilir limitin üzerinde kalıcı deformasyon tespit edilmemelidir
+---
+ID: SST-002
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-002
+ACIKLAMA: Sisteme bilinen yük altında kritik görevler çalıştırılırken işlemci döngüsü tüketimi izlenir ve bu tüketimin döngüden az olduğu doğrulanır; GEÇTİ KRİTERİ: Ölçülen maksimum döngü tüketimi < döngü
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Sisteme bilinen yük altında kritik görevler çalıştırılırken işlemci döngüsü tüketimi izlenir ve bu tüketimin döngüden az olduğu doğrulanır; GEÇTİ KRİTERİ: Ölçülen maksimum döngü tüketimi < döngü
+---
+ID: SST-003
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-003
+ACIKLAMA: Modülün arıza durumunu tetikleyen bilinen bir hata sinyali enjekte edilir; bu sinyalden sonra sistemin hata durumunu raporlaması için geçen süre ölçülür. GEÇTİ KRİTERİ: Raporlama süresi < 50 milisaniye
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Modülün arıza durumunu tetikleyen bilinen bir hata sinyali enjekte edilir; bu sinyalden sonra sistemin hata durumunu raporlaması için geçen süre ölçülür. GEÇTİ KRİTERİ: Raporlama süresi < 50 milisaniye
+---
+ID: SST-004
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-004
+ACIKLAMA: Kullanıcı kimlik doğrulamasını başarıyla tamamlayan bir kullanıcı için sistem tetiklenir; bu tetiklenme sonrası kaynak erişim listesinin arayüz bileşenlerine sunulma süresi ölçülür ve GEÇTİ KRİTERİ: sunum süresi < 50 milisaniye
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Kullanıcı kimlik doğrulamasını başarıyla tamamlayan bir kullanıcı için sistem tetiklenir; bu tetiklenme sonrası kaynak erişim listesinin arayüz bileşenlerine sunulma süresi ölçülür ve GEÇTİ KRİTERİ: sunum süresi < 50 milisaniye
+---
+ID: SST-005
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-005
+ACIKLAMA: Görüntü işleme birimine bilinen kaynaklardan gelen veri akışı enjekte edilir; bu verinin çözünürlüğünün 1920x1080 piksel ve kare hızının 60 FPS olduğu teyit edilir. GEÇTİ KRİTERİ: Veri akışında sürekli olarak 1080p çözünürlükte ve 60 FPS'de veri alınması sağlanır
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Görüntü işleme birimine bilinen kaynaklardan gelen veri akışı enjekte edilir; bu verinin çözünürlüğünün 1920x1080 piksel ve kare hızının 60 FPS olduğu teyit edilir. GEÇTİ KRİTERİ: Veri akışında sürekli olarak 1080p çözünürlükte ve 60 FPS'de veri alınması sağlanır
+---
+ID: SST-006
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-006
+ACIKLAMA: Test düzeneği ile bilinen uzaklıklarda (10 metre ve üzeri) referans hedefler kullanılarak görüş sistemi kalibre edilir; bu sırada ölçülen açısal çözünürlüğün en az 0.5 derece olduğu doğrulanır. GEÇTİ KRİTERİ: Ölçülen minimum açısal çözünürlük >= 0.5 derece ve test mesafesi >= 10 metre olmalıdır
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Test düzeneği ile bilinen uzaklıklarda (10 metre ve üzeri) referans hedefler kullanılarak görüş sistemi kalibre edilir; bu sırada ölçülen açısal çözünürlüğün en az 0.5 derece olduğu doğrulanır. GEÇTİ KRİTERİ: Ölçülen minimum açısal çözünürlük >= 0.5 derece ve test mesafesi >= 10 metre olmalıdır
+---
+ID: SST-007
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-007
+ACIKLAMA: Optik sensör modülü, bilinen bir referans hedefi kullanarak farklı mesafelerde görüş açısı testi yapılır; bu testte en az 10 metre mesafeden sinyal algılanabildiği doğrulanır. GEÇTİ KRİTERİ: Sensör, 10 metreden gelen hedefin sinyaline başarılı bir şekilde yanıt vermelidir
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Optik sensör modülü, bilinen bir referans hedefi kullanarak farklı mesafelerde görüş açısı testi yapılır; bu testte en az 10 metre mesafeden sinyal algılanabildiği doğrulanır. GEÇTİ KRİTERİ: Sensör, 10 metreden gelen hedefin sinyaline başarılı bir şekilde yanıt vermelidir
+---
+ID: SST-008
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-008
+ACIKLAMA: Güvenlik yönetim modülüne kontrollü arıza sinyalleri enjekte edilir; bu sinyalden sonraki ilk tespit döngüsünün süresi ölçülür ve kritik hata bildiriminin sistem kontrol ünitesine iletilme gecikmesi zaman damgaları kullanılarak belirlenir. GEÇTİ KRİTERİ: Tespit döngü süresi < 50 milisaniye VE Bildirim gecikmesi < 1 saniye
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Güvenlik yönetim modülüne kontrollü arıza sinyalleri enjekte edilir; bu sinyalden sonraki ilk tespit döngüsünün süresi ölçülür ve kritik hata bildiriminin sistem kontrol ünitesine iletilme gecikmesi zaman damgaları kullanılarak belirlenir. GEÇTİ KRİTERİ: Tespit döngü süresi < 50 milisaniye VE Bildirim gecikmesi < 1 saniye
+---
+ID: SST-009
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-009
+ACIKLAMA: Görüntü işleme modülüne sürekli olarak ulusal görüntü aktarım formatında veri akışı sağlanır ve bu akışın minimum 20 MBit/s hızda sürdürülebilirliği ölçülür; GEÇTİ KRİTERİ: Ölçülen ortalama veri akış hızı >= 20 MBit/s
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Görüntü işleme modülüne sürekli olarak ulusal görüntü aktarım formatında veri akışı sağlanır ve bu akışın minimum 20 MBit/s hızda sürdürülebilirliği ölçülür; GEÇTİ KRİTERİ: Ölçülen ortalama veri akış hızı >= 20 MBit/s
+---
+ID: SST-010
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-010
+ACIKLAMA: Arıza tespitini tetikleyecek bilinen parametre seti sisteme enjekte edilir; hesaplanan raporun tamamının üretilme süresi ölçülür. GEÇTİ KRİTERİ: Hesaplama ve raporlama süresi 50 milisaniyeden az olmalıdır
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Arıza tespitini tetikleyecek bilinen parametre seti sisteme enjekte edilir; hesaplanan raporun tamamının üretilme süresi ölçülür. GEÇTİ KRİTERİ: Hesaplama ve raporlama süresi 50 milisaniyeden az olmalıdır
+---
+ID: DOC-HARDWARE
+TUR: Teknik belge
+V_MODEL: Parça veya yazılım uygulaması
+BASLIK: Akıllı Donanım Listesi
+ACIKLAMA: 15 parça/bileşen kaydı içerir.
+KAYNAK_BELGE: Akıllı Donanım Listesi
+BOLUM: 
+KANIT: 
+---
+ID: HW-001
+TUR: Parça/bileşen
+V_MODEL: Parça veya yazılım uygulaması
+BASLIK: Belirtilen maksimum kalkış ağırlığını destekleyecek yapısal şasi veya taşıyıcı sistem
+ACIKLAMA: Belirtilen maksimum kalkış ağırlığını destekleyecek yapısal şasi veya taşıyıcı sistem
+KAYNAK_BELGE: Akıllı Donanım Listesi
+BOLUM: 
+KANIT: Sistem, maksimum kalkış ağırlığını 185 kg olarak destekleyebilmelidir
+---
+ID: HW-002
+TUR: Parça/bileşen
+V_MODEL: Parça veya yazılım uygulaması
+BASLIK: Sistem güvenilirlik analizleri için arıza oranı ve MTBF/MTTR ölçümü yapabilen test ekipmanı
+ACIKLAMA: Sistem güvenilirlik analizleri için arıza oranı ve MTBF/MTTR ölçümü yapabilen test ekipmanı
+KAYNAK_BELGE: Akıllı Donanım Listesi
+BOLUM: 
+KANIT: Sistem arızalar arası ortalama süre ve kritik arızalar arası ortalama süre değerlerini sağlamalıdır
+---
+ID: HW-003
+TUR: Parça/bileşen
+V_MODEL: Parça veya yazılım uygulaması
+BASLIK: Yetkilendirme ve kaynak erişim kontrol mekanizması için kullanıcı kimlik doğrulama arayüzü
+ACIKLAMA: Yetkilendirme ve kaynak erişim kontrol mekanizması için kullanıcı kimlik doğrulama arayüzü
+KAYNAK_BELGE: Akıllı Donanım Listesi
+BOLUM: 
+KANIT: Sistem, kullanıcıların yetki seviyelerine göre erişebilecekleri kaynakları belirleyebilmelidir
+---
+ID: HW-004
+TUR: Parça/bileşen
+V_MODEL: Parça veya yazılım uygulaması
+BASLIK: Ulusal görüntü aktarım formatını destekleyen optik veya dijital görüntü sensörü/modülü
+ACIKLAMA: Ulusal görüntü aktarım formatını destekleyen optik veya dijital görüntü sensörü/modülü
+KAYNAK_BELGE: Akıllı Donanım Listesi
+BOLUM: 
+KANIT: Sistem, ulusal görüntü aktarım formatını desteklemelidir
+---
+ID: HW-005
+TUR: Parça/bileşen
+V_MODEL: Parça veya yazılım uygulaması
+BASLIK: Belirtilen minimum mesafede görüş açısı sağlayan optik algılama sistemi
+ACIKLAMA: Belirtilen minimum mesafede görüş açısı sağlayan optik algılama sistemi
+KAYNAK_BELGE: Akıllı Donanım Listesi
+BOLUM: 
+KANIT: Sistem, minimum 10 metre mesafede görüş açısı sağlamalıdır
+---
+ID: HW-006
+TUR: Parça/bileşen
+V_MODEL: Parça veya yazılım uygulaması
+BASLIK: Ulusal görüntü aktarım formatını destekleyen veri arayüzü
+ACIKLAMA: Ulusal görüntü aktarım formatını destekleyen veri arayüzü
+KAYNAK_BELGE: Akıllı Donanım Listesi
+BOLUM: 
+KANIT: Sistem ulusal görüntü aktarım formatını desteklemelidir
+---
+ID: HW-007
+TUR: Parça/bileşen
+V_MODEL: Parça veya yazılım uygulaması
+BASLIK: Kritik görevler için düşük döngü tüketimine sahip işlemci birimi
+ACIKLAMA: Kritik görevler için düşük döngü tüketimine sahip işlemci birimi
+KAYNAK_BELGE: Akıllı Donanım Listesi
+BOLUM: 
+KANIT: Yazılım modülü, en kötü durum yürütme süresini analiz ederek kritik görevler için maksimum işlemci döngüsü tüketimini döngüden az tutmalı ve bu durumu işletim sistemi çekirdeği üzerinden raporlamalıdır
+---
+ID: HW-008
+TUR: Parça/bileşen
+V_MODEL: Parça veya yazılım uygulaması
+BASLIK: Hata tespiti için hızlı işlem kapasitesine sahip birim
+ACIKLAMA: Hata tespiti için hızlı işlem kapasitesine sahip birim
+KAYNAK_BELGE: Akıllı Donanım Listesi
+BOLUM: 
+KANIT: Sistem güvenilirlik modülü, arıza tespiti için en az 50 milisaniye döngü süresinde hata durumunu raporlamalıdır
+---
+ID: HW-009
+TUR: Parça/bileşen
+V_MODEL: Parça veya yazılım uygulaması
+BASLIK: Yetkilendirme veritabanı erişimi sağlayabilen depolama birimi
+ACIKLAMA: Yetkilendirme veritabanı erişimi sağlayabilen depolama birimi
+KAYNAK_BELGE: Akıllı Donanım Listesi
+BOLUM: 
+KANIT: Yazılım modülü, kullanıcı kimlik doğrulamasını tamamladıktan sonraki 50 milisaniye içinde yetkilendirme veritabanından kaynak erişim listesini çekmeli ve bu listeyi arayüz bileşenlerine sunmalıdır
+---
+ID: HW-010
+TUR: Parça/bileşen
+V_MODEL: Parça veya yazılım uygulaması
+BASLIK: Belirtilen maksimum kalkış ağırlığı altında yapısal bütünlüğü koruyabilen gövde yapısı
+ACIKLAMA: Belirtilen maksimum kalkış ağırlığı altında yapısal bütünlüğü koruyabilen gövde yapısı
+KAYNAK_BELGE: Akıllı Donanım Listesi
+BOLUM: 
+KANIT: Taşıyıcı sistem gövdesi, maksimum kalkış ağırlığı altında yapısal bütünlüğünü korumalı ve bu yükü kN kuvveti ile destekleyebilmelidir
+---
+ID: HW-011
+TUR: Parça/bileşen
+V_MODEL: Parça veya yazılım uygulaması
+BASLIK: Belirli bir görüş açısı ve mesafeyi sağlayabilen optik sensör sistemi
+ACIKLAMA: Belirli bir görüş açısı ve mesafeyi sağlayabilen optik sensör sistemi
+KAYNAK_BELGE: Akıllı Donanım Listesi
+BOLUM: 
+KANIT: Görüş sistemi, minimum 10 metre mesafede görüş açısı sağlamalıdır ve bu açısal çözünürlük en az 0.5 derece içinde tamamlanmalıdır
+---
+ID: HW-012
+TUR: Parça/bileşen
+V_MODEL: Parça veya yazılım uygulaması
+BASLIK: Optik sensör modülü, belirli bir menzil ve görüş açısı sağlayan tipte
+ACIKLAMA: Optik sensör modülü, belirli bir menzil ve görüş açısı sağlayan tipte
+KAYNAK_BELGE: Akıllı Donanım Listesi
+BOLUM: 
+KANIT: Optik sensör modülü, en az 10 metre mesafede görüş açısı sağlamalıdır
+---
+ID: HW-013
+TUR: Parça/bileşen
+V_MODEL: Parça veya yazılım uygulaması
+BASLIK: Hızlı arıza tespiti ve düşük gecikmeli hata bildirimini destekleyen kontrol birimi veya donanım
+ACIKLAMA: Hızlı arıza tespiti ve düşük gecikmeli hata bildirimini destekleyen kontrol birimi veya donanım
+KAYNAK_BELGE: Akıllı Donanım Listesi
+BOLUM: 
+KANIT: Güvenlik yönetim modülü, arıza tespiti için en az 50 milisaniye döngü süresinde çalışmalı ve kritik hata bildirimini 1 saniyeden kısa bir gecikme ile sistem kontrol ünitesine iletmelidir
+---
+ID: HW-014
+TUR: Parça/bileşen
+V_MODEL: Parça veya yazılım uygulaması
+BASLIK: Yüksek veri akış hızını destekleyen görüntü aktarım arayüzü
+ACIKLAMA: Yüksek veri akış hızını destekleyen görüntü aktarım arayüzü
+KAYNAK_BELGE: Akıllı Donanım Listesi
+BOLUM: 
+KANIT: Görüntü işleme modülü, ulusal görüntü aktarım formatını desteklemek için minimum 20 MBit/s veri akış hızında bir arayüz sağlamalıdır
+---
+ID: HW-015
+TUR: Parça/bileşen
+V_MODEL: Parça veya yazılım uygulaması
+BASLIK: Belirli hesaplama süresi kısıtlamasına sahip parametre işleme ve raporlama yeteneğine sahip işlem birimi
+ACIKLAMA: Belirli hesaplama süresi kısıtlamasına sahip parametre işleme ve raporlama yeteneğine sahip işlem birimi
+KAYNAK_BELGE: Akıllı Donanım Listesi
+BOLUM: 
+KANIT: Yazılım modülü, arıza tespitini gerçekleştirmek için en fazla 50 milisaniye içinde gerekli tüm parametreleri hesaplayıp raporlamalıdır
+---
+ID: AT-001
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-001
+ACIKLAMA: Sistem, 185 kg ağırlığındaki bir yükü güvenli bir şekilde taşıyabildiği doğrulanmalıdır
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Sistem, 185 kg ağırlığındaki bir yükü güvenli bir şekilde taşıyabildiği doğrulanmalıdır
+---
+ID: AT-002
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-002
+ACIKLAMA: Sistem, belirlenen en kötü durum yük altında bile işlem sürelerini belirtilen kriterlere uygun bir şekilde yönettiğini kanıtlamalıdır
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Sistem, belirlenen en kötü durum yük altında bile işlem sürelerini belirtilen kriterlere uygun bir şekilde yönettiğini kanıtlamalıdır
+---
+ID: AT-003
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-003
+ACIKLAMA: Sistem, belirlenen arıza ve kritik arıza süreleri için ortalama değerleri doğru bir şekilde raporlayabilmelidir
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Sistem, belirlenen arıza ve kritik arıza süreleri için ortalama değerleri doğru bir şekilde raporlayabilmelidir
+---
+ID: AT-004
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-004
+ACIKLAMA: Farklı tanımlanmış rollerdeki kullanıcılar, yalnızca kendilerine atanmış kaynaklara erişebilmeli ve yetkisiz kaynaklara erişim denemesi yapıldığında sistem tarafından engellenmelidir
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Farklı tanımlanmış rollerdeki kullanıcılar, yalnızca kendilerine atanmış kaynaklara erişebilmeli ve yetkisiz kaynaklara erişim denemesi yapıldığında sistem tarafından engellenmelidir
+---
+ID: AT-005
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-005
+ACIKLAMA: Sistem tarafından aktarılan tüm görüntü verileri ulusal görüntü aktarım formatına uygun olarak işlenmelidir
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Sistem tarafından aktarılan tüm görüntü verileri ulusal görüntü aktarım formatına uygun olarak işlenmelidir
+---
+ID: DOC-KMTD
+TUR: Teknik belge
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: Kabul Testi (Acceptance Test)
+ACIKLAMA: 5 yapılandırılmış madde içerir.
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: 
+---
+ID: DOC-SGD
+TUR: Teknik belge
+V_MODEL: Sistem gereksinimi
+BASLIK: Sistem Gereksinimi (System Requirements)
+ACIKLAMA: 10 yapılandırılmış madde içerir.
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: 
+---
+ID: SR-001
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-001
+ACIKLAMA: Sistem, maksimum kalkış ağırlığını 185 kg olarak destekleyebilmelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, maksimum kalkış ağırlığını 185 kg olarak destekleyebilmelidir
+---
+ID: SR-002
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-002
+ACIKLAMA: Sistem, en kötü durum yürütme süresini belirtilen kriterlere uygun olarak yönetebilmelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, en kötü durum yürütme süresini belirtilen kriterlere uygun olarak yönetebilmelidir
+---
+ID: SR-003
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-003
+ACIKLAMA: Sistem arızalar arası ortalama süre ve kritik arızalar arası ortalama süre değerlerini sağlamalıdır
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem arızalar arası ortalama süre ve kritik arızalar arası ortalama süre değerlerini sağlamalıdır
+---
+ID: SR-004
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-004
+ACIKLAMA: Sistem, kullanıcıların yetki seviyelerine göre erişebilecekleri kaynakları belirleyebilmelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, kullanıcıların yetki seviyelerine göre erişebilecekleri kaynakları belirleyebilmelidir
+---
+ID: SR-005
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-005
+ACIKLAMA: Sistem, ulusal görüntü aktarım formatını desteklemelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, ulusal görüntü aktarım formatını desteklemelidir
+---
+ID: SR-006
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-006
+ACIKLAMA: Sistem, minimum 10 metre mesafede görüş açısı sağlamalıdır
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, minimum 10 metre mesafede görüş açısı sağlamalıdır
+---
+ID: SR-007
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-007
+ACIKLAMA: Sistem, en az 10 metre mesafede görüş açısı sağlamalıdır
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, en az 10 metre mesafede görüş açısı sağlamalıdır
+---
+ID: SR-008
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-008
+ACIKLAMA: Sistem, arızalar arası ortalama süre ve kritik arızalar arası ortalama süre değerlerini sağlamalıdır
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, arızalar arası ortalama süre ve kritik arızalar arası ortalama süre değerlerini sağlamalıdır
+---
+ID: SR-009
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-009
+ACIKLAMA: Sistem ulusal görüntü aktarım formatını desteklemelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem ulusal görüntü aktarım formatını desteklemelidir
+---
+ID: SR-010
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-010
+ACIKLAMA: Sistem, arıza durumlarında ortalama arıza süresi ve kritik arıza durumlarında ortalama arıza süresini belirtilen değerlere uygun olarak sağlamalıdır
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, arıza durumlarında ortalama arıza süresi ve kritik arıza durumlarında ortalama arıza süresini belirtilen değerlere uygun olarak sağlamalıdır
+---
+ID: DOC-SITET
+TUR: Teknik belge
+V_MODEL: Sistem doğrulaması
+BASLIK: Sistem Testi (System Test)
+ACIKLAMA: 10 yapılandırılmış madde içerir.
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: 
+---
+ID: SITET-001
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-001
+ACIKLAMA: Sistemin kalkış sırasında 185 kg ağırlığındaki bir yükü güvenli bir şekilde taşıyabildiği doğrulanmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistemin kalkış sırasında 185 kg ağırlığındaki bir yükü güvenli bir şekilde taşıyabildiği doğrulanmalıdır
+---
+ID: SITET-002
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-002
+ACIKLAMA: Sistem, belirlenen yük altında işlemci kullanımının %80'i geçmemesi koşulunu sağlamalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistem, belirlenen yük altında işlemci kullanımının %80'i geçmemesi koşulunu sağlamalıdır
+---
+ID: SITET-003
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-003
+ACIKLAMA: Sistemde rastgele oluşturulan üç farklı arıza senaryosu simüle edilmeli ve bu arızalar arası ortalama süre ile kritik arıza senaryoları arasında bir fark olup olmadığı ölçülmelidir
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistemde rastgele oluşturulan üç farklı arıza senaryosu simüle edilmeli ve bu arızalar arası ortalama süre ile kritik arıza senaryoları arasında bir fark olup olmadığı ölçülmelidir
+---
+ID: SITET-004
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-004
+ACIKLAMA: Farklı yetki seviyelerine sahip en az üç farklı kullanıcı profili ile sisteme giriş yapıldığında, her kullanıcının erişim kısıtlamaları doğrulanarak yalnızca tanımlanmış kaynaklara yönlendirildiği test edilmelidir
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Farklı yetki seviyelerine sahip en az üç farklı kullanıcı profili ile sisteme giriş yapıldığında, her kullanıcının erişim kısıtlamaları doğrulanarak yalnızca tanımlanmış kaynaklara yönlendirildiği test edilmelidir
+---
+ID: SITET-005
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-005
+ACIKLAMA: Sistem, bilinen ulusal görüntü aktarım formatına sahip en az üç farklı kaynak verisi ile başarılı bir şekilde veri alıp işleyebilmelidir
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistem, bilinen ulusal görüntü aktarım formatına sahip en az üç farklı kaynak verisi ile başarılı bir şekilde veri alıp işleyebilmelidir
+---
+ID: SITET-006
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-006
+ACIKLAMA: Sistem, minimum 10 metre mesafede belirlenen görüş açısı sağlayarak test nesnesini algılayabilmelidir
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistem, minimum 10 metre mesafede belirlenen görüş açısı sağlayarak test nesnesini algılayabilmelidir
+---
+ID: SITET-007
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-007
+ACIKLAMA: Sistem, en az 10 metre mesafede görüş açısı sağlandığında belirlenen bir test nesnesini tespit edebilmelidir
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistem, en az 10 metre mesafede görüş açısı sağlandığında belirlenen bir test nesnesini tespit edebilmelidir
+---
+ID: SITET-008
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-008
+ACIKLAMA: Sistemde belirlenen arıza senaryoları tetiklendiğinde, sistemin ortalama kurtarma süresi ve kritik arızalar için ortalama geri dönüş süresinin ölçülmesi gerekir
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistemde belirlenen arıza senaryoları tetiklendiğinde, sistemin ortalama kurtarma süresi ve kritik arızalar için ortalama geri dönüş süresinin ölçülmesi gerekir
+---
+ID: SITET-009
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-009
+ACIKLAMA: Sistemin, belirlenen ulusal görüntü aktarım formatındaki farklı türdeki (örneğin JPEG ve PNG) geçerli dosyaları hatasız bir şekilde yükleyip işlediği doğrulanmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistemin, belirlenen ulusal görüntü aktarım formatındaki farklı türdeki (örneğin JPEG ve PNG) geçerli dosyaları hatasız bir şekilde yükleyip işlediği doğrulanmalıdır
+---
+ID: SITET-010
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-010
+ACIKLAMA: Sistemde simüle edilmiş arıza durumları altında ortalama arıza süresi ve kritik arıza durumlarında ortalama arıza süresinin belirtilen değerlere uygun olarak sağlanması doğrulanmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistemde simüle edilmiş arıza durumları altında ortalama arıza süresi ve kritik arıza durumlarında ortalama arıza süresinin belirtilen değerlere uygun olarak sağlanması doğrulanmalıdır
+---
+ID: DOC-STT
+TUR: Teknik belge
+V_MODEL: Alt sistem gereksinimi
+BASLIK: Alt Sistem Gereksinimleri (Subsystem Requirements)
+ACIKLAMA: 10 yapılandırılmış madde içerir.
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: 
+---
+ID: SSR-001
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-001
+ACIKLAMA: Taşıyıcı sistem gövdesi, maksimum kalkış ağırlığı altında yapısal bütünlüğünü korumalı ve bu yükü kN kuvveti ile destekleyebilmelidir
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Taşıyıcı sistem gövdesi, maksimum kalkış ağırlığı altında yapısal bütünlüğünü korumalı ve bu yükü kN kuvveti ile destekleyebilmelidir
+---
+ID: SSR-002
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-002
+ACIKLAMA: Yazılım modülü, en kötü durum yürütme süresini analiz ederek kritik görevler için maksimum işlemci döngüsü tüketimini döngüden az tutmalı ve bu durumu işletim sistemi çekirdeği üzerinden raporlamalıdır
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Yazılım modülü, en kötü durum yürütme süresini analiz ederek kritik görevler için maksimum işlemci döngüsü tüketimini döngüden az tutmalı ve bu durumu işletim sistemi çekirdeği üzerinden raporlamalıdır
+---
+ID: SSR-003
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-003
+ACIKLAMA: Sistem güvenilirlik modülü, arıza tespiti için en az 50 milisaniye döngü süresinde hata durumunu raporlamalıdır
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Sistem güvenilirlik modülü, arıza tespiti için en az 50 milisaniye döngü süresinde hata durumunu raporlamalıdır
+---
+ID: SSR-004
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-004
+ACIKLAMA: Yazılım modülü, kullanıcı kimlik doğrulamasını tamamladıktan sonraki 50 milisaniye içinde yetkilendirme veritabanından kaynak erişim listesini çekmeli ve bu listeyi arayüz bileşenlerine sunmalıdır
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Yazılım modülü, kullanıcı kimlik doğrulamasını tamamladıktan sonraki 50 milisaniye içinde yetkilendirme veritabanından kaynak erişim listesini çekmeli ve bu listeyi arayüz bileşenlerine sunmalıdır
+---
+ID: SSR-005
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-005
+ACIKLAMA: Görüntü işleme birimi, ulusal görüntü aktarım formatını desteklemek için en az 1080p çözünürlükte ve maksimum 60 FPS hızında veri alabilmelidir
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Görüntü işleme birimi, ulusal görüntü aktarım formatını desteklemek için en az 1080p çözünürlükte ve maksimum 60 FPS hızında veri alabilmelidir
+---
+ID: SSR-006
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-006
+ACIKLAMA: Görüş sistemi, minimum 10 metre mesafede görüş açısı sağlamalıdır ve bu açısal çözünürlük en az 0.5 derece içinde tamamlanmalıdır
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Görüş sistemi, minimum 10 metre mesafede görüş açısı sağlamalıdır ve bu açısal çözünürlük en az 0.5 derece içinde tamamlanmalıdır
+---
+ID: SSR-007
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-007
+ACIKLAMA: Optik sensör modülü, en az 10 metre mesafede görüş açısı sağlamalıdır
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Optik sensör modülü, en az 10 metre mesafede görüş açısı sağlamalıdır
+---
+ID: SSR-008
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-008
+ACIKLAMA: Güvenlik yönetim modülü, arıza tespiti için en az 50 milisaniye döngü süresinde çalışmalı ve kritik hata bildirimini 1 saniyeden kısa bir gecikme ile sistem kontrol ünitesine iletmelidir
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Güvenlik yönetim modülü, arıza tespiti için en az 50 milisaniye döngü süresinde çalışmalı ve kritik hata bildirimini 1 saniyeden kısa bir gecikme ile sistem kontrol ünitesine iletmelidir
+---
+ID: SSR-009
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-009
+ACIKLAMA: Görüntü işleme modülü, ulusal görüntü aktarım formatını desteklemek için minimum 20 MBit/s veri akış hızında bir arayüz sağlamalıdır
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Görüntü işleme modülü, ulusal görüntü aktarım formatını desteklemek için minimum 20 MBit/s veri akış hızında bir arayüz sağlamalıdır
+---
+ID: SSR-010
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-010
+ACIKLAMA: Yazılım modülü, arıza tespitini gerçekleştirmek için en fazla 50 milisaniye içinde gerekli tüm parametreleri hesaplayıp raporlamalıdır
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Yazılım modülü, arıza tespitini gerçekleştirmek için en fazla 50 milisaniye içinde gerekli tüm parametreleri hesaplayıp raporlamalıdır
+---
+ID: DOC-TID
+TUR: Teknik belge
+V_MODEL: Müşteri gereksinimi
+BASLIK: Kullanıcı Gereksinimi (User Requirement)
+ACIKLAMA: 5 yapılandırılmış madde içerir.
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: 
+---
+ID: UR-001
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-001
+ACIKLAMA: Sistem, maksimum kalkış ağırlığını 185 kg olarak desteklemelidir
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem, maksimum kalkış ağırlığını 185 kg olarak desteklemelidir
+---
+ID: UR-002
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-002
+ACIKLAMA: Sistem, en kötü durum yürütme süresini belirtilen kriterlere uygun olarak yönetmelidir
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem, en kötü durum yürütme süresini belirtilen kriterlere uygun olarak yönetmelidir
+---
+ID: UR-003
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-003
+ACIKLAMA: Sistem, arızalar arası ortalama süre ve kritik arızalar arası ortalama süre değerlerini sağlamalıdır
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem, arızalar arası ortalama süre ve kritik arızalar arası ortalama süre değerlerini sağlamalıdır
+---
+ID: UR-004
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-004
+ACIKLAMA: Sistem, rol tabanlı erişim kontrol mekanizmasını uygulamalıdır
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem, rol tabanlı erişim kontrol mekanizmasını uygulamalıdır
+---
+ID: UR-005
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-005
+ACIKLAMA: Sistem, ulusal görüntü aktarım formatını kullanmalıdır
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem, ulusal görüntü aktarım formatını kullanmalıdır
+---
+ILISKILER
+SR-001 -> allocated_to -> HW-001 | Kesin
+SR-003 -> allocated_to -> HW-002 | Kesin
+SR-004 -> allocated_to -> HW-003 | Kesin
+SR-005 -> allocated_to -> HW-004 | Kesin
+SR-006 -> allocated_to -> HW-005 | Kesin
+SR-007 -> allocated_to -> HW-005 | Kesin
+SR-008 -> allocated_to -> HW-002 | Kesin
+SR-009 -> allocated_to -> HW-006 | Kesin
+SSR-001 -> allocated_to -> HW-010 | Kesin
+SSR-002 -> allocated_to -> HW-007 | Kesin
+SSR-003 -> allocated_to -> HW-008 | Kesin
+SSR-004 -> allocated_to -> HW-009 | Kesin
+SSR-005 -> allocated_to -> HW-006 | Kesin
+SSR-006 -> allocated_to -> HW-011 | Kesin
+SSR-007 -> allocated_to -> HW-012 | Kesin
+SSR-008 -> allocated_to -> HW-013 | Kesin
+SSR-009 -> allocated_to -> HW-014 | Kesin
+SSR-010 -> allocated_to -> HW-015 | Kesin
+SR-001 -> derives_from -> UR-001 | Kesin
+SR-002 -> derives_from -> UR-002 | Kesin
+SR-003 -> derives_from -> UR-003 | Kesin
+SR-004 -> derives_from -> UR-004 | Kesin
+SR-005 -> derives_from -> UR-005 | Kesin
+SR-006 -> derives_from -> UR-001 | Kesin
+SR-007 -> derives_from -> UR-001 | Kesin
+SR-008 -> derives_from -> UR-003 | Kesin
+SR-009 -> derives_from -> UR-005 | Kesin
+SR-010 -> derives_from -> UR-003 | Kesin
+SSR-001 -> derives_from -> SR-001 | Kesin
+SSR-002 -> derives_from -> SR-002 | Kesin
+SSR-003 -> derives_from -> SR-003 | Kesin
+SSR-004 -> derives_from -> SR-004 | Kesin
+SSR-005 -> derives_from -> SR-005 | Kesin
+SSR-006 -> derives_from -> SR-006 | Kesin
+SSR-007 -> derives_from -> SR-007 | Kesin
+SSR-008 -> derives_from -> SR-008 | Kesin
+SSR-009 -> derives_from -> SR-009 | Kesin
+SSR-010 -> derives_from -> SR-010 | Kesin
+AT-001 -> documented_in -> DOC-KMTD | Kesin
+AT-002 -> documented_in -> DOC-KMTD | Kesin
+AT-003 -> documented_in -> DOC-KMTD | Kesin
+AT-004 -> documented_in -> DOC-KMTD | Kesin
+AT-005 -> documented_in -> DOC-KMTD | Kesin
+HW-001 -> documented_in -> DOC-HARDWARE | Kesin
+HW-002 -> documented_in -> DOC-HARDWARE | Kesin
+HW-003 -> documented_in -> DOC-HARDWARE | Kesin
+HW-004 -> documented_in -> DOC-HARDWARE | Kesin
+HW-005 -> documented_in -> DOC-HARDWARE | Kesin
+HW-006 -> documented_in -> DOC-HARDWARE | Kesin
+HW-007 -> documented_in -> DOC-HARDWARE | Kesin
+HW-008 -> documented_in -> DOC-HARDWARE | Kesin
+HW-009 -> documented_in -> DOC-HARDWARE | Kesin
+HW-010 -> documented_in -> DOC-HARDWARE | Kesin
+HW-011 -> documented_in -> DOC-HARDWARE | Kesin
+HW-012 -> documented_in -> DOC-HARDWARE | Kesin
+HW-013 -> documented_in -> DOC-HARDWARE | Kesin
+HW-014 -> documented_in -> DOC-HARDWARE | Kesin
+HW-015 -> documented_in -> DOC-HARDWARE | Kesin
+SITET-001 -> documented_in -> DOC-SITET | Kesin
+SITET-002 -> documented_in -> DOC-SITET | Kesin
+SITET-003 -> documented_in -> DOC-SITET | Kesin
+SITET-004 -> documented_in -> DOC-SITET | Kesin
+SITET-005 -> documented_in -> DOC-SITET | Kesin
+SITET-006 -> documented_in -> DOC-SITET | Kesin
+SITET-007 -> documented_in -> DOC-SITET | Kesin
+SITET-008 -> documented_in -> DOC-SITET | Kesin
+SITET-009 -> documented_in -> DOC-SITET | Kesin
+SITET-010 -> documented_in -> DOC-SITET | Kesin
+SR-001 -> documented_in -> DOC-SGD | Kesin
+SR-002 -> documented_in -> DOC-SGD | Kesin
+SR-003 -> documented_in -> DOC-SGD | Kesin
+SR-004 -> documented_in -> DOC-SGD | Kesin
+SR-005 -> documented_in -> DOC-SGD | Kesin
+SR-006 -> documented_in -> DOC-SGD | Kesin
+SR-007 -> documented_in -> DOC-SGD | Kesin
+SR-008 -> documented_in -> DOC-SGD | Kesin
+SR-009 -> documented_in -> DOC-SGD | Kesin
+SR-010 -> documented_in -> DOC-SGD | Kesin
+SSR-001 -> documented_in -> DOC-STT | Kesin
+SSR-002 -> documented_in -> DOC-STT | Kesin
+SSR-003 -> documented_in -> DOC-STT | Kesin
+SSR-004 -> documented_in -> DOC-STT | Kesin
+SSR-005 -> documented_in -> DOC-STT | Kesin
+SSR-006 -> documented_in -> DOC-STT | Kesin
+SSR-007 -> documented_in -> DOC-STT | Kesin
+SSR-008 -> documented_in -> DOC-STT | Kesin
+SSR-009 -> documented_in -> DOC-STT | Kesin
+SSR-010 -> documented_in -> DOC-STT | Kesin
+SST-001 -> documented_in -> DOC-AST | Kesin
+SST-002 -> documented_in -> DOC-AST | Kesin
+SST-003 -> documented_in -> DOC-AST | Kesin
+SST-004 -> documented_in -> DOC-AST | Kesin
+SST-005 -> documented_in -> DOC-AST | Kesin
+SST-006 -> documented_in -> DOC-AST | Kesin
+SST-007 -> documented_in -> DOC-AST | Kesin
+SST-008 -> documented_in -> DOC-AST | Kesin
+SST-009 -> documented_in -> DOC-AST | Kesin
+SST-010 -> documented_in -> DOC-AST | Kesin
+UR-001 -> documented_in -> DOC-TID | Kesin
+UR-002 -> documented_in -> DOC-TID | Kesin
+UR-003 -> documented_in -> DOC-TID | Kesin
+UR-004 -> documented_in -> DOC-TID | Kesin
+UR-005 -> documented_in -> DOC-TID | Kesin
+UR-001 -> validated_by -> AT-001 | Kesin
+UR-002 -> validated_by -> AT-002 | Kesin
+UR-003 -> validated_by -> AT-003 | Kesin
+UR-004 -> validated_by -> AT-004 | Kesin
+UR-005 -> validated_by -> AT-005 | Kesin
+SR-001 -> verified_by -> SITET-001 | Kesin
+SR-002 -> verified_by -> SITET-002 | Kesin
+SR-003 -> verified_by -> SITET-003 | Kesin
+SR-004 -> verified_by -> SITET-004 | Kesin
+SR-005 -> verified_by -> SITET-005 | Kesin
+SR-006 -> verified_by -> SITET-006 | Kesin
+SR-007 -> verified_by -> SITET-007 | Kesin
+SR-008 -> verified_by -> SITET-008 | Kesin
+SR-009 -> verified_by -> SITET-009 | Kesin
+SR-010 -> verified_by -> SITET-010 | Kesin
+SSR-001 -> verified_by -> SST-001 | Kesin
+SSR-002 -> verified_by -> SST-002 | Kesin
+SSR-003 -> verified_by -> SST-003 | Kesin
+SSR-004 -> verified_by -> SST-004 | Kesin
+SSR-005 -> verified_by -> SST-005 | Kesin
+SSR-006 -> verified_by -> SST-006 | Kesin
+SSR-007 -> verified_by -> SST-007 | Kesin
+SSR-008 -> verified_by -> SST-008 | Kesin
+SSR-009 -> verified_by -> SST-009 | Kesin
+SSR-010 -> verified_by -> SST-010 | Kesin

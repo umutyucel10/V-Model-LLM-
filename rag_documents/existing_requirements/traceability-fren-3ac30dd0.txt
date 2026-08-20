@@ -1,0 +1,385 @@
+PROJE: fren
+PROJE_KIMLIGI: fren-3ac30dd0
+IZLENEBILIRLIK_SURUMU: 17
+KAYNAK: Belge üretimindeki yapılandırılmış Python verisi
+
+ID: DOC-AST
+TUR: Teknik belge
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: Alt Sistem Testi (Subsystem Test)
+ACIKLAMA: 5 yapılandırılmış madde içerir.
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: 
+---
+ID: SST-001
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-001
+ACIKLAMA: Fren Kontrol Sistemi'nden tekerlek kilitlenme sinyali üretilirken Motor Yönetim Ünitesi'nin CAN arayüzü üzerinden bu veriyi başarıyla aldığının doğrulanması ve alınan verinin içeriğinin doğru olması kontrol edilir. GEÇTİ KRİTERİ: Veri, belirlenen CAN mesaj kimliği ile eşleşmeli ve kilitlenme durumunu temsil eden bayrak değeri '1' olmalıdır
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Fren Kontrol Sistemi'nden tekerlek kilitlenme sinyali üretilirken Motor Yönetim Ünitesi'nin CAN arayüzü üzerinden bu veriyi başarıyla aldığının doğrulanması ve alınan verinin içeriğinin doğru olması kontrol edilir. GEÇTİ KRİTERİ: Veri, belirlenen CAN mesaj kimliği ile eşleşmeli ve kilitlenme durumunu temsil eden bayrak değeri '1' olmalıdır
+---
+ID: SST-002
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-002
+ACIKLAMA: Laboratuvar Test Birimi'nden üretilen geçerli bir kompozit fren pabuçları bileşimi asbest içermeme raporu, USB arayüzü üzerinden Belgeleme Sistemi'ne bağlanır ve veri transferi tamamlandıktan sonra sistemde okunabilir durumda olmalıdır. GEÇTİ KRİTERİ: Verinin başarılı bir şekilde aktarılması ve Belgeleme Sistemi üzerinde tarih/saat bilgisi ile birlikte bulunması
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Laboratuvar Test Birimi'nden üretilen geçerli bir kompozit fren pabuçları bileşimi asbest içermeme raporu, USB arayüzü üzerinden Belgeleme Sistemi'ne bağlanır ve veri transferi tamamlandıktan sonra sistemde okunabilir durumda olmalıdır. GEÇTİ KRİTERİ: Verinin başarılı bir şekilde aktarılması ve Belgeleme Sistemi üzerinde tarih/saat bilgisi ile birlikte bulunması
+---
+ID: SST-003
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-003
+ACIKLAMA: Aktüatör birimi, bilinen aşınma profiline sahip kompozit disk balataları ile metal sırt plakası arasına kontrollü bir yük bindirilerek hareket ettirilir ve bu esnada en az 5 mm mesafede temas olmadığı doğrulanır. GEÇTİ KRİTERİ: En düşük ölçülen mesafe >= 5 mm
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Aktüatör birimi, bilinen aşınma profiline sahip kompozit disk balataları ile metal sırt plakası arasına kontrollü bir yük bindirilerek hareket ettirilir ve bu esnada en az 5 mm mesafede temas olmadığı doğrulanır. GEÇTİ KRİTERİ: En düşük ölçülen mesafe >= 5 mm
+---
+ID: SST-004
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-004
+ACIKLAMA: Fren Aktüatör Birimi, kompozit fren pabuçları kullanılarak belirli bir hızda DSB km/sa) ve mesafe boyunca sürekli olarak çalıştırılırken emisyon gazı seviyesi ölçülür; GEÇTİ KRİTERİ: Ölçülen ortalama emisyon gazı seviyesi 50 ppm'in altında olmalıdır
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Fren Aktüatör Birimi, kompozit fren pabuçları kullanılarak belirli bir hızda DSB km/sa) ve mesafe boyunca sürekli olarak çalıştırılırken emisyon gazı seviyesi ölçülür; GEÇTİ KRİTERİ: Ölçülen ortalama emisyon gazı seviyesi 50 ppm'in altında olmalıdır
+---
+ID: SST-005
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-005
+ACIKLAMA: Sürtünme Sensörü Birimi, kontrollü bir ortamda önceden belirlenen kuru ve yağışlı nemli hava koşullarına maruz bırakılırken ölçülen sürtünme katsayısı verisinin CAN arayüzü üzerinden Görev Kontrol Sistemi'ne başarılı bir şekilde iletildiği doğrulanır. GEÇTİ KRİTERİ: Tüm test döngülerinde, hem kuru hem de yağışlı nemli koşullarda geçerli ölçüm aralığında (örneğin 0.1 ile 0.9 arasında) veri akışı kesintisiz ve doğru bir şekilde alınmalıdır
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Sürtünme Sensörü Birimi, kontrollü bir ortamda önceden belirlenen kuru ve yağışlı nemli hava koşullarına maruz bırakılırken ölçülen sürtünme katsayısı verisinin CAN arayüzü üzerinden Görev Kontrol Sistemi'ne başarılı bir şekilde iletildiği doğrulanır. GEÇTİ KRİTERİ: Tüm test döngülerinde, hem kuru hem de yağışlı nemli koşullarda geçerli ölçüm aralığında (örneğin 0.1 ile 0.9 arasında) veri akışı kesintisiz ve doğru bir şekilde alınmalıdır
+---
+ID: AT-001
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-001
+ACIKLAMA: Fren sistemi kompozit pabuçlarla çalışırken tekerleklerin kilitlenme eğilimini minimumda tutarak hareketliliği sürdürmelidir
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Fren sistemi kompozit pabuçlarla çalışırken tekerleklerin kilitlenme eğilimini minimumda tutarak hareketliliği sürdürmelidir
+---
+ID: AT-002
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-002
+ACIKLAMA: Belirlenen kompozit fren pabuçları numuneleri üzerinde, asbest varlığına dair laboratuvar testleri yapılarak sonuçların belgelenmesi gerekmektedir
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Belirlenen kompozit fren pabuçları numuneleri üzerinde, asbest varlığına dair laboratuvar testleri yapılarak sonuçların belgelenmesi gerekmektedir
+---
+ID: AT-003
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-003
+ACIKLAMA: Metal sırt plakası dahil olmak üzere kompozit disk balatalarının aşınması sırasında metal sırt fren diskine temas etmediği doğrulanmalıdır
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Metal sırt plakası dahil olmak üzere kompozit disk balatalarının aşınması sırasında metal sırt fren diskine temas etmediği doğrulanmalıdır
+---
+ID: AT-004
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-004
+ACIKLAMA: Fren pabuçları kullanılarak yapılan testlerde, aracın bulunduğu ortamda algılanan koku yoğunluğu 5 ppm'in altında kalmalıdır
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Fren pabuçları kullanılarak yapılan testlerde, aracın bulunduğu ortamda algılanan koku yoğunluğu 5 ppm'in altında kalmalıdır
+---
+ID: AT-005
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-005
+ACIKLAMA: Kuru ve yağışlı nemli hava şartlarında ölçülen sürtünme katsayısı farkı %15'i geçmemelidir
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Kuru ve yağışlı nemli hava şartlarında ölçülen sürtünme katsayısı farkı %15'i geçmemelidir
+---
+ID: DOC-KMTD
+TUR: Teknik belge
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: Kabul Testi (Acceptance Test)
+ACIKLAMA: 5 yapılandırılmış madde içerir.
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: 
+---
+ID: DOC-SGD
+TUR: Teknik belge
+V_MODEL: Sistem gereksinimi
+BASLIK: Sistem Gereksinimi (System Requirements)
+ACIKLAMA: 5 yapılandırılmış madde içerir.
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: 
+---
+ID: SR-001
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-001
+ACIKLAMA: Sistem kompozit fren pabuçları ile fren yapılırken tekerleklerin bloke olmasını engellemelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem kompozit fren pabuçları ile fren yapılırken tekerleklerin bloke olmasını engellemelidir
+---
+ID: SR-002
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-002
+ACIKLAMA: Sistem, kompozit fren pabuçlarının bileşiminde asbest bulunmadığına dair laboratuvar testlerini gerçekleştirip sonuçları belgelendirebilmelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, kompozit fren pabuçlarının bileşiminde asbest bulunmadığına dair laboratuvar testlerini gerçekleştirip sonuçları belgelendirebilmelidir
+---
+ID: SR-003
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-003
+ACIKLAMA: Sistem kompozit disk balatalarının tasarımı ile metal sırt plakası dahil olmak üzere 5 mm'ye kadar aşınmasına rağmen metal sırt fren diskine temas etmemelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem kompozit disk balatalarının tasarımı ile metal sırt plakası dahil olmak üzere 5 mm'ye kadar aşınmasına rağmen metal sırt fren diskine temas etmemelidir
+---
+ID: SR-004
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-004
+ACIKLAMA: Sistem kompozit fren pabuçları kullanıldığında çevreye rahatsız edici koku ve gürültü yaymamalıdır
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem kompozit fren pabuçları kullanıldığında çevreye rahatsız edici koku ve gürültü yaymamalıdır
+---
+ID: SR-005
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-005
+ACIKLAMA: Sistem kompozit fren pabuçlarının sürtünme özelliklerinin kuru ve yağışlı nemli hava şartlarında %15'ten fazla değişim göstermemesini sağlamalıdır
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem kompozit fren pabuçlarının sürtünme özelliklerinin kuru ve yağışlı nemli hava şartlarında %15'ten fazla değişim göstermemesini sağlamalıdır
+---
+ID: DOC-SITET
+TUR: Teknik belge
+V_MODEL: Sistem doğrulaması
+BASLIK: Sistem Testi (System Test)
+ACIKLAMA: 5 yapılandırılmış madde içerir.
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: 
+---
+ID: SITET-001
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-001
+ACIKLAMA: Kompozit fren pabuçları ile yapılan frenleme sırasında tekerleklerin bloke olmaması gerektiği doğrulanmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Kompozit fren pabuçları ile yapılan frenleme sırasında tekerleklerin bloke olmaması gerektiği doğrulanmalıdır
+---
+ID: SITET-002
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-002
+ACIKLAMA: Sistem, kompozit fren pabuçlarının bileşiminde asbest bulunmadığını gösteren geçerli laboratuvar raporlarını başarıyla sisteme yükleyebilmeli ve bu kayıtları arşivlenmiş olarak görüntüleyebilmelidir
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistem, kompozit fren pabuçlarının bileşiminde asbest bulunmadığını gösteren geçerli laboratuvar raporlarını başarıyla sisteme yükleyebilmeli ve bu kayıtları arşivlenmiş olarak görüntüleyebilmelidir
+---
+ID: SITET-003
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-003
+ACIKLAMA: Kompozit disk balataları ile metal sırt plakası arasındaki temas mesafesi 5 mm'ye kadar aşınma sonrası bile fren diskine ulaşmamalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Kompozit disk balataları ile metal sırt plakası arasındaki temas mesafesi 5 mm'ye kadar aşınma sonrası bile fren diskine ulaşmamalıdır
+---
+ID: SITET-004
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-004
+ACIKLAMA: Fren pabuçları kompozit malzemeden üretildiğinde, test ortamında ölçülebilir bir koku eşiği ve belirlenen gürültü seviyesinin altında kalması doğrulanmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Fren pabuçları kompozit malzemeden üretildiğinde, test ortamında ölçülebilir bir koku eşiği ve belirlenen gürültü seviyesinin altında kalması doğrulanmalıdır
+---
+ID: SITET-005
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-005
+ACIKLAMA: Kuru ve yağışlı nemli hava şartlarında ölçülen kompozit fren pabuçlarının sürtünme katsayısı arasındaki değişim %15'i geçmemelidir
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Kuru ve yağışlı nemli hava şartlarında ölçülen kompozit fren pabuçlarının sürtünme katsayısı arasındaki değişim %15'i geçmemelidir
+---
+ID: DOC-STT
+TUR: Teknik belge
+V_MODEL: Alt sistem gereksinimi
+BASLIK: Alt Sistem Gereksinimleri (Subsystem Requirements)
+ACIKLAMA: 5 yapılandırılmış madde içerir.
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: 
+---
+ID: SSR-001
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-001
+ACIKLAMA: Fren Kontrol Sistemi, tekerlek kilitlenme durumunu tespit ettiğinde bu veriyi Motor Yönetim Ünitesi'ne CAN arayüzü üzerinden iletmelidir
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Fren Kontrol Sistemi, tekerlek kilitlenme durumunu tespit ettiğinde bu veriyi Motor Yönetim Ünitesi'ne CAN arayüzü üzerinden iletmelidir
+---
+ID: SSR-002
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-002
+ACIKLAMA: Laboratuvar Test Birimi, kompozit fren pabuçlarının bileşiminde asbest bulunmadığına dair test sonuçlarını dijital formatta Belgeleme Sistemi'ne USB arayüzü üzerinden iletmelidir
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Laboratuvar Test Birimi, kompozit fren pabuçlarının bileşiminde asbest bulunmadığına dair test sonuçlarını dijital formatta Belgeleme Sistemi'ne USB arayüzü üzerinden iletmelidir
+---
+ID: SSR-003
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-003
+ACIKLAMA: Fren Aktüatör Birimi, kompozit disk balatalarının metal sırt plakasına temas etmemesi için en az 5 mm'ye kadar aşınma toleransını sağlamalıdır
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Fren Aktüatör Birimi, kompozit disk balatalarının metal sırt plakasına temas etmemesi için en az 5 mm'ye kadar aşınma toleransını sağlamalıdır
+---
+ID: SSR-004
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-004
+ACIKLAMA: Fren Aktüatör Birimi, kompozit fren pabuçları kullanıldığında emisyon gazı seviyesini 50 ppm'in altında tutmalıdır
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Fren Aktüatör Birimi, kompozit fren pabuçları kullanıldığında emisyon gazı seviyesini 50 ppm'in altında tutmalıdır
+---
+ID: SSR-005
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-005
+ACIKLAMA: Sürtünme Sensörü Birimi, kuru ve yağışlı nemli hava şartlarında ölçülen sürtünme katsayısı verisini Görev Kontrol Sistemi'ne CAN arayüzü üzerinden iletmelidir
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Sürtünme Sensörü Birimi, kuru ve yağışlı nemli hava şartlarında ölçülen sürtünme katsayısı verisini Görev Kontrol Sistemi'ne CAN arayüzü üzerinden iletmelidir
+---
+ID: DOC-TID
+TUR: Teknik belge
+V_MODEL: Müşteri gereksinimi
+BASLIK: Kullanıcı Gereksinimi (User Requirement)
+ACIKLAMA: 5 yapılandırılmış madde içerir.
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: 
+---
+ID: UR-001
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-001
+ACIKLAMA: Sistem kompozit fren pabuçları ile fren yapılırken tekerleklerin bloke olmasını engellemelidir
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem kompozit fren pabuçları ile fren yapılırken tekerleklerin bloke olmasını engellemelidir
+---
+ID: UR-002
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-002
+ACIKLAMA: Kompozit fren pabuçlarının bileşiminde asbest bulunmadığına dair laboratuvar testleri yapılmalı ve belgelendirilmelidir
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Kompozit fren pabuçlarının bileşiminde asbest bulunmadığına dair laboratuvar testleri yapılmalı ve belgelendirilmelidir
+---
+ID: UR-003
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-003
+ACIKLAMA: Kompozit disk balatalarının tasarımı, metal sırt plakası dahil olmak üzere 5 mm'ye düşünceye kadar aşınsa bile metal sırt fren diskine temas etmemelidir
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Kompozit disk balatalarının tasarımı, metal sırt plakası dahil olmak üzere 5 mm'ye düşünceye kadar aşınsa bile metal sırt fren diskine temas etmemelidir
+---
+ID: UR-004
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-004
+ACIKLAMA: Sistem kompozit fren pabuçları kullanıldığında çevreye rahatsız edici koku ve gürültü yaymamalıdır
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem kompozit fren pabuçları kullanıldığında çevreye rahatsız edici koku ve gürültü yaymamalıdır
+---
+ID: UR-005
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-005
+ACIKLAMA: Kompozit fren pabuçlarının sürtünme özellikleri kuru ve yağışlı nemli hava şartlarında %15'ten fazla değişim göstermemelidir
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Kompozit fren pabuçlarının sürtünme özellikleri kuru ve yağışlı nemli hava şartlarında %15'ten fazla değişim göstermemelidir
+---
+ILISKILER
+SR-001 -> derives_from -> UR-001 | Kesin
+SR-002 -> derives_from -> UR-002 | Kesin
+SR-003 -> derives_from -> UR-003 | Kesin
+SR-004 -> derives_from -> UR-004 | Kesin
+SR-005 -> derives_from -> UR-005 | Kesin
+SSR-001 -> derives_from -> SR-001 | Kesin
+SSR-002 -> derives_from -> SR-002 | Kesin
+SSR-003 -> derives_from -> SR-003 | Kesin
+SSR-004 -> derives_from -> SR-004 | Kesin
+SSR-005 -> derives_from -> SR-005 | Kesin
+AT-001 -> documented_in -> DOC-KMTD | Kesin
+AT-002 -> documented_in -> DOC-KMTD | Kesin
+AT-003 -> documented_in -> DOC-KMTD | Kesin
+AT-004 -> documented_in -> DOC-KMTD | Kesin
+AT-005 -> documented_in -> DOC-KMTD | Kesin
+SITET-001 -> documented_in -> DOC-SITET | Kesin
+SITET-002 -> documented_in -> DOC-SITET | Kesin
+SITET-003 -> documented_in -> DOC-SITET | Kesin
+SITET-004 -> documented_in -> DOC-SITET | Kesin
+SITET-005 -> documented_in -> DOC-SITET | Kesin
+SR-001 -> documented_in -> DOC-SGD | Kesin
+SR-002 -> documented_in -> DOC-SGD | Kesin
+SR-003 -> documented_in -> DOC-SGD | Kesin
+SR-004 -> documented_in -> DOC-SGD | Kesin
+SR-005 -> documented_in -> DOC-SGD | Kesin
+SSR-001 -> documented_in -> DOC-STT | Kesin
+SSR-002 -> documented_in -> DOC-STT | Kesin
+SSR-003 -> documented_in -> DOC-STT | Kesin
+SSR-004 -> documented_in -> DOC-STT | Kesin
+SSR-005 -> documented_in -> DOC-STT | Kesin
+SST-001 -> documented_in -> DOC-AST | Kesin
+SST-002 -> documented_in -> DOC-AST | Kesin
+SST-003 -> documented_in -> DOC-AST | Kesin
+SST-004 -> documented_in -> DOC-AST | Kesin
+SST-005 -> documented_in -> DOC-AST | Kesin
+UR-001 -> documented_in -> DOC-TID | Kesin
+UR-002 -> documented_in -> DOC-TID | Kesin
+UR-003 -> documented_in -> DOC-TID | Kesin
+UR-004 -> documented_in -> DOC-TID | Kesin
+UR-005 -> documented_in -> DOC-TID | Kesin
+UR-001 -> validated_by -> AT-001 | Kesin
+UR-002 -> validated_by -> AT-002 | Kesin
+UR-003 -> validated_by -> AT-003 | Kesin
+UR-004 -> validated_by -> AT-004 | Kesin
+UR-005 -> validated_by -> AT-005 | Kesin
+SR-001 -> verified_by -> SITET-001 | Kesin
+SR-002 -> verified_by -> SITET-002 | Kesin
+SR-003 -> verified_by -> SITET-003 | Kesin
+SR-004 -> verified_by -> SITET-004 | Kesin
+SR-005 -> verified_by -> SITET-005 | Kesin
+SSR-001 -> verified_by -> SST-001 | Kesin
+SSR-002 -> verified_by -> SST-002 | Kesin
+SSR-003 -> verified_by -> SST-003 | Kesin
+SSR-004 -> verified_by -> SST-004 | Kesin
+SSR-005 -> verified_by -> SST-005 | Kesin

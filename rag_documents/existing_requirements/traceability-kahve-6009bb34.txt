@@ -1,0 +1,757 @@
+PROJE: kahve
+PROJE_KIMLIGI: kahve-6009bb34
+IZLENEBILIRLIK_SURUMU: 2
+KAYNAK: Belge üretimindeki yapılandırılmış Python verisi
+
+ID: DOC-AST
+TUR: Teknik belge
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: Alt Sistem Testi (Subsystem Test)
+ACIKLAMA: 10 yapılandırılmış madde içerir.
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: 
+---
+ID: SST-001
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-001
+ACIKLAMA: Kahve hazırlama ünitesi, 24 bitlik renkli bir ekran arayüzü üzerinden 1920x1080 çözünürlükte kullanıcı talimatlarını işlerken, farklı kahve türlerini hazırlamak için 5 saniye içinde DSB MB RAM'e sahip işlemci üzerinde çalışır; GEÇTİ KRİTERİ: Kahve hazırlama ünitesi, 5 saniye içinde belirtilen çözünürlükte ve renk derinliğinde bir arayüz sunar
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Kahve hazırlama ünitesi, 24 bitlik renkli bir ekran arayüzü üzerinden 1920x1080 çözünürlükte kullanıcı talimatlarını işlerken, farklı kahve türlerini hazırlamak için 5 saniye içinde DSB MB RAM'e sahip işlemci üzerinde çalışır; GEÇTİ KRİTERİ: Kahve hazırlama ünitesi, 5 saniye içinde belirtilen çözünürlükte ve renk derinliğinde bir arayüz sunar
+---
+ID: SST-002
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-002
+ACIKLAMA: Kullanıcı arayüzüne kahve boyutu seçimi için bir değer girildiğinde, sistemin 10 milisaniyeden daha kısa sürede kullanıcı girdisine yanıt verdiği doğrulanır; GEÇTİ KRITERİ: Sistem 10 milisaniyeden daha kısa sürede yanıt vermelidir
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Kullanıcı arayüzüne kahve boyutu seçimi için bir değer girildiğinde, sistemin 10 milisaniyeden daha kısa sürede kullanıcı girdisine yanıt verdiği doğrulanır; GEÇTİ KRITERİ: Sistem 10 milisaniyeden daha kısa sürede yanıt vermelidir
+---
+ID: SST-003
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-003
+ACIKLAMA: Su besleme pompası, şebeke suyu kesildiğinde 15 saniye içinde çalışır ve dahili su haznesinden çekilen suyun sıcaklığı 72°C ile 74°C arasında ölçülür; GEÇTİ KRITERİ: pompa 15 saniye içinde çalışır ve su sıcaklığı DSB -74°C arasında kalır
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Su besleme pompası, şebeke suyu kesildiğinde 15 saniye içinde çalışır ve dahili su haznesinden çekilen suyun sıcaklığı 72°C ile 74°C arasında ölçülür; GEÇTİ KRITERİ: pompa 15 saniye içinde çalışır ve su sıcaklığı DSB -74°C arasında kalır
+---
+ID: SST-004
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-004
+ACIKLAMA: Sistem, fiziksel bakım kapağı açıkken güç kaynağını 50 ms içinde kapatmalı ve kapandığında 200 ms içerisinde güç kaynağını etkinleştirerek DSB ms sağlamalı. TEST: Fiziksel bakım kapağı kapatıldığında, sistem 50 ms içinde güç kaynağını kapatmalı ve kapandığına dair bir sinyal üretmelidir; kapalıktan 200 ms sonra güç kaynağı etkinleştirilerek DSB ms süreyle sağlanmalıdır. GEÇTİ KRITERİ: Kapama süresi < 50 ms, etkinleştirme süresi < 200 ms ve DSB ms’den az olmamalıdır
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Sistem, fiziksel bakım kapağı açıkken güç kaynağını 50 ms içinde kapatmalı ve kapandığında 200 ms içerisinde güç kaynağını etkinleştirerek DSB ms sağlamalı. TEST: Fiziksel bakım kapağı kapatıldığında, sistem 50 ms içinde güç kaynağını kapatmalı ve kapandığına dair bir sinyal üretmelidir; kapalıktan 200 ms sonra güç kaynağı etkinleştirilerek DSB ms süreyle sağlanmalıdır. GEÇTİ KRITERİ: Kapama süresi < 50 ms, etkinleştirme süresi < 200 ms ve DSB ms’den az olmamalıdır
+---
+ID: SST-005
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-005
+ACIKLAMA: Sistem elektrik geri dönüşü sonrasında 7.2 saniye içerisinde güvenli bir şekilde yeniden başlatılmalı ve bu süre boyunca sistemdeki tüm veriler korunmalıdır. GEÇTİ KRİTERİ: Yeniden başlatma süresi < 7.2 saniye ve sistem yeniden başlatıldıktan sonraki veriler eksiksiz olarak korunmalıdır
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Sistem elektrik geri dönüşü sonrasında 7.2 saniye içerisinde güvenli bir şekilde yeniden başlatılmalı ve bu süre boyunca sistemdeki tüm veriler korunmalıdır. GEÇTİ KRİTERİ: Yeniden başlatma süresi < 7.2 saniye ve sistem yeniden başlatıldıktan sonraki veriler eksiksiz olarak korunmalıdır
+---
+ID: SST-006
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-006
+ACIKLAMA: Su ısıtma sisteminin dahili su haznesinden çekilen su, elektrik kesintisi sırasında 5 saniye içinde 72.5°C ile 73.5°C arasında stabilize edilir ve bu sıcaklık, ısı kontrol ünitesinin 0.25°C’lik hassasiyetle izlenerek ayarlanır; GEÇTİ KRİTERİ: DSB °C - 73.5°C aralığında ve 5 saniye içinde
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Su ısıtma sisteminin dahili su haznesinden çekilen su, elektrik kesintisi sırasında 5 saniye içinde 72.5°C ile 73.5°C arasında stabilize edilir ve bu sıcaklık, ısı kontrol ünitesinin 0.25°C’lik hassasiyetle izlenerek ayarlanır; GEÇTİ KRİTERİ: DSB °C - 73.5°C aralığında ve 5 saniye içinde
+---
+ID: SST-007
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-007
+ACIKLAMA: Mikrodenetleyici, 50 farklı kahve boyutu seçeneği sunulduğunda, kullanıcı tarafından seçilen boyuta karşılık gelen hazırlama parametrelerini 10 ms içinde yanıt olarak sağlamalı; GEÇTİ KRİTERİ: yanıt süresi < 10 ms
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Mikrodenetleyici, 50 farklı kahve boyutu seçeneği sunulduğunda, kullanıcı tarafından seçilen boyuta karşılık gelen hazırlama parametrelerini 10 ms içinde yanıt olarak sağlamalı; GEÇTİ KRİTERİ: yanıt süresi < 10 ms
+---
+ID: SST-008
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-008
+ACIKLAMA: Su haznesi tamamen doldurulur ve kontrol ünitesine 10 saniye içerisinde 68°C sıcaklığı ulaşır; bu durum, sistemin 250 milisaniye içinde istenen sıcaklığa ulaşmasıyla GEÇTİ KRITERİ: sıcaklık ≥ 68°C
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Su haznesi tamamen doldurulur ve kontrol ünitesine 10 saniye içerisinde 68°C sıcaklığı ulaşır; bu durum, sistemin 250 milisaniye içinde istenen sıcaklığa ulaşmasıyla GEÇTİ KRITERİ: sıcaklık ≥ 68°C
+---
+ID: SST-009
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-009
+ACIKLAMA: Kahve hazırlama sistemi, kullanıcı tarafından sağlanan kahve boyutu değerine göre 250-400 ml arasında bir kahve hacmi aralığında, 1 milisaniye içinde ve 50 MHz'lik bir işlem hızıyla çalışacak bir mikrodenetleyici kullanmalı Mikrodenetleyicinin, 250-400 ml arasında bir kahve hacmi üretmesi için kullanıcı tarafından sağlanan boyuta göre 150 milisaniye içinde çalıştırıldığında, işlem hızı 48 MHz'den yüksek olmalıdır. GEÇTİ KRITERİ: Kahve hacmi 250-400 ml aralığında ve işlem hızı 48 MHz'den yüksek
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Kahve hazırlama sistemi, kullanıcı tarafından sağlanan kahve boyutu değerine göre 250-400 ml arasında bir kahve hacmi aralığında, 1 milisaniye içinde ve 50 MHz'lik bir işlem hızıyla çalışacak bir mikrodenetleyici kullanmalı Mikrodenetleyicinin, 250-400 ml arasında bir kahve hacmi üretmesi için kullanıcı tarafından sağlanan boyuta göre 150 milisaniye içinde çalıştırıldığında, işlem hızı 48 MHz'den yüksek olmalıdır. GEÇTİ KRITERİ: Kahve hacmi 250-400 ml aralığında ve işlem hızı 48 MHz'den yüksek
+---
+ID: SST-010
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-010
+ACIKLAMA: Su ısıtma kontrol sistemi, enerji kesintisi sonrasında 2 saniyeden kısa sürede su haznesinden çekilen suyun sıcaklığının 70.5°C ile 71.2°C arasında tutulduğu ve bu süre boyunca maksimum 145 mW güç tüketimiyle çalıştığı doğrulanmalıdır. GEÇTİ KRITERİ: Su sıcaklığı 70.5°C – 71.2°C aralığında kalmalı ve güç tüketimi 145 mW’den fazla olmamalı
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Su ısıtma kontrol sistemi, enerji kesintisi sonrasında 2 saniyeden kısa sürede su haznesinden çekilen suyun sıcaklığının 70.5°C ile 71.2°C arasında tutulduğu ve bu süre boyunca maksimum 145 mW güç tüketimiyle çalıştığı doğrulanmalıdır. GEÇTİ KRITERİ: Su sıcaklığı 70.5°C – 71.2°C aralığında kalmalı ve güç tüketimi 145 mW’den fazla olmamalı
+---
+ID: DOC-HARDWARE
+TUR: Teknik belge
+V_MODEL: Parça veya yazılım uygulaması
+BASLIK: Akıllı Donanım Listesi
+ACIKLAMA: 12 parça/bileşen kaydı içerir.
+KAYNAK_BELGE: Akıllı Donanım Listesi
+BOLUM: 
+KANIT: 
+---
+ID: HW-001
+TUR: Parça/bileşen
+V_MODEL: Parça veya yazılım uygulaması
+BASLIK: 28 VDC girişli güç dönüştürme birimi
+ACIKLAMA: 28 VDC girişli güç dönüştürme birimi
+KAYNAK_BELGE: Akıllı Donanım Listesi
+BOLUM: 
+KANIT: KULLANICI GEREKSİNİMİ: Sistem, farklı kahve türlerini hazırlayabilme kabiliyetine sahip olmalıdır
+---
+ID: HW-002
+TUR: Parça/bileşen
+V_MODEL: Parça veya yazılım uygulaması
+BASLIK: Su seviyesi sensörü (dahili su haznesi)
+ACIKLAMA: Su seviyesi sensörü (dahili su haznesi)
+KAYNAK_BELGE: Akıllı Donanım Listesi
+BOLUM: 
+KANIT: Sistem, dahili su haznesi kapasitesi 15 litreyi aşmamalı ve şebeke suyu kesildiğinde, dahili hazneden çekilen suyun sıcaklığı 65°C ile 80°C arasında kalmalıdır
+---
+ID: HW-003
+TUR: Parça/bileşen
+V_MODEL: Parça veya yazılım uygulaması
+BASLIK: Su sıcaklık sensörü (dahili su haznesi)
+ACIKLAMA: Su sıcaklık sensörü (dahili su haznesi)
+KAYNAK_BELGE: Akıllı Donanım Listesi
+BOLUM: 
+KANIT: Sistem, dahili su haznesi kapasitesi 15 litreyi aşmamalı ve şebeke suyu kesildiğinde, dahili hazneden çekilen suyun sıcaklığı 65°C ile 80°C arasında kalmalıdır
+---
+ID: HW-004
+TUR: Parça/bileşen
+V_MODEL: Parça veya yazılım uygulaması
+BASLIK: Otomatik kapanma rölesi (fiziksel kapı sensörü)
+ACIKLAMA: Otomatik kapanma rölesi (fiziksel kapı sensörü)
+KAYNAK_BELGE: Akıllı Donanım Listesi
+BOLUM: 
+KANIT: Sistem, fiziksel bakım kapağı açık konumdayken otomatik olarak çalışmayı durdurmalı ve yalnızca kapandığında çalışmaya başlamalı, DSB saniye
+---
+ID: HW-005
+TUR: Parça/bileşen
+V_MODEL: Parça veya yazılım uygulaması
+BASLIK: 256 MB RAM'e sahip işlemci
+ACIKLAMA: 256 MB RAM'e sahip işlemci
+KAYNAK_BELGE: Akıllı Donanım Listesi
+BOLUM: 
+KANIT: Kahve hazırlama ünitesi, 256 MB RAM'e sahip bir işlemci üzerinde çalışmalı ve farklı kahve türlerini hazırlamak için 5 saniye içinde, 24 bitlik renkli bir ekran arayüzü üzerinden kullanıcı talimatlarını işleyerek, 1920x1080 çözünürlükte görüntü sağlamalı
+---
+ID: HW-006
+TUR: Parça/bileşen
+V_MODEL: Parça veya yazılım uygulaması
+BASLIK: Su sıcaklığı sensörü (dahili su haznesi)
+ACIKLAMA: Su sıcaklığı sensörü (dahili su haznesi)
+KAYNAK_BELGE: Akıllı Donanım Listesi
+BOLUM: 
+KANIT: Su ısıtma sisteminin dahili su haznesinden çekilen suyu, elektrik kesintisi durumunda 3 saniyeden fazla sürmeden 72°C ile 74°C arasında sıcak tutması ve bu sıcaklığı 5 saniye içinde stabilize etmesi için, su pompası 20 L/dakika’lık bir debiyle çalışmalı ve ısı kontrol ünitesi, su sıcaklığını 0.5°C’lik hassasiyetle izlemeli ve ayarlamalıdır
+---
+ID: HW-007
+TUR: Parça/bileşen
+V_MODEL: Parça veya yazılım uygulaması
+BASLIK: 1920x1080 çözünürlükte renkli ekran arayüzü
+ACIKLAMA: 1920x1080 çözünürlükte renkli ekran arayüzü
+KAYNAK_BELGE: Akıllı Donanım Listesi
+BOLUM: 
+KANIT: Kahve hazırlama ünitesi, 256 MB RAM'e sahip bir işlemci üzerinde çalışmalı ve farklı kahve türlerini hazırlamak için 5 saniye içinde, 24 bitlik renkli bir ekran arayüzü üzerinden kullanıcı talimatlarını işleyerek, 1920x1080 çözünürlükte görüntü sağlamalı
+---
+ID: HW-008
+TUR: Parça/bileşen
+V_MODEL: Parça veya yazılım uygulaması
+BASLIK: Su pompası (20 L/dakika debi)
+ACIKLAMA: Su pompası (20 L/dakika debi)
+KAYNAK_BELGE: Akıllı Donanım Listesi
+BOLUM: 
+KANIT: Su besleme pompası, şebeke suyu kesildiğinde 15 saniye içinde çalışmalı ve dahili su haznesinden çekilen suyun sıcaklığını 70°C ile 75°C arasında tutmalıdır
+---
+ID: HW-009
+TUR: Parça/bileşen
+V_MODEL: Parça veya yazılım uygulaması
+BASLIK: 1 GHz işlemci gücüne sahip mikrodenetleyici
+ACIKLAMA: 1 GHz işlemci gücüne sahip mikrodenetleyici
+KAYNAK_BELGE: Akıllı Donanım Listesi
+BOLUM: 
+KANIT: Sistem, kullanıcı tarafından belirtilen kahve boyutu değerine göre hazırlama parametrelerini otomatik olarak ayarlamak için, 1 GHz işlemci gücüyle çalışan ve 4 GB RAM'e sahip bir mikrodenetleyici kullanmalı, kahve boyutu seçeneği için 10 ms içinde bir yanıt sağlamalı ve farklı kahve türleri arasında veri aktarımı için Ethernet protokolünü desteklemeli
+---
+ID: HW-010
+TUR: Parça/bileşen
+V_MODEL: Parça veya yazılım uygulaması
+BASLIK: Mikrodenetleyici için bellek
+ACIKLAMA: Mikrodenetleyici için bellek
+KAYNAK_BELGE: Akıllı Donanım Listesi
+BOLUM: 
+KANIT: Sistem, kullanıcı tarafından belirtilen kahve boyutu değerine göre hazırlama parametrelerini otomatik olarak ayarlamak için, 1 GHz işlemci gücüyle çalışan ve 4 GB RAM'e sahip bir mikrodenetleyici kullanmalı, kahve boyutu seçeneği için 10 ms içinde bir yanıt sağlamalı ve farklı kahve türleri arasında veri aktarımı için Ethernet protokolünü desteklemeli
+---
+ID: HW-011
+TUR: Parça/bileşen
+V_MODEL: Parça veya yazılım uygulaması
+BASLIK: Ethernet protokolünü destekleyen mikrodenetleyici
+ACIKLAMA: Ethernet protokolünü destekleyen mikrodenetleyici
+KAYNAK_BELGE: Akıllı Donanım Listesi
+BOLUM: 
+KANIT: Sistem, kullanıcı tarafından belirtilen kahve boyutu değerine göre hazırlama parametrelerini otomatik olarak ayarlamak için, 1 GHz işlemci gücüyle çalışan ve 4 GB RAM'e sahip bir mikrodenetleyici kullanmalı, kahve boyutu seçeneği için 10 ms içinde bir yanıt sağlamalı ve farklı kahve türleri arasında veri aktarımı için Ethernet protokolünü desteklemeli
+---
+ID: HW-012
+TUR: Parça/bileşen
+V_MODEL: Parça veya yazılım uygulaması
+BASLIK: Su sıcaklığı sensörü
+ACIKLAMA: Su sıcaklığı sensörü
+KAYNAK_BELGE: Akıllı Donanım Listesi
+BOLUM: 
+KANIT: Su ısıtma kontrol sistemi, enerji kesintisi sonrasında 2 saniyeden kısa sürede su haznesinden çekilen suyun sıcaklığını 70°C ile 72°C arasında tutmalı ve bu süre boyunca 150 mW’den fazla güç tüketmemeli
+---
+ID: AT-001
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-001
+ACIKLAMA: Sistem, farklı kahve türlerinin hazırlanması için 250 mililitre su ile 125 gram kahve kullanıldığında, her bir türün hazırlanması 4 saniyeden kısa sürede tamamlanmalıdır
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Sistem, farklı kahve türlerinin hazırlanması için 250 mililitre su ile 125 gram kahve kullanıldığında, her bir türün hazırlanması 4 saniyeden kısa sürede tamamlanmalıdır
+---
+ID: AT-002
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-002
+ACIKLAMA: Kullanıcı, kahve boyutunu 250 mililitre ile 750 mililitre arasında seçebilmelidir
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Kullanıcı, kahve boyutunu 250 mililitre ile 750 mililitre arasında seçebilmelidir
+---
+ID: AT-003
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-003
+ACIKLAMA: Sistem, şebeke suyu kesildiğinde dahili su haznesinden 12 saniye içinde çalışmaya devam etmelidir
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Sistem, şebeke suyu kesildiğinde dahili su haznesinden 12 saniye içinde çalışmaya devam etmelidir
+---
+ID: AT-004
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-004
+ACIKLAMA: Fiziksel bakım kapağı açık bırakıldığında, sistem 2.5 saniye içinde çalışmayı durdurmalı ve başlamayı engellemelidir
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Fiziksel bakım kapağı açık bırakıldığında, sistem 2.5 saniye içinde çalışmayı durdurmalı ve başlamayı engellemelidir
+---
+ID: AT-005
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-005
+ACIKLAMA: Sistem, elektrik kesintisi sonrasında 2 saniye içinde otomatik olarak güvenli bir şekilde yeniden başlatılmalı ve kullanıcıya sistemin çalışır durumda olduğunu bildiren bir mesaj göstermeli
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Sistem, elektrik kesintisi sonrasında 2 saniye içinde otomatik olarak güvenli bir şekilde yeniden başlatılmalı ve kullanıcıya sistemin çalışır durumda olduğunu bildiren bir mesaj göstermeli
+---
+ID: DOC-KMTD
+TUR: Teknik belge
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: Kabul Testi (Acceptance Test)
+ACIKLAMA: 5 yapılandırılmış madde içerir.
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: 
+---
+ID: DOC-SGD
+TUR: Teknik belge
+V_MODEL: Sistem gereksinimi
+BASLIK: Sistem Gereksinimi (System Requirements)
+ACIKLAMA: 10 yapılandırılmış madde içerir.
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: 
+---
+ID: SR-001
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-001
+ACIKLAMA: KULLANICI GEREKSİNİMİ: Sistem, farklı kahve türlerini hazırlayabilme kabiliyetine sahip olmalıdır
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: KULLANICI GEREKSİNİMİ: Sistem, farklı kahve türlerini hazırlayabilme kabiliyetine sahip olmalıdır
+---
+ID: SR-002
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-002
+ACIKLAMA: KULLANICI GEREKSİNİMİ: Sistem, kullanıcı tarafından hazırlanacak kahvenin boyutu seçilebilmelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: KULLANICI GEREKSİNİMİ: Sistem, kullanıcı tarafından hazırlanacak kahvenin boyutu seçilebilmelidir
+---
+ID: SR-003
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-003
+ACIKLAMA: Sistem, dahili su haznesi kapasitesi 15 litreyi aşmamalı ve şebeke suyu kesildiğinde, dahili hazneden çekilen suyun sıcaklığı 65°C ile 80°C arasında kalmalıdır
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, dahili su haznesi kapasitesi 15 litreyi aşmamalı ve şebeke suyu kesildiğinde, dahili hazneden çekilen suyun sıcaklığı 65°C ile 80°C arasında kalmalıdır
+---
+ID: SR-004
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-004
+ACIKLAMA: Sistem, fiziksel bakım kapağı açık konumdayken otomatik olarak çalışmayı durdurmalı ve yalnızca kapandığında çalışmaya başlamalı, DSB saniye
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, fiziksel bakım kapağı açık konumdayken otomatik olarak çalışmayı durdurmalı ve yalnızca kapandığında çalışmaya başlamalı, DSB saniye
+---
+ID: SR-005
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-005
+ACIKLAMA: KULLANICI GEREKSİNİMİ: Sistem, ani enerji kesintisi sonrasında elektrik geri geldiğinde güvenli şekilde yeniden başlatılabilmelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: KULLANICI GEREKSİNİMİ: Sistem, ani enerji kesintisi sonrasında elektrik geri geldiğinde güvenli şekilde yeniden başlatılabilmelidir
+---
+ID: SR-006
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-006
+ACIKLAMA: Sistem, elektrik kesintisi durumunda 3 saniye içerisinde otomatik olarak dahili su haznesinden çekilen suyu 70°C ile 75°C aralığında sıcak tutarak, güvenli bir şekilde yeniden başlatılmalıdır
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, elektrik kesintisi durumunda 3 saniye içerisinde otomatik olarak dahili su haznesinden çekilen suyu 70°C ile 75°C aralığında sıcak tutarak, güvenli bir şekilde yeniden başlatılmalıdır
+---
+ID: SR-007
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-007
+ACIKLAMA: Sistem, kullanıcı tarafından belirtilen kahve boyutu (küçük, orta, büyük) değerine göre farklı kahve türleri için hazırlama parametrelerini otomatik olarak ayarlamalıdır
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, kullanıcı tarafından belirtilen kahve boyutu (küçük, orta, büyük) değerine göre farklı kahve türleri için hazırlama parametrelerini otomatik olarak ayarlamalıdır
+---
+ID: SR-008
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-008
+ACIKLAMA: Sistem, dahili su haznesi doldurulması tamamlandığında otomatik olarak çalışmayı başlatmalı ve 10 saniye içinde sıcaklığı 68°C’ye yükseltmelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, dahili su haznesi doldurulması tamamlandığında otomatik olarak çalışmayı başlatmalı ve 10 saniye içinde sıcaklığı 68°C’ye yükseltmelidir
+---
+ID: SR-009
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-009
+ACIKLAMA: Sistem, kullanıcı tarafından belirtilen kahve boyutu değerine göre farklı kahve türleri için hazırlama parametrelerini otomatik olarak ayarlayarak, 250-400 ml arasında kahve hacmi aralığında çalışmalıdır
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, kullanıcı tarafından belirtilen kahve boyutu değerine göre farklı kahve türleri için hazırlama parametrelerini otomatik olarak ayarlayarak, 250-400 ml arasında kahve hacmi aralığında çalışmalıdır
+---
+ID: SR-010
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-010
+ACIKLAMA: Sistem, ani enerji kesintisi durumunda 5 saniye içerisinde elektrik geri geldiğinde, dahili su haznesinden çekilen suyun sıcaklığını 68°C ile 72°C arasında tutarak güvenli bir şekilde yeniden başlatılmalıdır
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, ani enerji kesintisi durumunda 5 saniye içerisinde elektrik geri geldiğinde, dahili su haznesinden çekilen suyun sıcaklığını 68°C ile 72°C arasında tutarak güvenli bir şekilde yeniden başlatılmalıdır
+---
+ID: DOC-SITET
+TUR: Teknik belge
+V_MODEL: Sistem doğrulaması
+BASLIK: Sistem Testi (System Test)
+ACIKLAMA: 10 yapılandırılmış madde içerir.
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: 
+---
+ID: SITET-001
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-001
+ACIKLAMA: Farklı kahve türlerini seçerek hazırlayan bir kullanıcı, sistemin 2 saniyeden kısa sürede uygun sıcaklıkta DSB °C) ve belirtilen miktarda kahve hazırladığını doğrulamalı
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Farklı kahve türlerini seçerek hazırlayan bir kullanıcı, sistemin 2 saniyeden kısa sürede uygun sıcaklıkta DSB °C) ve belirtilen miktarda kahve hazırladığını doğrulamalı
+---
+ID: SITET-002
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-002
+ACIKLAMA: Kullanıcı, kahve boyutu seçeneğini arayüzde görüntülediğinde, 250 ml ile 1 litre arasında en az 3 adet farklı boyutta kahve seçeneği mevcut olmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Kullanıcı, kahve boyutu seçeneğini arayüzde görüntülediğinde, 250 ml ile 1 litre arasında en az 3 adet farklı boyutta kahve seçeneği mevcut olmalıdır
+---
+ID: SITET-003
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-003
+ACIKLAMA: Dahili su haznesi kapasitesi 15 litre aşıldığında, sistemin dahili hazneden çekilen suyun sıcaklığının 68°C ile 75°C arasında kalması sağlanmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Dahili su haznesi kapasitesi 15 litre aşıldığında, sistemin dahili hazneden çekilen suyun sıcaklığının 68°C ile 75°C arasında kalması sağlanmalıdır
+---
+ID: SITET-004
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-004
+ACIKLAMA: Fiziksel bakım kapağı açık konumdayken sistem DSB saniye içinde otomatik olarak durdurulmalı ve kapandığında DSB saniye içerisinde çalışmaya başlamalı
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Fiziksel bakım kapağı açık konumdayken sistem DSB saniye içinde otomatik olarak durdurulmalı ve kapandığında DSB saniye içerisinde çalışmaya başlamalı
+---
+ID: SITET-005
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-005
+ACIKLAMA: Sistem, elektrik kesintisi sonrasında 10 saniye içinde otomatik olarak yeniden başlatılmalı ve kullanıcı arayüzünde güvenli bir şekilde oturum açma imkanı sunmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistem, elektrik kesintisi sonrasında 10 saniye içinde otomatik olarak yeniden başlatılmalı ve kullanıcı arayüzünde güvenli bir şekilde oturum açma imkanı sunmalıdır
+---
+ID: SITET-006
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-006
+ACIKLAMA: Elektrik kesintisi durumunda, sistem dahili su haznesinden çekilen suyu 60 saniye içerisinde 72°C ile 74°C aralığında sıcak tutarak, güvenli bir şekilde yeniden başlatılmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Elektrik kesintisi durumunda, sistem dahili su haznesinden çekilen suyu 60 saniye içerisinde 72°C ile 74°C aralığında sıcak tutarak, güvenli bir şekilde yeniden başlatılmalıdır
+---
+ID: SITET-007
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-007
+ACIKLAMA: Kullanıcı tarafından belirtilen kahve boyutu değerine göre sistem, 2 saniyeden daha kısa sürede ilgili kahve türü için hazırlama parametrelerini otomatik olarak ayarlar ve bu işlem 95% ihtimalle başarılı olmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Kullanıcı tarafından belirtilen kahve boyutu değerine göre sistem, 2 saniyeden daha kısa sürede ilgili kahve türü için hazırlama parametrelerini otomatik olarak ayarlar ve bu işlem 95% ihtimalle başarılı olmalıdır
+---
+ID: SITET-008
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-008
+ACIKLAMA: Dahili su haznesi doldurulduktan sonra sistem, 12 saniye içerisinde sıcaklığı DSB °C’ye yükseltmelidir
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Dahili su haznesi doldurulduktan sonra sistem, 12 saniye içerisinde sıcaklığı DSB °C’ye yükseltmelidir
+---
+ID: SITET-009
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-009
+ACIKLAMA: Kullanıcının belirttiği kahve boyutu değerine göre sistem, 10 farklı kahve türü için hazırlama parametrelerini otomatik olarak ayarlayarak, 250-400 ml arasında kahve hacmi aralığında bir sonuç üretmelidir
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Kullanıcının belirttiği kahve boyutu değerine göre sistem, 10 farklı kahve türü için hazırlama parametrelerini otomatik olarak ayarlayarak, 250-400 ml arasında kahve hacmi aralığında bir sonuç üretmelidir
+---
+ID: SITET-010
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-010
+ACIKLAMA: Sistem, dahili su haznesinden çekilen suyun sıcaklığının elektrik geri geldiğinde 10 saniye içinde 68°C ile 72°C aralığında sabitlendiği doğrulanmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistem, dahili su haznesinden çekilen suyun sıcaklığının elektrik geri geldiğinde 10 saniye içinde 68°C ile 72°C aralığında sabitlendiği doğrulanmalıdır
+---
+ID: DOC-STT
+TUR: Teknik belge
+V_MODEL: Alt sistem gereksinimi
+BASLIK: Alt Sistem Gereksinimleri (Subsystem Requirements)
+ACIKLAMA: 10 yapılandırılmış madde içerir.
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: 
+---
+ID: SSR-001
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-001
+ACIKLAMA: Kahve hazırlama ünitesi, 256 MB RAM'e sahip bir işlemci üzerinde çalışmalı ve farklı kahve türlerini hazırlamak için 5 saniye içinde, 24 bitlik renkli bir ekran arayüzü üzerinden kullanıcı talimatlarını işleyerek, 1920x1080 çözünürlükte görüntü sağlamalı
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Kahve hazırlama ünitesi, 256 MB RAM'e sahip bir işlemci üzerinde çalışmalı ve farklı kahve türlerini hazırlamak için 5 saniye içinde, 24 bitlik renkli bir ekran arayüzü üzerinden kullanıcı talimatlarını işleyerek, 1920x1080 çözünürlükte görüntü sağlamalı
+---
+ID: SSR-002
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-002
+ACIKLAMA: Kullanıcı arayüzü, kahve boyutu seçimi için 5 farklı önceden tanımlanmış seçenek sunmalı ve bu seçenekler, sistemin 20 milisaniye içinde kullanıcı girdisine yanıt vermesini sağlamalı
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Kullanıcı arayüzü, kahve boyutu seçimi için 5 farklı önceden tanımlanmış seçenek sunmalı ve bu seçenekler, sistemin 20 milisaniye içinde kullanıcı girdisine yanıt vermesini sağlamalı
+---
+ID: SSR-003
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-003
+ACIKLAMA: Su besleme pompası, şebeke suyu kesildiğinde 15 saniye içinde çalışmalı ve dahili su haznesinden çekilen suyun sıcaklığını 70°C ile 75°C arasında tutmalıdır
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Su besleme pompası, şebeke suyu kesildiğinde 15 saniye içinde çalışmalı ve dahili su haznesinden çekilen suyun sıcaklığını 70°C ile 75°C arasında tutmalıdır
+---
+ID: SSR-004
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-004
+ACIKLAMA: Sistem, fiziksel bakım kapağı açıkken güç kaynağını 50 ms içinde kapatmalı ve kapandığında 200 ms içerisinde güç kaynağını etkinleştirerek DSB ms sağlamalı
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Sistem, fiziksel bakım kapağı açıkken güç kaynağını 50 ms içinde kapatmalı ve kapandığında 200 ms içerisinde güç kaynağını etkinleştirerek DSB ms sağlamalı
+---
+ID: SSR-005
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-005
+ACIKLAMA: Sistem, elektrik geri dönüşü sonrasında 5 saniyeden kısa sürede güvenli bir şekilde yeniden başlatılmalı ve bu süre boyunca sistemdeki tüm veriler tutulmalıdır
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Sistem, elektrik geri dönüşü sonrasında 5 saniyeden kısa sürede güvenli bir şekilde yeniden başlatılmalı ve bu süre boyunca sistemdeki tüm veriler tutulmalıdır
+---
+ID: SSR-006
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-006
+ACIKLAMA: Su ısıtma sisteminin dahili su haznesinden çekilen suyu, elektrik kesintisi durumunda 3 saniyeden fazla sürmeden 72°C ile 74°C arasında sıcak tutması ve bu sıcaklığı 5 saniye içinde stabilize etmesi için, su pompası 20 L/dakika’lık bir debiyle çalışmalı ve ısı kontrol ünitesi, su sıcaklığını 0.5°C’lik hassasiyetle izlemeli ve ayarlamalıdır
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Su ısıtma sisteminin dahili su haznesinden çekilen suyu, elektrik kesintisi durumunda 3 saniyeden fazla sürmeden 72°C ile 74°C arasında sıcak tutması ve bu sıcaklığı 5 saniye içinde stabilize etmesi için, su pompası 20 L/dakika’lık bir debiyle çalışmalı ve ısı kontrol ünitesi, su sıcaklığını 0.5°C’lik hassasiyetle izlemeli ve ayarlamalıdır
+---
+ID: SSR-007
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-007
+ACIKLAMA: Sistem, kullanıcı tarafından belirtilen kahve boyutu değerine göre hazırlama parametrelerini otomatik olarak ayarlamak için, 1 GHz işlemci gücüyle çalışan ve 4 GB RAM'e sahip bir mikrodenetleyici kullanmalı, kahve boyutu seçeneği için 10 ms içinde bir yanıt sağlamalı ve farklı kahve türleri arasında veri aktarımı için Ethernet protokolünü desteklemeli
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Sistem, kullanıcı tarafından belirtilen kahve boyutu değerine göre hazırlama parametrelerini otomatik olarak ayarlamak için, 1 GHz işlemci gücüyle çalışan ve 4 GB RAM'e sahip bir mikrodenetleyici kullanmalı, kahve boyutu seçeneği için 10 ms içinde bir yanıt sağlamalı ve farklı kahve türleri arasında veri aktarımı için Ethernet protokolünü desteklemeli
+---
+ID: SSR-008
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-008
+ACIKLAMA: Su haznesi doldurulması tamamlandığında, kontrol ünitesi 5 saniye içerisinde sıcaklığı 68°C’ye yükseltmeli ve bu işlemi 250 milisaniye içinde tamamlamalıdır
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Su haznesi doldurulması tamamlandığında, kontrol ünitesi 5 saniye içerisinde sıcaklığı 68°C’ye yükseltmeli ve bu işlemi 250 milisaniye içinde tamamlamalıdır
+---
+ID: SSR-009
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-009
+ACIKLAMA: Kahve hazırlama sistemi, kullanıcı tarafından sağlanan kahve boyutu değerine göre 250-400 ml arasında bir kahve hacmi aralığında, 1 milisaniye içinde ve 50 MHz'lik bir işlem hızıyla çalışacak bir mikrodenetleyici kullanmalı
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Kahve hazırlama sistemi, kullanıcı tarafından sağlanan kahve boyutu değerine göre 250-400 ml arasında bir kahve hacmi aralığında, 1 milisaniye içinde ve 50 MHz'lik bir işlem hızıyla çalışacak bir mikrodenetleyici kullanmalı
+---
+ID: SSR-010
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-010
+ACIKLAMA: Su ısıtma kontrol sistemi, enerji kesintisi sonrasında 2 saniyeden kısa sürede su haznesinden çekilen suyun sıcaklığını 70°C ile 72°C arasında tutmalı ve bu süre boyunca 150 mW’den fazla güç tüketmemeli
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Su ısıtma kontrol sistemi, enerji kesintisi sonrasında 2 saniyeden kısa sürede su haznesinden çekilen suyun sıcaklığını 70°C ile 72°C arasında tutmalı ve bu süre boyunca 150 mW’den fazla güç tüketmemeli
+---
+ID: DOC-TID
+TUR: Teknik belge
+V_MODEL: Müşteri gereksinimi
+BASLIK: Kullanıcı Gereksinimi (User Requirement)
+ACIKLAMA: 5 yapılandırılmış madde içerir.
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: 
+---
+ID: UR-001
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-001
+ACIKLAMA: Sistem, farklı kahve türlerini hazırlayabilme kabiliyetine sahip olmalıdır
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem, farklı kahve türlerini hazırlayabilme kabiliyetine sahip olmalıdır
+---
+ID: UR-002
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-002
+ACIKLAMA: Sistem, kullanıcı tarafından hazırlanacak kahvenin boyutu seçilebilmelidir
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem, kullanıcı tarafından hazırlanacak kahvenin boyutu seçilebilmelidir
+---
+ID: UR-003
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-003
+ACIKLAMA: Sistem, dahili bir su haznesi yardımıyla çalışabilmeli ve şebeke suyu kesildiğinde dahili hazneden çalışmaya kesintisiz devam edebilmelidir
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem, dahili bir su haznesi yardımıyla çalışabilmeli ve şebeke suyu kesildiğinde dahili hazneden çalışmaya kesintisiz devam edebilmelidir
+---
+ID: UR-004
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-004
+ACIKLAMA: Sistem, fiziksel bakım kapağı açık konumdayken çalışmayı durdurmalı ve başlamasını engellemelidir
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem, fiziksel bakım kapağı açık konumdayken çalışmayı durdurmalı ve başlamasını engellemelidir
+---
+ID: UR-005
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-005
+ACIKLAMA: Sistem, ani enerji kesintisi sonrasında elektrik geri geldiğinde güvenli şekilde yeniden başlatılabilmelidir
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem, ani enerji kesintisi sonrasında elektrik geri geldiğinde güvenli şekilde yeniden başlatılabilmelidir
+---
+ILISKILER
+SR-001 -> allocated_to -> HW-001 | Kesin
+SR-002 -> allocated_to -> HW-001 | Kesin
+SR-003 -> allocated_to -> HW-001 | Kesin
+SR-003 -> allocated_to -> HW-002 | Kesin
+SR-003 -> allocated_to -> HW-003 | Kesin
+SR-004 -> allocated_to -> HW-004 | Kesin
+SR-005 -> allocated_to -> HW-001 | Kesin
+SR-006 -> allocated_to -> HW-003 | Kesin
+SR-008 -> allocated_to -> HW-002 | Kesin
+SR-009 -> allocated_to -> HW-001 | Kesin
+SSR-001 -> allocated_to -> HW-005 | Kesin
+SSR-001 -> allocated_to -> HW-007 | Kesin
+SSR-003 -> allocated_to -> HW-008 | Kesin
+SSR-004 -> allocated_to -> HW-001 | Kesin
+SSR-006 -> allocated_to -> HW-006 | Kesin
+SSR-006 -> allocated_to -> HW-008 | Kesin
+SSR-007 -> allocated_to -> HW-009 | Kesin
+SSR-007 -> allocated_to -> HW-010 | Kesin
+SSR-007 -> allocated_to -> HW-011 | Kesin
+SSR-009 -> allocated_to -> HW-009 | Kesin
+SSR-009 -> allocated_to -> HW-010 | Kesin
+SSR-010 -> allocated_to -> HW-001 | Kesin
+SSR-010 -> allocated_to -> HW-012 | Kesin
+SR-001 -> derives_from -> UR-001 | Kesin
+SR-002 -> derives_from -> UR-002 | Kesin
+SR-003 -> derives_from -> UR-003 | Kesin
+SR-004 -> derives_from -> UR-004 | Kesin
+SR-005 -> derives_from -> UR-005 | Kesin
+SR-006 -> derives_from -> UR-001 | Kesin
+SR-007 -> derives_from -> UR-002 | Kesin
+SR-008 -> derives_from -> UR-003 | Kesin
+SR-009 -> derives_from -> UR-004 | Kesin
+SR-010 -> derives_from -> UR-005 | Kesin
+SSR-001 -> derives_from -> SR-001 | Kesin
+SSR-002 -> derives_from -> SR-002 | Kesin
+SSR-003 -> derives_from -> SR-003 | Kesin
+SSR-004 -> derives_from -> SR-004 | Kesin
+SSR-005 -> derives_from -> SR-005 | Kesin
+SSR-006 -> derives_from -> SR-006 | Kesin
+SSR-007 -> derives_from -> SR-007 | Kesin
+SSR-008 -> derives_from -> SR-008 | Kesin
+SSR-009 -> derives_from -> SR-009 | Kesin
+SSR-010 -> derives_from -> SR-010 | Kesin
+AT-001 -> documented_in -> DOC-KMTD | Kesin
+AT-002 -> documented_in -> DOC-KMTD | Kesin
+AT-003 -> documented_in -> DOC-KMTD | Kesin
+AT-004 -> documented_in -> DOC-KMTD | Kesin
+AT-005 -> documented_in -> DOC-KMTD | Kesin
+HW-001 -> documented_in -> DOC-HARDWARE | Kesin
+HW-002 -> documented_in -> DOC-HARDWARE | Kesin
+HW-003 -> documented_in -> DOC-HARDWARE | Kesin
+HW-004 -> documented_in -> DOC-HARDWARE | Kesin
+HW-005 -> documented_in -> DOC-HARDWARE | Kesin
+HW-006 -> documented_in -> DOC-HARDWARE | Kesin
+HW-007 -> documented_in -> DOC-HARDWARE | Kesin
+HW-008 -> documented_in -> DOC-HARDWARE | Kesin
+HW-009 -> documented_in -> DOC-HARDWARE | Kesin
+HW-010 -> documented_in -> DOC-HARDWARE | Kesin
+HW-011 -> documented_in -> DOC-HARDWARE | Kesin
+HW-012 -> documented_in -> DOC-HARDWARE | Kesin
+SITET-001 -> documented_in -> DOC-SITET | Kesin
+SITET-002 -> documented_in -> DOC-SITET | Kesin
+SITET-003 -> documented_in -> DOC-SITET | Kesin
+SITET-004 -> documented_in -> DOC-SITET | Kesin
+SITET-005 -> documented_in -> DOC-SITET | Kesin
+SITET-006 -> documented_in -> DOC-SITET | Kesin
+SITET-007 -> documented_in -> DOC-SITET | Kesin
+SITET-008 -> documented_in -> DOC-SITET | Kesin
+SITET-009 -> documented_in -> DOC-SITET | Kesin
+SITET-010 -> documented_in -> DOC-SITET | Kesin
+SR-001 -> documented_in -> DOC-SGD | Kesin
+SR-002 -> documented_in -> DOC-SGD | Kesin
+SR-003 -> documented_in -> DOC-SGD | Kesin
+SR-004 -> documented_in -> DOC-SGD | Kesin
+SR-005 -> documented_in -> DOC-SGD | Kesin
+SR-006 -> documented_in -> DOC-SGD | Kesin
+SR-007 -> documented_in -> DOC-SGD | Kesin
+SR-008 -> documented_in -> DOC-SGD | Kesin
+SR-009 -> documented_in -> DOC-SGD | Kesin
+SR-010 -> documented_in -> DOC-SGD | Kesin
+SSR-001 -> documented_in -> DOC-STT | Kesin
+SSR-002 -> documented_in -> DOC-STT | Kesin
+SSR-003 -> documented_in -> DOC-STT | Kesin
+SSR-004 -> documented_in -> DOC-STT | Kesin
+SSR-005 -> documented_in -> DOC-STT | Kesin
+SSR-006 -> documented_in -> DOC-STT | Kesin
+SSR-007 -> documented_in -> DOC-STT | Kesin
+SSR-008 -> documented_in -> DOC-STT | Kesin
+SSR-009 -> documented_in -> DOC-STT | Kesin
+SSR-010 -> documented_in -> DOC-STT | Kesin
+SST-001 -> documented_in -> DOC-AST | Kesin
+SST-002 -> documented_in -> DOC-AST | Kesin
+SST-003 -> documented_in -> DOC-AST | Kesin
+SST-004 -> documented_in -> DOC-AST | Kesin
+SST-005 -> documented_in -> DOC-AST | Kesin
+SST-006 -> documented_in -> DOC-AST | Kesin
+SST-007 -> documented_in -> DOC-AST | Kesin
+SST-008 -> documented_in -> DOC-AST | Kesin
+SST-009 -> documented_in -> DOC-AST | Kesin
+SST-010 -> documented_in -> DOC-AST | Kesin
+UR-001 -> documented_in -> DOC-TID | Kesin
+UR-002 -> documented_in -> DOC-TID | Kesin
+UR-003 -> documented_in -> DOC-TID | Kesin
+UR-004 -> documented_in -> DOC-TID | Kesin
+UR-005 -> documented_in -> DOC-TID | Kesin
+UR-001 -> validated_by -> AT-001 | Kesin
+UR-002 -> validated_by -> AT-002 | Kesin
+UR-003 -> validated_by -> AT-003 | Kesin
+UR-004 -> validated_by -> AT-004 | Kesin
+UR-005 -> validated_by -> AT-005 | Kesin
+SR-001 -> verified_by -> SITET-001 | Kesin
+SR-002 -> verified_by -> SITET-002 | Kesin
+SR-003 -> verified_by -> SITET-003 | Kesin
+SR-004 -> verified_by -> SITET-004 | Kesin
+SR-005 -> verified_by -> SITET-005 | Kesin
+SR-006 -> verified_by -> SITET-006 | Kesin
+SR-007 -> verified_by -> SITET-007 | Kesin
+SR-008 -> verified_by -> SITET-008 | Kesin
+SR-009 -> verified_by -> SITET-009 | Kesin
+SR-010 -> verified_by -> SITET-010 | Kesin
+SSR-001 -> verified_by -> SST-001 | Kesin
+SSR-002 -> verified_by -> SST-002 | Kesin
+SSR-003 -> verified_by -> SST-003 | Kesin
+SSR-004 -> verified_by -> SST-004 | Kesin
+SSR-005 -> verified_by -> SST-005 | Kesin
+SSR-006 -> verified_by -> SST-006 | Kesin
+SSR-007 -> verified_by -> SST-007 | Kesin
+SSR-008 -> verified_by -> SST-008 | Kesin
+SSR-009 -> verified_by -> SST-009 | Kesin
+SSR-010 -> verified_by -> SST-010 | Kesin
