@@ -2,6 +2,18 @@
 """Configuration file for IEEE 15288 LLM system"""
 
 import os
+import sys
+
+# config.py hemen hemen her modül tarafından en erken import edilen dosya
+# olduğu için Windows konsolunun emoji/Unicode basamaması sorununu (cp1254
+# gibi kod sayfalarında) burada, tek yerden çözüyoruz. Arayüz.py ve main.py
+# giriş noktalarındaki aynı bloklar geriye dönük uyumluluk için kalabilir;
+# bu blok idempotent olduğundan tekrar çalışması zarar vermez.
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
 
 
 def _env_number(name, default, converter):

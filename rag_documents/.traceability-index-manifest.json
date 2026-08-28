@@ -17,8 +17,14 @@
       "fingerprint": "0880a9f9613eb5440d44a4c9e5b25af2b4d499a7fb5fc3b5d82afbbde3d7cbe9",
       "indexed_at": "2026-08-03T10:39:47+03:00",
       "traceability_revision": 2
+    },
+    "kahve-testi-a2671e50": {
+      "document_path": "C:\\Users\\umuty\\OneDrive\\Masaüstü\\staj ehsim\\AI-V-Model-Tool-for-System-Engineers\\rag_documents\\existing_requirements\\traceability-kahve-testi-a2671e50.txt",
+      "fingerprint": "0f494e439ff939718b3ceb420081f32ec1a00d49c7f016d6b49def8b1ead97e6",
+      "indexed_at": "2026-08-28T10:08:59+03:00",
+      "traceability_revision": 4
     }
   },
   "schema_version": "1.0",
-  "updated_at": "2026-08-16T21:09:31+03:00"
+  "updated_at": "2026-08-28T10:08:59+03:00"
 }
