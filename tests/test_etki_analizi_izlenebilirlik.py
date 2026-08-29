@@ -270,7 +270,7 @@ class TraceabilityUiIntegrationTests(unittest.TestCase):
             }],
         }
         with patch.object(
-            self.ui, "pre_process_files", return_value=(["kaynak"], [0])
+            self.ui.yardimcilar, "pre_process_files", return_value=(["kaynak"], [0])
         ), patch.object(
             self.ui.tid_generator_logic,
             "run_generation_logic",
