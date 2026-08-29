@@ -91,8 +91,8 @@ hardware_image/
 
 etki_analizi/
   __init__.py
-  izlenebilirlik.py      <- etki_analizi_izlenebilirlik.py (bkz. not: bu
-                            aslında ortak/çekirdek — bölüm 2a'ya bakın)
+  [GÜNCELLEME — uygulandı: izlenebilirlik.py buraya değil, core/izlenebilirlik.py'ye
+   taşındı; bkz. 2a'nın güncellenmiş hâli.]
   logic.py
   entegrasyon.py
   simulasyon.py
@@ -145,10 +145,8 @@ core/                        (üç iş alanının da paylaştığı gerçek çek
   text_cleanup.py       <- text_cleanup.py
   html_generation.py    <- html_generation.py
   pdf_extraction.py     <- pdf_extraction.py
-  izlenebilirlik_cekirdek.py <- etki_analizi_izlenebilirlik.py'den YALNIZCA
-                                 atomic_write_json/project_identity gibi 3
-                                 alan tarafından da kullanılan fonksiyonlar
-                                 (bkz. 2a)
+  izlenebilirlik.py     <- etki_analizi_izlenebilirlik.py (TAMAMI — bkz. 2a,
+                            uygulandı: Faz 7'de bölme yerine tüm dosya taşındı)
 
 (kökte kalanlar)
   Arayüz.py             <- ince orkestrasyon katmanına indirgenir (bkz. bölüm 3)
@@ -159,20 +157,30 @@ core/                        (üç iş alanının da paylaştığı gerçek çek
   data_processor.py     <- main.py'nin CLI akışına özel, değişmeden kalır
 ```
 
-### 2a. `etki_analizi_izlenebilirlik.py` ikilemi
+### 2a. `etki_analizi_izlenebilirlik.py` ikilemi — [GÜNCELLENDİ, Faz 7'de uygulandı]
 RISK_HARITASI.md'de tespit edildi: bu dosya adının aksine üç iş alanı
 tarafından da (`etki_analizi_*`, `donanim_kartlari_algilama/yonetim`,
-`mimari_cerceve_cikarim/yonetim`) kullanılıyor. İki seçenek var:
-- **(i) Tamamını `core/`'a taşı** — basit ama "etki_analizi" adı çekirdekte
-  garip durur, dosya hâlâ etki-analizi-özel fonksiyonlar da içeriyor.
-- **(ii) Böl** — `atomic_write_json`, `project_identity` ve gerçekten paylaşılan
-  birkaç fonksiyonu `core/izlenebilirlik_cekirdek.py`'ye çıkar, geri kalanı
-  `etki_analizi/izlenebilirlik.py`'de bırak.
+`mimari_cerceve_cikarim/yonetim`) kullanılıyor. Planlama sırasında iki
+seçenek değerlendirilmişti: (i) tamamını `core/`'a taşı, (ii) böl
+(`core/izlenebilirlik_cekirdek.py` + `etki_analizi/izlenebilirlik.py`) ve
+o sırada (ii) önerilmişti.
 
-**Öneri: (ii).** Daha fazla iş ama daha doğru sınır çizer; Faz 7'de bu
-modülün taşınması sırasında hangi fonksiyonların gerçekten üç alanda da
-kullanıldığı tam olarak listelenip karar netleştirilmeli (bu plan sadece
-yönü belirliyor, kesin fonksiyon listesini Faz 7'nin o adımı çıkaracak).
+**Faz 7'de bu adıma gelindiğinde yapılan kullanım analizi kararı
+değiştirdi:** dosyanın 17 public isminden 10'u (+ `__all__`'a hiç
+girmemiş `DEFAULT_OUTPUT_ROOT`) zaten `donanim_kartlari_algilama/yonetim`
+VE `mimari_cerceve_cikarim/yonetim` tarafından kullanılıyor; üstelik en
+büyük fonksiyon olan `build_traceability_map` (`persist_traceability_report`
+ve `load_project_traceability` ile birlikte) yalnızca etki_analizi'nin
+kendi UI'ı tarafından değil, **doğrudan `Arayüz.py` tarafından** çağrılıyor.
+Gerçekten sadece dosya-içi/dışarıdan hiç kullanılmayan üç isim
+(`TraceabilityError`, `check_lm_studio_status`, `read_document_records`)
+için ayrı bir modül açmak gereksiz karmaşıklık olurdu.
+
+**Sonuç (kullanıcıya sunulup onaylandı): (i) — tüm dosya `core/izlenebilirlik.py`'ye
+taşındı, bölme yapılmadı.** Bu, planlama aşamasında tahmin edilemeyen,
+yalnızca gerçek import grafiği çıkarılınca ortaya çıkan bir düzeltmeydi;
+gelecekteki fazlar için ders: kesin bölme kararları, mümkünse taşıma
+adımına gelindiğinde güncel kullanım verisiyle doğrulanmalı.
 
 ### Not — çok büyük dosyalar (donanim_kartlari_ui.py, mimari_cerceve_ui.py, Arayüz.py)
 Yukarıdaki haritada bu üç dosya "1-e-1" taşınmış gibi görünüyor ama
@@ -231,7 +239,8 @@ ve "döngüsel bağımlılık yok" bulgusu sayesinde bu sıra güvenle uygulanab
    `donanim_kartlari_gorsel.py`, `mimari_cerceve_katalog.py`,
    `hardware_image_provider.py`, `lmstudio_model.py`.
 3. **Üçüncü katman** (izlenebilirlik çekirdeği + ona bağımlı olanlar):
-   `core/izlenebilirlik_cekirdek.py`'nin ayrıştırılması, ardından
+   `etki_analizi_izlenebilirlik.py`'nin `core/izlenebilirlik.py`'ye taşınması
+   (bölünmeden, bkz. 2a'nın güncellenmiş hâli), ardından
    `donanim_kartlari_algilama.py`, `donanim_kartlari_yonetim.py`,
    `mimari_cerceve_dogrulama.py`, `mimari_cerceve_gorunumleri.py`,
    `mimari_cerceve_cikarim.py`, `mimari_cerceve_yonetim.py`.
@@ -267,16 +276,23 @@ güncellenebilir — ama bu playbook'un zorunlu kapsamı değil.
 Faz 7 prompt'u (playbook'ta zaten tanımlı) her modül için tekrar tekrar
 kullanılacak. Önerilen sıra (yukarıdaki 6 katmanı izler):
 
-1. `donanim_kartlari_model.py` → `donanim_kartlari/model.py` + shim
-2. `mimari_cerceve_model.py` → `mimari_cerceve/model.py` + shim
-3. `etki_analizi_logic.py`, `hardware_list_logic.py`, `config.py`,
-   `app_identity.py`, `text_cleanup.py` → ilgili klasörlere (küçük, düşük
-   riskli dosyalar; tek commit'te birlikte de yapılabilir)
-4. `donanim_kartlari_gorsel.py`, `mimari_cerceve_katalog.py`,
+1. ✅ (Uygulandı) `donanim_kartlari_model.py` → `donanim_kartlari/model.py` + shim
+2. ✅ (Uygulandı) `mimari_cerceve_model.py` → `mimari_cerceve/model.py` + shim
+   (bu adımda `__all__`'ın eksik olduğu görüldü, shim tekniği
+   `sys.modules[__name__] = _module` alias yöntemine yükseltildi — bkz.
+   ilgili commit mesajları)
+3. ✅ (Uygulandı) `etki_analizi_logic.py`, `hardware_list_logic.py`, `config.py`,
+   `app_identity.py`, `text_cleanup.py` → ilgili klasörlere. Bu adımda
+   `app_identity.py`'nin `resource_path()`'inin `__file__`'a göre proje
+   kökünü bulduğu, taşıma sonrası `.parent.parent`'e düzeltilmesi gerektiği
+   görüldü (davranış korundu, `test_app_identity.py` ile doğrulandı).
+4. ✅ (Uygulandı) `donanim_kartlari_gorsel.py`, `mimari_cerceve_katalog.py`,
    `hardware_image_provider.py`, `lmstudio_model.py`
-5. `etki_analizi_izlenebilirlik.py` bölünmesi (`core/izlenebilirlik_cekirdek.py`
-   + `etki_analizi/izlenebilirlik.py`) — **en riskli erken adım**, üç alan
-   da buna bağımlı olduğu için özenle yapılmalı, ayrı bir onay istenebilir
+5. ✅ (Uygulandı) `etki_analizi_izlenebilirlik.py` → `core/izlenebilirlik.py`
+   — **en riskli erken adım**, üç alan da buna bağımlı olduğu için özenle
+   yapıldı, ayrı onay istendi. Sonuç: plandaki "böl" kararı, taşıma
+   sırasındaki kullanım analizi sonucunda "tamamını taşı"ya revize edildi
+   (bkz. 2a'nın güncellenmiş hâli) — dosya bölünmedi, olduğu gibi taşındı.
 6. `donanim_kartlari_algilama.py`, `donanim_kartlari_yonetim.py`
 7. `mimari_cerceve_dogrulama.py`, `mimari_cerceve_gorunumleri.py`,
    `mimari_cerceve_cikarim.py`, `mimari_cerceve_yonetim.py`
@@ -297,9 +313,9 @@ kullanılacak. Önerilen sıra (yukarıdaki 6 katmanı izler):
 
 Her adımdan sonra: `pytest tests/ -q` (tümü geçmeli), mümkünse ilgili
 ekranın manuel duman testi (Faz 1/BASELINE.md'deki gibi), sonra tek bir
-açıklayıcı commit. Adım 5 (izlenebilirlik bölünmesi) ve adım 13 (Arayüz.py)
-öncesinde ayrıca kullanıcı onayı istenmesi öneriliyor çünkü bunlar en çok
-sayıda çağıranı etkileyen, en riskli adımlar.
+açıklayıcı commit. Adım 5 (izlenebilirlik taşıması — ✅ uygulandı) ve
+adım 13 (Arayüz.py) öncesinde ayrıca kullanıcı onayı istenmesi öneriliyor
+çünkü bunlar en çok sayıda çağıranı etkileyen, en riskli adımlar.
 
 ---
 
