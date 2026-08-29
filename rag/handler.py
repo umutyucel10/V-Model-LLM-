@@ -3,6 +3,7 @@
 
 import os
 import shutil
+import threading
 from typing import List, Dict, Optional, Tuple
 
 from langchain_community.document_loaders import PyPDFDirectoryLoader
@@ -58,6 +59,7 @@ class RAGHandler:
         self.db = None
         self.last_build_error = ""
         self._embeddings_initialization_attempted = False
+        self._lock = threading.Lock()
         if initialize_embeddings:
             self.ensure_embeddings_initialized()
         else:
@@ -177,6 +179,15 @@ class RAGHandler:
             print("RAG will work with simple text search only")
             self.embeddings = None
 
+    def _get_lock(self) -> threading.Lock:
+        # Eski test/entegrasyon nesneleri __new__ ile hazırlanmış olabilir,
+        # bu yüzden kilit burada tembel (lazy) kuruluyor.
+        lock = getattr(self, "_lock", None)
+        if lock is None:
+            lock = threading.Lock()
+            self._lock = lock
+        return lock
+
     def ensure_embeddings_initialized(self) -> bool:
         """Embedding istemcisini yalnızca RAG gerçekten kullanılacağı zaman hazırla."""
         if not hasattr(self, "_embeddings_initialization_attempted"):
@@ -184,9 +195,18 @@ class RAGHandler:
             return self.embeddings is not None
         if self._embeddings_initialization_attempted:
             return self.embeddings is not None
-        self._embeddings_initialization_attempted = True
-        self._initialize_embeddings()
-        self._update_db_path()
+        # Faz 11: paylaşılan rag_handler tekil nesnesi birden fazla iş
+        # parçacığından (belge üretimi + kopilot sohbeti aynı anda) çağrılabilir.
+        # Kilit olmadan iki iş parçacığı bu kontrolü aynı anda geçip
+        # _initialize_embeddings()'i (ağ isteği içerir) tekrar tekrar
+        # çalıştırabilir. Çift kontrollü kilitleme (double-checked locking)
+        # bunu önler.
+        with self._get_lock():
+            if self._embeddings_initialization_attempted:
+                return self.embeddings is not None
+            self._embeddings_initialization_attempted = True
+            self._initialize_embeddings()
+            self._update_db_path()
         return self.embeddings is not None
 
     # --------------------------- FS SETUP & LOADING --------------------------- #
@@ -371,8 +391,13 @@ Bu klasör RAG (Retrieval-Augmented Generation) sistemi için dökümanları iç
         """Ensure database is loaded if it exists"""
         self.ensure_embeddings_initialized()
         if not self.db and self.embeddings and os.path.exists(self.chroma_path):
-            print(f"🔄 Loading knowledge base from {self.chroma_path}")
-            self._load_existing_database()
+            # Faz 11: aynı çift kontrollü kilitleme, eşzamanlı çağrıların
+            # aynı anda birden fazla Chroma bağlantısı açıp birbirinin
+            # üzerine yazmasını (bağlantı sızıntısı) önlemek için.
+            with self._get_lock():
+                if not self.db:
+                    print(f"🔄 Loading knowledge base from {self.chroma_path}")
+                    self._load_existing_database()
         return self.db is not None
 
     def close_database(self):
@@ -544,9 +569,7 @@ Bu klasör RAG (Retrieval-Augmented Generation) sistemi için dökümanları iç
     def get_enhanced_context(self, tid_description: str, requirement_type: str = "SGD") -> str:
         """Get enhanced context for requirement generation using RAG"""
         try:
-            if not self.db and self.embeddings and os.path.exists(self.chroma_path):
-                print(f"🔄 Loading existing knowledge base from {self.chroma_path}")
-                self._load_existing_database()
+            self.ensure_database_loaded()
 
             search_queries = [
                 f"{tid_description} {requirement_type}",

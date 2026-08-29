@@ -677,7 +677,8 @@ class _UretimAkisiMixin:
         thread = threading.Thread(
             target=self.run_ai_process,
             args=(self.file_paths, doc_counts, doc_flags,
-                  self.format_combo.get().lower(), proje_ismi)
+                  self.format_combo.get().lower(), proje_ismi),
+            daemon=True,
         )
         thread.start()
 
