@@ -12,6 +12,13 @@ import requests
 
 from config import LMSTUDIO_API_KEY, LMSTUDIO_BASE_URL, MODEL_NAME
 
+# Faz 9 performans bulgusu: paylasilan bir requests.Session(), tekil
+# requests.get() cagrilarina gore olculebilir sekilde daha hizli (bkz.
+# llm/handler.py'deki ayni notu). list_loaded_models() get_active_model_name()
+# uzerinden her belge uretimi/oturum baslangicinda cagrildigi icin burada da
+# uygulaniyor.
+_session = requests.Session()
+
 
 class ModelSelectionError(RuntimeError):
     pass
@@ -114,7 +121,7 @@ def resolve_model_id(requested_model: str, loaded_models: Sequence[str]) -> str:
 
 
 def list_loaded_models(
-    request_get: Callable[..., Any] = requests.get,
+    request_get: Callable[..., Any] = _session.get,
     timeout: float = 4.0,
 ) -> tuple[str, ...]:
     response = request_get(
@@ -129,7 +136,7 @@ def list_loaded_models(
 def get_active_model_name(
     requested_model: str | None = None,
     force_refresh: bool = False,
-    request_get: Callable[..., Any] = requests.get,
+    request_get: Callable[..., Any] = _session.get,
 ) -> str:
     requested = str(requested_model or MODEL_NAME).strip()
     cached = _CACHE.get(requested)
@@ -144,7 +151,7 @@ def get_active_model_name(
 
 def probe_model(
     requested_model: str | None = None,
-    request_get: Callable[..., Any] = requests.get,
+    request_get: Callable[..., Any] = _session.get,
 ) -> ModelProbeResult:
     requested = str(requested_model or MODEL_NAME).strip()
     try:

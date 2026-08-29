@@ -86,7 +86,7 @@ class LlmHandlerModelTests(unittest.TestCase):
         }
         with patch.object(
             llm_handler, "get_active_model_name", return_value="gemma-4-e4b-it-q4"
-        ), patch.object(llm_handler.requests, "post", return_value=response) as post:
+        ), patch.object(llm_handler._session, "post", return_value=response) as post:
             result = llm_handler.call_gemma3_api("test", max_tokens=8)
 
         self.assertEqual(result, "tamam")
@@ -106,7 +106,7 @@ class LlmHandlerModelTests(unittest.TestCase):
         }
         with patch.object(
             llm_handler, "get_active_model_name", return_value="google/gemma-3-4b"
-        ), patch.object(llm_handler.requests, "post", return_value=response) as post:
+        ), patch.object(llm_handler._session, "post", return_value=response) as post:
             result = llm_handler.call_gemma3_api("test", max_tokens=12)
 
         self.assertEqual(result, "eski model tamam")

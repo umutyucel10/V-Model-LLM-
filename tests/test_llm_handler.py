@@ -20,13 +20,13 @@ import llm_handler
 class CallGemma3ApiErrorHandlingTests(unittest.TestCase):
     def test_connection_error_returns_none_without_raising(self):
         with patch.object(llm_handler, "get_active_model_name", return_value="google/gemma-3-4b"), \
-             patch.object(llm_handler.requests, "post", side_effect=requests.exceptions.ConnectionError("no route")):
+             patch.object(llm_handler._session, "post", side_effect=requests.exceptions.ConnectionError("no route")):
             result = llm_handler.call_gemma3_api("test", max_tokens=8)
         self.assertIsNone(result)
 
     def test_timeout_is_a_request_exception_and_returns_none(self):
         with patch.object(llm_handler, "get_active_model_name", return_value="google/gemma-3-4b"), \
-             patch.object(llm_handler.requests, "post", side_effect=requests.exceptions.Timeout("180s asildi")):
+             patch.object(llm_handler._session, "post", side_effect=requests.exceptions.Timeout("180s asildi")):
             result = llm_handler.call_gemma3_api("test", max_tokens=8)
         self.assertIsNone(result)
 
@@ -38,7 +38,7 @@ class CallGemma3ApiErrorHandlingTests(unittest.TestCase):
         error = requests.exceptions.RequestException("500")
         error.response = response
         with patch.object(llm_handler, "get_active_model_name", return_value="google/gemma-3-4b"), \
-             patch.object(llm_handler.requests, "post", side_effect=error):
+             patch.object(llm_handler._session, "post", side_effect=error):
             result = llm_handler.call_gemma3_api("test", max_tokens=8)
         self.assertIsNone(result)
 
@@ -47,7 +47,7 @@ class CallGemma3ApiErrorHandlingTests(unittest.TestCase):
         response.raise_for_status.return_value = None
         response.json.return_value = {"unexpected": "shape"}
         with patch.object(llm_handler, "get_active_model_name", return_value="google/gemma-3-4b"), \
-             patch.object(llm_handler.requests, "post", return_value=response):
+             patch.object(llm_handler._session, "post", return_value=response):
             result = llm_handler.call_gemma3_api("test", max_tokens=8)
         self.assertIsNone(result)
 
@@ -56,7 +56,7 @@ class CallGemma3ApiErrorHandlingTests(unittest.TestCase):
         response.raise_for_status.return_value = None
         response.json.return_value = {"output": []}
         with patch.object(llm_handler, "get_active_model_name", return_value="gemma-4-e4b-it"), \
-             patch.object(llm_handler.requests, "post", return_value=response):
+             patch.object(llm_handler._session, "post", return_value=response):
             result = llm_handler.call_gemma3_api("test", max_tokens=8)
         self.assertIsNone(result)
 
@@ -68,7 +68,7 @@ class CallGemma3ApiRequestConstructionTests(unittest.TestCase):
         response.json.return_value = {"choices": [{"message": {"content": "ok"}}]}
         long_chunks = ["a" * 5000, "b" * 5000, "c" * 5000]
         with patch.object(llm_handler, "get_active_model_name", return_value="google/gemma-3-4b"), \
-             patch.object(llm_handler.requests, "post", return_value=response) as post:
+             patch.object(llm_handler._session, "post", return_value=response) as post:
             llm_handler.call_gemma3_api("test", max_tokens=8, rag_chunks=long_chunks)
 
         system_content = post.call_args.kwargs["json"]["messages"][0]["content"]
@@ -81,7 +81,7 @@ class CallGemma3ApiRequestConstructionTests(unittest.TestCase):
         response.raise_for_status.return_value = None
         response.json.return_value = {"choices": [{"message": {"content": "ok"}}]}
         with patch.object(llm_handler, "get_active_model_name", return_value="google/gemma-3-4b"), \
-             patch.object(llm_handler.requests, "post", return_value=response) as post:
+             patch.object(llm_handler._session, "post", return_value=response) as post:
             llm_handler.call_gemma3_api("x" * 9000, max_tokens=8)
 
         sent_prompt = post.call_args.kwargs["json"]["messages"][-1]["content"]
@@ -102,7 +102,7 @@ class GenerateAllRequirementsBatchTests(unittest.TestCase):
         with patch.object(llm_handler, "choose_context_option") as choose_dialog, \
              patch.object(llm_handler, "get_active_model_name", return_value="google/gemma-3-4b"), \
              patch.object(llm_handler, "get_rag_enhanced_context", return_value=""), \
-             patch.object(llm_handler.requests, "post", return_value=response):
+             patch.object(llm_handler._session, "post", return_value=response):
             batch_response, context_info = llm_handler.generate_all_requirements_batch(
                 [("TID-001", "Sistem hedefi tespit etmeli")],
                 context_selection={"option": "none", "file_path": None},
@@ -118,7 +118,7 @@ class GenerateAllRequirementsBatchTests(unittest.TestCase):
         response.json.return_value = {"choices": [{"message": {"content": "gecerli json degil"}}]}
         with patch.object(llm_handler, "get_active_model_name", return_value="google/gemma-3-4b"), \
              patch.object(llm_handler, "get_rag_enhanced_context", return_value=""), \
-             patch.object(llm_handler.requests, "post", return_value=response):
+             patch.object(llm_handler._session, "post", return_value=response):
             batch_response, _ = llm_handler.generate_all_requirements_batch(
                 [("TID-001", "aciklama")],
                 context_selection={"option": "none", "file_path": None},

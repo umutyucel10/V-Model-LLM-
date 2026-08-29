@@ -19,6 +19,22 @@ from config import LMSTUDIO_BASE_URL, LMSTUDIO_API_KEY
 import warnings
 warnings.filterwarnings("ignore")
 
+# Faz 9 performans bulgusu: paylasilan bir requests.Session(), tekil
+# requests.get()/post() cagrilarina gore olculebilir sekilde (bu makinede
+# ~10x) daha hizli - bkz. llm/handler.py'deki ayni not. embed_query() bir
+# belge parcalama isleminde YUZLERCE kez ardisik cagrilabildigi icin burada
+# etkisi ozellikle buyuk. Modulun kendi "ust seviyede requests'e sert
+# bagimlilik olmasin" tercihini korumak icin session tembel (lazy) kuruluyor.
+_session = None
+
+
+def _get_session():
+    global _session
+    if _session is None:
+        import requests
+        _session = requests.Session()
+    return _session
+
 # Try to import PyMuPDF for better PDF processing
 try:
     import fitz  # PyMuPDF
@@ -98,11 +114,9 @@ class RAGHandler:
     def _initialize_embeddings(self):
         """Initialize embedding function for vector database"""
         try:
-            import requests
-
             print(f"🔗 Testing LM Studio connection to {LMSTUDIO_BASE_URL}/models")
             headers = {"Authorization": f"Bearer {LMSTUDIO_API_KEY}"}
-            response = requests.get(f"{LMSTUDIO_BASE_URL}/models", headers=headers, timeout=5)
+            response = _get_session().get(f"{LMSTUDIO_BASE_URL}/models", headers=headers, timeout=5)
             print(f"🔍 Response status: {response.status_code}")
 
             if response.status_code == 200:
@@ -132,8 +146,7 @@ class RAGHandler:
                                 "input": text,
                                 "model": "text-embedding-nomic-embed-text-v1.5",
                             }
-                            import requests  # local import to avoid top-level hard dependency
-                            response = requests.post(
+                            response = _get_session().post(
                                 f"{self.base_url}/embeddings",
                                 headers=self.headers,
                                 json=payload,

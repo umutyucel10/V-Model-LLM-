@@ -9,6 +9,15 @@ from tkinter import filedialog, messagebox
 from datetime import datetime
 from config import BATCH_SIZE, ENABLE_CHUNKING, CHUNK_SIZE, CHUNK_OVERLAP
 
+# Faz 9 performans bulgusu: bu makinede requests.get/post (modul seviyesi
+# kisayol fonksiyonlari) her cagrida ~2s'ye varan ek yuk tasiyor (muhtemelen
+# Windows proxy/ortam degiskeni taramasi + gecici Session kurulumu, her
+# cagrida tekrar tekrar); paylasilan bir requests.Session() ile ayni istekler
+# olculebilir sekilde ~10x daha hizli calisti (bkz. PERFORMANS_RAPORU_BASLANGIC.md
+# guncellemesi). Bu modul artik tum LM Studio isteklerinde bu tekil session'i
+# kullaniyor.
+_session = requests.Session()
+
 # Use PyMuPDF instead of PDFplumber for better extraction
 try:
     import fitz  # PyMuPDF
@@ -351,7 +360,7 @@ def call_gemma3_api(prompt, max_tokens=2000, temperature=0.4, system_message=Non
             }
             if combined_system_message:
                 native_data["system_prompt"] = combined_system_message
-            response = requests.post(
+            response = _session.post(
                 f"{server_root}/api/v1/chat",
                 headers=headers,
                 json=native_data,
@@ -376,7 +385,7 @@ def call_gemma3_api(prompt, max_tokens=2000, temperature=0.4, system_message=Non
             "temperature": temperature,
             "stream": False
         }
-        response = requests.post(url, headers=headers, json=data, timeout=(3.05, 180))
+        response = _session.post(url, headers=headers, json=data, timeout=(3.05, 180))
         response.raise_for_status()
         return response.json()['choices'][0]['message']['content']
     except requests.exceptions.ConnectionError:
@@ -914,7 +923,7 @@ def detect_lmstudio_port():
     for port in common_ports:
         try:
             test_url = f"http://localhost:{port}/v1/models"
-            response = requests.get(test_url, timeout=5)
+            response = _session.get(test_url, timeout=5)
             if response.status_code == 200:
                 print(f"✅ LM Studio {port} portunda çalışıyor!")
                 return port
