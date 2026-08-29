@@ -24,57 +24,83 @@ simülasyonu ve DoDAF/NAF mimari çerçeve görünümleri (bkz.
 - CLI/toplu iz sürülebilirlik akışı: `python main.py`.
 - Testler: `pytest tests/ -q`.
 
-## Dizin/dosya haritası (iş alanına göre)
-- **Donanım kartları:** `donanim_kartlari_ui.py`, `donanim_kartlari_yonetim.py`,
-  `donanim_kartlari_model.py`, `donanim_kartlari_algilama.py`,
-  `donanim_kartlari_gorsel.py`, `donanim_kartlari_karsilastirma_ui.py`,
-  `donanim_detayli_inceleme*.py`, `hardware_*` dosyaları (liste/export/
-  generator/review), `hardware_image_*` (AI görsel üretimi, ComfyUI).
-- **Etki analizi:** `etki_analizi_ui.py`, `etki_analizi_logic.py`,
-  `etki_analizi_simulasyon*.py`, `etki_analizi_degisim_*.py`,
-  `etki_analizi_izlenebilirlik.py`, `etki_analizi_raporlama.py`,
-  `etki_analizi_entegrasyon.py`.
-- **Mimari çerçeve (DoDAF/NAF):** `mimari_cerceve_ui.py`,
-  `mimari_cerceve_yonetim.py`, `mimari_cerceve_model.py`,
-  `mimari_cerceve_render.py`, `mimari_cerceve_cikarim.py`,
-  `mimari_cerceve_dogrulama.py`, `mimari_cerceve_katalog.py`,
-  `mimari_cerceve_gorunumleri.py`. Tasarım kararları: `MIMARI_CERCEVE_TASARIM.md`.
-- **LLM erişimi:** `llm_handler.py` (LM Studio'ya `requests` ile HTTP,
-  batch/tekli üretim fonksiyonları), `lmstudio_model.py` (aktif model adı,
-  port tespiti).
-- **RAG:** `rag_handler.py` (`RAGHandler` sınıfı — embedding + Chroma
-  yükleme/kaydetme), `rag_manager.py`, `rebuild_rag.py`.
-- **Belge üretim modülleri:** `tid_generator_logic.py`,
-  `dgöygö_generator_logic.py`, `dtet_ytet_generator_logic.py`,
-  `kmtd_generator_logic.py`, `sgd_generator_logic.py`,
-  `sitet_generator_logic.py`, `stt_generator_logic.py`,
-  `sablon_generator_logic.py`, `hardware_generator_logic.py`.
-- **Veri/çıktı:** `data_processor.py` (TİD işleme, ağaç/düz veri yapıları),
-  `pdf_extraction.py`, `html_generation.py`, `hardware_export_logic.py`,
-  `file_handler.py`, `text_cleanup.py`.
-- **Ortak/çekirdek:** `config.py` (tüm ayarlar), `app_identity.py`,
-  `sozluk.py`, `kalite_denetci.py`, `alt_sistem_test_logic.py`.
-- **Giriş noktaları:** `Arayüz.py` (GUI, ~159 KB — pencere kurulumu +
-  sekme/panel yönetimi + sohbet + tüm iş alanlarının entegrasyonu tek dosyada),
-  `main.py` (CLI toplu akış).
+## Dizin/dosya haritası (Faz 7 sonrası — GERÇEK KOD paket altında, kök .py'ler shim)
 
-## Bilinen risk alanları (büyük/karmaşık "god-file" adayları)
-`Arayüz.py` (~159 KB), `donanim_kartlari_ui.py` (~138 KB),
-`mimari_cerceve_ui.py` (~137 KB), `mimari_cerceve_yonetim.py` (~94 KB),
-`mimari_cerceve_model.py` (~89 KB), `etki_analizi_ui.py` (~80 KB),
-`etki_analizi_simulasyon.py` / `etki_analizi_simulasyon_ui.py` (~70 KB),
-`donanim_kartlari_algilama.py` (~68 KB), `etki_analizi_degisim_paketi.py`
-(~60 KB), `donanim_kartlari_yonetim.py` (~56 KB),
-`mimari_cerceve_render.py` (~49 KB), `etki_analizi_izlenebilirlik.py`
-(~43 KB), `llm_handler.py` (~42 KB, ağ + threading), `rag_handler.py`
-(~29 KB, Chroma/embedding).
+Faz 7'de (playbook) ~60 kök `.py` dosyası anlamlı paketlere taşındı.
+**Gerçek kod artık paketlerin içinde**; kök dizindeki eski dosya adları
+(`donanim_kartlari_ui.py`, `mimari_cerceve_yonetim.py`, `llm_handler.py`
+vb.) hâlâ var ama içerikleri `sys.modules[__name__] = _module` ile paket
+içindeki gerçek modüle yönlendiren birer **shim** — eski import yolları
+(`import llm_handler`, `from donanim_kartlari_yonetim import ...`) kırılmadan
+çalışmaya devam ediyor. Yeni kod paket yollarını kullanmalı.
+
+- **Donanım kartları:** `donanim_kartlari/` (model.py, gorsel.py,
+  algilama.py, yonetim.py, karsilastirma_ui.py, `ui/` altında 9 mixin
+  dosyası — workspace.py bunları birleştirir), `donanim_detayli/`
+  (inceleme.py, raporlama.py, ui.py), `hardware_liste/` (logic.py,
+  review_ui.py, ui.py), `hardware_image/` (provider.py, generation.py,
+  prompt.py, generation_ui.py — AI görsel üretimi/ComfyUI).
+- **Etki analizi:** `etki_analizi/` (logic.py, entegrasyon.py,
+  simulasyon.py, degisim_paketi.py, degisim_ui.py, raporlama.py,
+  simulasyon_ui.py, ui.py). **Not:** `etki_analizi_degisim_raporlama.py`
+  Faz 7'de taşınmadı, hâlâ kök dizinde gerçek kod olarak duruyor (bilinçli
+  istisna, bkz. `MIMARI_YENIDEN_YAPILANDIRMA_PLANI.md`).
+- **Mimari çerçeve (DoDAF/NAF):** `mimari_cerceve/` (model.py, katalog.py,
+  gorunumleri.py, dogrulama.py, cikarim.py, yonetim.py, render.py, `ui/`
+  altında 8 mixin dosyası). Tasarım kararları: `MIMARI_CERCEVE_TASARIM.md`.
+- **LLM erişimi:** `llm/` (handler.py — LM Studio'ya `requests.Session()`
+  ile HTTP, batch/tekli üretim fonksiyonları; model_secim.py — aktif model
+  adı, port tespiti).
+- **RAG:** `rag/` (handler.py — `RAGHandler` sınıfı, embedding + Chroma
+  yükleme/kaydetme, tembel `threading.Lock` korumalı; manager.py,
+  rebuild.py).
+- **Belge üretim modülleri:** `belge_uretim/` (tid.py, sgd.py, stt.py,
+  dgoygo.py, dtet_ytet.py, kmtd.py, sitet.py, hardware.py, sablon.py —
+  sonuncusu tamamen devre dışı/dead-code bir triple-quoted string, olduğu
+  gibi taşındı).
+- **Veri/çıktı:** `data_processor.py` (TİD işleme, ağaç/düz veri
+  yapıları — kök dizinde, taşınmadı), `pdf_extraction.py`,
+  `html_generation.py`, `hardware_export_logic.py`, `file_handler.py`,
+  `text_cleanup.py` (→ `core/text_cleanup.py` shim'i).
+- **Ortak/çekirdek:** `core/` (config.py — tüm ayarlar, app_identity.py,
+  text_cleanup.py, izlenebilirlik.py [eski `etki_analizi_izlenebilirlik.py`
+  — Faz 6'da bölme planlanmıştı, kullanım analizi çapraz-alan bağımlılık
+  gösterince kullanıcı onayıyla bütün dosya olarak taşındı]).
+- **Arayüz (GUI):** `arayuz/` (yardimcilar.py, pencere.py,
+  dosya_surukle.py, workspace_koordinasyon.py, donanim_entegrasyon.py,
+  uretim_akisi.py, copilot.py, disa_aktarim.py, workspace.py — eski tek
+  parça ~159 KB `Arayüz.py`'nin mixin'lere bölünmüş hali). Kök `Arayüz.py`
+  hem shim hem giriş noktası: `TIDGeneratorApp`/`prepare_process_identity`/
+  `ttk`'yi `arayuz`'dan re-export eder, `__main__` altında pencereyi açar.
+- **Giriş noktaları:** `Arayüz.py` (GUI), `main.py` (CLI toplu akış).
+
+## Bilinen risk alanları (Faz 7 öncesi "god-file" adaylarının şimdiki hali)
+Faz 6-7'de (playbook) en büyük dosyalar mixin desenine bölündü:
+`Arayüz.py` (~159 KB) → `arayuz/` (9 dosya), `donanim_kartlari_ui.py`
+(~138 KB) → `donanim_kartlari/ui/` (9 mixin dosyası),
+`mimari_cerceve_ui.py` (~137 KB) → `mimari_cerceve/ui/` (8 mixin dosyası).
+Bölünmemiş ama paket içine taşınmış orta-büyük dosyalar:
+`mimari_cerceve/yonetim.py` (~94 KB), `mimari_cerceve/model.py` (~89 KB),
+`etki_analizi/ui.py` (~80 KB), `etki_analizi/simulasyon.py` /
+`simulasyon_ui.py` (~70 KB), `donanim_kartlari/algilama.py` (~68 KB),
+`etki_analizi/degisim_paketi.py` (~60 KB), `donanim_kartlari/yonetim.py`
+(~56 KB), `mimari_cerceve/render.py` (~49 KB), `core/izlenebilirlik.py`
+(~43 KB), `llm/handler.py` (~42 KB, ağ + threading), `rag/handler.py`
+(~29 KB, Chroma/embedding, artık `threading.Lock` korumalı — bkz. Faz 11).
+Doğrulama yöntemi: her bölme `inspect.getsource()` ile eski/yeni kod
+karşılaştırılarak bayt-bayt aynılık garantilendi (bkz.
+`MIMARI_YENIDEN_YAPILANDIRMA_PLANI.md`).
 
 `Arayüz_yedek.py` Faz 3'te (RISK_HARITASI.md) hiçbir yerden import
 edilmediği doğrulanıp Faz 4'te silindi — artık yok.
 
 Threading deseni (`threading.Thread(...)` + `self.master.after(...)`)
-repo genelinde 32 yerde (12 dosyada) tekrarlanıyor, ortak bir yardımcıya
-çıkarılmamış — bkz. playbook Faz 8.
+repo genelinde 23 `threading.Thread()` çağrısı (15 dosyada) olarak devam
+ediyor, ortak bir yardımcıya çıkarılmadı (playbook Faz 8 kapsamı dışında
+bırakıldı — bilinçli tercih, sadece UI performansı hedeflendi). Faz 11'de
+hepsi `daemon=True` olacak şekilde denetlendi (1 eksik bulundu, düzeltildi
+— bkz. `arayuz/uretim_akisi.py`), paylaşılan `rag_handler` tekil nesnesi
+kilitle korunuyor, ama ortak bir "arka plan işi" soyutlaması hâlâ yok.
 
 ## Test
 `pytest tests/ -q`. `tests/` klasöründe ciddi kapsam var (`donanim_*`,
@@ -118,8 +144,14 @@ bırakıldı; gerektiğinde `repomix` ile yeniden üretilir.
 
 ## Performans yeniden yapılandırma süreci
 Bu proje kök dizindeki `PERFORMANS_REFAKTOR_PLAYBOOK.md` dosyasında
-tanımlanan 13 fazlık (Faz 0-12) bir yeniden yapılandırma sürecinden
-geçiriliyor. Sürecin ilerleme durumu için o dosyayı ve fazlar ilerledikçe
-oluşturulan `BASELINE.md`, `PERFORMANS_RAPORU_BASLANGIC.md`,
-`RISK_HARITASI.md`, `MIMARI_YENIDEN_YAPILANDIRMA_PLANI.md` gibi rapor
-dosyalarını kontrol et.
+tanımlanan 13 fazlık (Faz 0-12) yeniden yapılandırma sürecinin **tüm
+fazlarını tamamladı** (2026-08-29). Her faz kendi git dalında
+(`refactor/faz-N-...`, zincir halinde birbirinin üstüne) yapıldı; `main`
+dalı bilinçli olarak dokunulmadan bırakıldı ve zincirin `main`'e
+birleştirilmesi ayrı, kullanıcı onaylı bir adım (henüz yapılmadıysa bu
+notu güncelle). Süreç detayları ve ölçümler için: `BASELINE.md` (Faz 1),
+`PERFORMANS_RAPORU_BASLANGIC.md` (Faz 2, öncesi ölçümler),
+`RISK_HARITASI.md` (Faz 3), `MIMARI_YENIDEN_YAPILANDIRMA_PLANI.md`
+(Faz 6-7, paket planı ve gerçek sonuç), `PERFORMANS_RAPORU_SONUC.md`
+(Faz 12, öncesi/sonrası karşılaştırma), `REFAKTOR_OZETI.md` (tüm sürecin
+özeti).
