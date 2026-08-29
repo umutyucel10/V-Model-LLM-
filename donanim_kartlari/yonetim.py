@@ -94,9 +94,30 @@ def _catalog_dict(catalog: HardwareCatalog | Mapping[str, Any] | None) -> dict[s
     return deepcopy(dict(catalog))
 
 
-def _safe_project_id(project_name: str, catalog: Mapping[str, Any] | None = None) -> str:
-    if catalog and clean_text(catalog.get("project_id")):
-        return clean_text(catalog.get("project_id"))
+def _catalog_get(catalog: HardwareCatalog | Mapping[str, Any] | None, key: str, default: str = "") -> Any:
+    """Katalogdan TEK bir üst düzey alanı, tüm yapıyı (yüzlerce donanım
+    kartı olabilir) kopyalamadan okur.
+
+    Faz 8 performans bulgusu: overrides_path/_safe_project_id/empty_overrides
+    yalnızca "project_id"/"storage_path" gibi tek bir string alana ihtiyaç
+    duyarken, önceden her çağrıda _catalog_dict() ile TÜM katalog
+    deepcopy'leniyordu (500 kayıtlı bir katalogda tek bir filtre/görünüm
+    değişikliğinde yüz binlerce deepcopy çağrısına yol açıyordu — bkz.
+    PERFORMANS_RAPORU_BASLANGIC.md). Bu fonksiyon kopyalama yapmadan okur.
+    """
+    if catalog is None:
+        return default
+    if isinstance(catalog, HardwareCatalog):
+        return getattr(catalog, key, default)
+    if isinstance(catalog, Mapping):
+        return catalog.get(key, default)
+    return default
+
+
+def _safe_project_id(project_name: str, catalog: HardwareCatalog | Mapping[str, Any] | None = None) -> str:
+    project_id = clean_text(_catalog_get(catalog, "project_id"))
+    if project_id:
+        return project_id
     return project_identity(project_name or "Proje")[0]
 
 
@@ -105,8 +126,7 @@ def overrides_path(
     catalog: HardwareCatalog | Mapping[str, Any] | None = None,
     output_root: str | os.PathLike[str] | None = None,
 ) -> Path:
-    raw = _catalog_dict(catalog)
-    storage_path = clean_text(raw.get("storage_path"))
+    storage_path = clean_text(_catalog_get(catalog, "storage_path"))
     if storage_path:
         return Path(storage_path).resolve().parent / OVERRIDE_FILENAME
     # Faz 7'de bu dosya proje kokunden donanim_kartlari/ alt paketine tasindi;
@@ -115,10 +135,10 @@ def overrides_path(
     # traceability'yi proje kokunde bulmak) tasimadan onceki haliyle ayni
     # kalsin diye.
     root = Path(output_root) if output_root else Path(__file__).resolve().parent.parent / "outputs" / "traceability"
-    return root / _safe_project_id(project_name, raw) / OVERRIDE_FILENAME
+    return root / _safe_project_id(project_name, catalog) / OVERRIDE_FILENAME
 
 
-def empty_overrides(project_name: str, catalog: Mapping[str, Any] | None = None) -> dict[str, Any]:
+def empty_overrides(project_name: str, catalog: HardwareCatalog | Mapping[str, Any] | None = None) -> dict[str, Any]:
     return {
         "schema_version": OVERRIDE_SCHEMA_VERSION,
         "project_id": _safe_project_id(project_name, catalog),
@@ -145,12 +165,12 @@ def load_overrides(
 ) -> dict[str, Any]:
     path = overrides_path(project_name, catalog, output_root)
     if not path.exists():
-        return empty_overrides(project_name, _catalog_dict(catalog))
+        return empty_overrides(project_name, catalog)
     try:
         raw = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError, TypeError) as error:
         raise ValueError(f"Donanım Kartları kullanıcı verisi okunamadı: {error}") from error
-    base = empty_overrides(project_name, _catalog_dict(catalog))
+    base = empty_overrides(project_name, catalog)
     if isinstance(raw, Mapping):
         for key in base:
             if key in raw:
@@ -164,7 +184,7 @@ def save_overrides(
     catalog: HardwareCatalog | Mapping[str, Any] | None = None,
     output_root: str | os.PathLike[str] | None = None,
 ) -> Path:
-    payload = empty_overrides(project_name, _catalog_dict(catalog))
+    payload = empty_overrides(project_name, catalog)
     payload.update(deepcopy(dict(overrides)))
     payload["schema_version"] = OVERRIDE_SCHEMA_VERSION
     payload["updated_at"] = _now()
