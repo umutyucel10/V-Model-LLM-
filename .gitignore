@@ -30,6 +30,7 @@ __pycache__/
 outputs/
 output/
 tmp/
+.coverage
 
 # Yerel embedding model ağırlıkları (~88 MB, HuggingFace'ten indirilir;
 # bkz. CLAUDE.md "Yapılandırma" bölümü)
