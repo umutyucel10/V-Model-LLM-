@@ -529,8 +529,25 @@ Bu plan onaylanmadan Faz 7'ye geçilmeyecek. Onaydan sonra Faz 7 prompt'u
 yukarıdaki sıradaki **ilk modülle** (`donanim_kartlari_model.py`)
 başlatılacak.
 
-[GÜNCELLEME] Faz 7, bu belgedeki roadmap'in 11. adımına kadar (belge
-üretim ailesi dahil) onaylanıp uygulandı; UI dosyalarının çoğu (roadmap
-12) da tek-dosya-taşı yöntemiyle tamamlandı. Bölüm 6'daki iç-bölme planı,
-kalan iki en büyük dosya (`donanim_kartlari_ui.py`, `mimari_cerceve_ui.py`)
-için ayrıca onay bekliyor.
+[GÜNCELLEME — TAMAMLANDI] Faz 7'nin roadmap'teki 13 adımının HEPSİ
+uygulandı: 1-11 (model/küçük dosyalar/ikinci katman/izlenebilirlik/
+donanım+mimari alt dosyaları/render+image/etki_analizi ailesi/rag+llm/
+belge_uretim ailesi), 12 (tüm UI dosyaları — en düşük riskliden başlayıp
+`donanim_kartlari_ui.py` ve `mimari_cerceve_ui.py`'nin bölüm 6'daki mixin
+planıyla bölünmesi dahil), ve 13 (`Arayüz.py`'nin kendisi, `arayuz/`
+paketine mixin'lerle bölündü, hem `sys.modules` alias'ı hem `python
+Arayüz.py` giriş noktası korunarak).
+
+Proje artık düz dosya yapısından, MIMARI_YENIDEN_YAPILANDIRMA_PLANI.md'de
+planlanan paket yapısına (donanim_kartlari/, donanim_detayli/,
+hardware_liste/, hardware_image/, etki_analizi/, mimari_cerceve/, rag/,
+llm/, belge_uretim/, core/, arayuz/) geçirilmiş durumda. Kök dizindeki
+eski dosya adları hâlâ `sys.modules[__name__] = _module` shim'leri olarak
+duruyor — hiçbir eski `import X` satırı kırılmadı. Her adımda mekanik
+kaynak-kodu karşılaştırması (inspect.getsource) ile davranışın birebir
+korunduğu doğrulandı; `pytest tests/ -q` her adımda 418/418 yeşil kaldı.
+
+Sıradaki adım playbook'un Faz 8'idir (Arayüz/Tkinter katmanı performans
+iyileştirmesi) — artık kod, PERFORMANS_RAPORU_BASLANGIC.md'nin (Faz 2)
+işaret ettiği darboğazlara (özellikle `donanim_kartlari/ui/liste_render.py`)
+çok daha kolay müdahale edilebilir küçük dosyalarda yaşıyor.
