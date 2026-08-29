@@ -321,8 +321,216 @@ adım 13 (Arayüz.py) öncesinde ayrıca kullanıcı onayı istenmesi öneriliyo
 
 ---
 
+## 6. `donanim_kartlari_ui.py` ve `mimari_cerceve_ui.py` iç bölme planı — [EK, Faz 7'de eklendi]
+
+**Durum:** Onay bekliyor. Roadmap madde 12'nin son iki dosyası
+(`donanim_kartlari_ui.py`, `mimari_cerceve_ui.py`) için, taşıma adımına
+gelmeden önce söz verilen "dosyanın kendi iç sorumluluk sınırları
+incelenerek ayrıca planlanmalı" notunun karşılığı budur. Şu ana kadar
+Faz 7'de hiçbir dosyanın **içi** bölünmedi (hep 1 dosya → 1 dosya taşındı);
+bu ikisi ilk kez bir dosyayı birden fazla dosyaya bölmeyi gerektiriyor.
+
+### 6.1 Ortak teknik: mixin sınıfları
+
+Her iki dosya da tek bir devasa sınıfa (`HardwareCardsWorkspace`,
+`ArchitectureFrameworkWorkspace`) ait ~100 metottan oluşuyor; metotların
+neredeyse tamamı aynı `self` durumuna (widget'lar, filtre durumu, önbellek)
+erişiyor. Bunu birden fazla dosyaya bölmenin davranışı bozmadan yapılabilecek
+tek mekanik yolu **mixin sınıfları**dır: her dosyada, ilgili metot grubunu
+taşıyan bir `_XyzMixin` sınıfı tanımlanır (state tanımlamaz, sadece metot
+taşır); asıl `Workspace` sınıfı bu mixin'lerden çoklu kalıtımla türetilir.
+Metotların **gövdesi tek bir satır bile değişmeden** olduğu gibi taşınır —
+bu yüzden bu, "bölme" fazının (Faz 7) kapsamına uyar, davranış değiştirmez.
+İsimlendirme çakışması riski yok çünkü zaten tek sınıfın metotlarıydı
+(hepsi zaten benzersiz isimli).
+
+Her iki dosya da bir paket haline getirilir (örn. `donanim_kartlari/ui.py`
+→ `donanim_kartlari/ui/` klasörü + `__init__.py`); `__init__.py`,
+`from .workspace import HardwareCardsWorkspace` ile eski
+`donanim_kartlari.ui.HardwareCardsWorkspace` erişimini korur, kök
+dizindeki `donanim_kartlari_ui.py` shim'i hiç değişmez (zaten
+`from donanim_kartlari import ui as _module` yapıyor — `ui` bir dosya
+yerine paket olsa da bu satır aynen çalışır).
+
+### 6.2 `donanim_kartlari/ui/` hedef dosya haritası
+
+Kaynak: `donanim_kartlari_ui.py` (2401 satır, `ScrollableCards`,
+`HardwareEditorDialog`, `AlternativeDialog`, `HardwareCardsWorkspace` — 112
+metot).
+
+```
+donanim_kartlari/ui/
+  __init__.py        <- from .workspace import HardwareCardsWorkspace
+                         (+ dışarıdan kullanılan diğer adlar, ör. testler
+                         ScrollableCards'a erişiyorsa onu da)
+  yardimcilar.py      <- modül seviyesi fonksiyonlar (_clean, _display,
+                          _trace_node_index, catalog_filter_options,
+                          product_tree_instances) + küçük yardımcı sınıflar
+                          (ScrollableCards, HardwareEditorDialog,
+                          AlternativeDialog)
+  kurulum.py          <- _KurulumMixin: __init__, _build, _build_detail_tabs,
+                          exists, focus, close, refresh, on_catalog_ready,
+                          set_loading, set_simulation_result, _status_text,
+                          _on_resize, refresh_language, apply_theme
+  filtre.py           <- _FiltreMixin: _refresh_filters, _filter_value,
+                          _search_focus_in/out, _focus_search,
+                          _restore_preferences, _persist_preferences,
+                          _filtered_items, _filters_changed,
+                          _apply_filters_changed, _view_changed,
+                          _clear_filters, _quality_filter_selected
+  liste_render.py     <- _ListeRenderMixin: _render_all, _card_index,
+                          _render_tree, _tree_*, _render_quality_strip,
+                          _render_catalog_view, _apply_catalog_panel_span,
+                          _has_next_page, _change_page, _group_label,
+                          _render_compact_list, _render_catalog_tree_view,
+                          _compact_*, _catalog_tree_*, _render_cards,
+                          _build_card, _card_context_menu
+                          (Faz 2'nin performans darboğazı bulduğu metotların
+                          TAMAMI burada — Faz 8 optimizasyonu artık 2400
+                          satırlık dosya yerine bu tek dosyaya odaklanabilir)
+  karsilastirma.py    <- _KarsilastirmaMixin: _toggle_compare,
+                          _update_compare_controls, _open_comparison,
+                          _archive_item, _undo_last_change,
+                          _make_card_image, _card_accent,
+                          _update_card_selection, _trace_click,
+                          _old_alternative_open, select_card
+  detay_paneli.py     <- _DetayPaneliMixin: open_detailed_review,
+                          _close_detailed_review, _save_detailed_fields,
+                          _detail_*, _generate_selected_visual,
+                          _open_bulk_image_generation,
+                          _poll_selected_visual, _select_tree_recursive,
+                          _render_detail, _evidence_for, _render_technical,
+                          _render_requirements, _traceability_report,
+                          _render_states, _render_alternatives,
+                          _render_locations, _render_sources
+  duzenleme.py        <- _DuzenlemeMixin: _persist_and_refresh,
+                          _start_visual_generation, _poll_visual_generation,
+                          _finish_visual_generation, _new_item, _edit_item,
+                          _select_image, _remove_image,
+                          _edit_technical_value, _load_datasheet, _rescan,
+                          _load_sample, _add_alternative, _add_state,
+                          _link_requirement, _reject_source_field
+  gezinme.py          <- _GezinmeMixin: _send_to_impact, _go_parent,
+                          _selected_requirement_id, _go_requirement,
+                          _show_confidence, _show_change_summary
+  workspace.py         <- class HardwareCardsWorkspace(_KurulumMixin,
+                          _FiltreMixin, _ListeRenderMixin,
+                          _KarsilastirmaMixin, _DetayPaneliMixin,
+                          _DuzenlemeMixin, _GezinmeMixin): pass
+                          (gövdesi neredeyse boş; sınıf birleşimi burada)
+```
+
+9 dosya, her biri ~100-350 satır arası (en büyüğü `liste_render.py` ve
+`detay_paneli.py`, ~500-600 satır civarı olabilir — gerekirse ikiye daha
+bölünebilir, taşıma sırasında netleşir).
+
+### 6.3 `mimari_cerceve/ui/` hedef dosya haritası
+
+Kaynak: `mimari_cerceve_ui.py` (2936 satır, `WorkflowStep`, `ProfileOption`,
+`SourceRequirement`, `ArchitectureFrameworkWorkspace` — 95 metot). Bu sınıf
+zaten kod içinde açık bir iş akışına (kaynak seç → çıkar → görünümler →
+aday incele/onayla → render/önizle → doğrula → yayımla) karşılık geliyor;
+bölme bu akışı izliyor.
+
+```
+mimari_cerceve/ui/
+  __init__.py          <- from .workspace import ArchitectureFrameworkWorkspace
+  yardimcilar.py        <- modül seviyesi fonksiyonlar (filter_candidate_records,
+                           layout_mode_for_width, _clean,
+                           filter_source_requirements, _has_integrity_error,
+                           classify_view_card_state, view_card_status_label)
+                           + veri sınıfları (WorkflowStep, ProfileOption,
+                           SourceRequirement)
+  kurulum.py            <- _KurulumMixin: __init__, exists, focus, close,
+                           _language, _tr, _palette, _label, _button,
+                           _build, _build_source_panel, _build_center_panel,
+                           _build_inspector_panel, _select_step,
+                           _show_narrow_panel_for_step, _on_resize,
+                           _apply_responsive_layout, _toggle_language,
+                           _toggle_theme, refresh_language, apply_theme
+  kaynak_yonetimi.py    <- _KaynakMixin: refresh, on_sources_changed,
+                           on_source_mutation_started, _source_change_worker,
+                           _finish_source_change, on_generation_started,
+                           on_traceability_ready, on_generation_failed,
+                           _ensure_sources_ready, _ensure_extraction_ready,
+                           _ensure_current_project_context,
+                           _reset_project_context, _filtered_sources,
+                           _refresh_source_tree, _update_source_count,
+                           _selected_source_ids, _busy
+  cikarim_akisi.py      <- _CikarimMixin: _start_extraction,
+                           _project_context_matches, _dispatch_after,
+                           _poll_ui_queue, _extraction_worker,
+                           _extraction_guard_is_current,
+                           _prepare_extraction_state, _finish_extraction
+  gorunum_kartlari.py   <- _GorunumMixin: _on_profile_changed,
+                           _invalidate_architecture_outputs,
+                           _rebuild_view_cards, _select_view, _view_status,
+                           _refresh_view_cards
+  aday_inceleme.py      <- _AdayMixin: _candidate_filter_mode,
+                           _on_candidate_filter_changed,
+                           _select_all_candidates, _refresh_candidate_tree,
+                           _selected_records, _selected_record,
+                           _proposal_stable_id, _set_text,
+                           _show_selected_candidate,
+                           _populate_validation_findings,
+                           _selected_unresolved_conflicts,
+                           _update_review_controls, _persist_review_state,
+                           _capture_review_guard, _review_guard_is_current,
+                           _report_stale_review_block, _review_transaction,
+                           _element_record_index, _endpoint_closure,
+                           _approve_selected, _reject_selected,
+                           _edit_selected, _resolve_selected_conflict
+  render_onizleme.py    <- _RenderMixin: _build_snapshot, _start_render,
+                           _rasterize_svg_preview, _render_worker,
+                           _finish_render, _clear_preview, _display_svg
+  dogrulama.py          <- _DogrulamaMixin: _validate_current,
+                           _validation_worker, _finish_validation
+  disa_aktarim_yayim.py <- _YayimMixin: _export_svg, _start_publish,
+                           _finish_publish
+  workspace.py          <- class ArchitectureFrameworkWorkspace(_KurulumMixin,
+                           _KaynakMixin, _CikarimMixin, _GorunumMixin,
+                           _AdayMixin, _RenderMixin, _DogrulamaMixin,
+                           _YayimMixin): pass
+```
+
+10 dosya, çoğu ~100-250 satır; `aday_inceleme.py` en büyüğü (~700 satır
+civarı — bu, dosyanın en karmaşık tek sorumluluğu olan "aday onay/red/
+düzenleme + çakışma çözümü" iş mantığını taşıyor, gerekirse ileride
+kendi içinde de bölünebilir).
+
+### 6.4 Uygulama sırası ve risk notu
+
+Her iki dosya için de:
+1. Modül seviyesi fonksiyonlar/veri sınıfları önce `yardimcilar.py`'ye taşınır.
+2. Mixin'ler tek tek çıkarılır (en bağımsız/en az çapraz-referanslı gruptan
+   başlanarak) — her mixin çıkarma adımı kendi commit'i olabilir ya da tek
+   dosya taşıma işlemi için tüm mixin'ler birlikte tek commit'te de
+   yapılabilir (dosya sayısı çok ama hepsi aynı mekanik "kopyala/kes" işlemi).
+3. `workspace.py` en son yazılır (tüm mixin'ler hazır olduktan sonra).
+4. `pytest tests/ -q` + gerçek `Arayüz.py` duman testi + ilgili workspace'in
+   (donanım kartları / mimari çerçeve) manuel olarak açılıp temel
+   etkileşimlerin (liste render, filtre, detay paneli, mimari çerçeve için
+   kaynak seç → çıkar → görünüm oluştur adımları) çalıştığının kontrolü.
+
+**Risk:** `tests/test_mimari_cerceve_ui.py` (~83 KB, en kapsamlı test
+dosyası) ve donanım kartları tarafındaki QA script'leri
+(`tests/_hardware_cards_*`) `object.__new__(Workspace)` deseniyle sınıfın
+üzerinde doğrudan metot çağırıyor (bkz. Faz 5) — mixin'e bölünme bu
+deseni BOZMAMALI çünkü Python'da `object.__new__(HardwareCardsWorkspace)`
+ile oluşturulan örnek, sınıf MRO'sundaki (mixin'ler dahil) tüm metotlara
+zaten erişebilir. Yine de bölme sonrası bu iki büyük test dosyasının
+tamamının geçtiği ayrıca doğrulanmalı (zaten `pytest tests/ -q` kapsamında).
+
+---
+
 ## Onay
 
 Bu plan onaylanmadan Faz 7'ye geçilmeyecek. Onaydan sonra Faz 7 prompt'u
 yukarıdaki sıradaki **ilk modülle** (`donanim_kartlari_model.py`)
 başlatılacak.
+
+[GÜNCELLEME] Faz 7, bu belgedeki roadmap'in 11. adımına kadar (belge
+üretim ailesi dahil) onaylanıp uygulandı; UI dosyalarının çoğu (roadmap
+12) da tek-dosya-taşı yöntemiyle tamamlandı. Bölüm 6'daki iç-bölme planı,
+kalan iki en büyük dosya (`donanim_kartlari_ui.py`, `mimari_cerceve_ui.py`)
+için ayrıca onay bekliyor.
