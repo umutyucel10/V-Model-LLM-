@@ -11,7 +11,8 @@ __pycache__/
 
 # RAG / üretilen çıktılar
 rag_simple_db.txt
-chroma_db/
+rag_chroma/
+rag_chroma_lms/
 *.html
 
 # Geçici / üretilen dosyalar (gerekiyorsa bu satırları kaldır)
@@ -27,5 +28,14 @@ __pycache__/
 .env
 
 outputs/
+output/
+tmp/
+
+# Yerel embedding model ağırlıkları (~88 MB, HuggingFace'ten indirilir;
+# bkz. CLAUDE.md "Yapılandırma" bölümü)
+HuggingFaceEmbeddings/
+
+# repomix ile üretilen statik bağlam dökümü (gerektiğinde yeniden üretilir)
+repomix-output.xml
 
 ._*
