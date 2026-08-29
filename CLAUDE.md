@@ -69,8 +69,8 @@ simülasyonu ve DoDAF/NAF mimari çerçeve görünümleri (bkz.
 (~43 KB), `llm_handler.py` (~42 KB, ağ + threading), `rag_handler.py`
 (~29 KB, Chroma/embedding).
 
-`Arayüz_yedek.py` (85 KB) şüpheli ölü kod — `Arayüz.py`'nin yedeği gibi
-duruyor; kullanım durumu Faz 3'te doğrulanacak.
+`Arayüz_yedek.py` Faz 3'te (RISK_HARITASI.md) hiçbir yerden import
+edilmediği doğrulanıp Faz 4'te silindi — artık yok.
 
 Threading deseni (`threading.Thread(...)` + `self.master.after(...)`)
 repo genelinde 32 yerde (12 dosyada) tekrarlanıyor, ortak bir yardımcıya
@@ -85,11 +85,18 @@ otomatik toplamadığı, muhtemelen manuel/QA amaçlı) yardımcı script'ler va
 `_hardware_ai_image_qa.py`, `_hardware_cards_app_smoke.py` vb.
 
 ## Dokunulmaması gereken dizinler
-`.venv/`, `HuggingFaceEmbeddings/`, `rag_chroma_lms/` (gerçek Chroma veritabanı
-klasörü — `.gitignore`'daki `chroma_db/` adıyla eşleşmiyor, bkz. Faz 4),
-`outputs/`, `output/`, `tmp/`, `__pycache__/`, `context_files/`,
-`rag_documents/`. Bunlar üretilmiş/ikili veri veya bağımlılık dizinleri;
-kaynak kod gibi elle düzenlenmemeli.
+`.venv/`, `HuggingFaceEmbeddings/`, `rag_chroma/`, `rag_chroma_lms/`
+(gerçek Chroma veritabanı klasörleri — Faz 4'te `.gitignore` düzeltildi,
+artık gerçek isimlerle eşleşiyor ve git takibinden çıkarıldı), `outputs/`,
+`output/`, `tmp/`, `__pycache__/`, `context_files/`, `rag_documents/`.
+Bunlar üretilmiş/ikili veri veya bağımlılık dizinleri; kaynak kod gibi
+elle düzenlenmemeli.
+
+`HuggingFaceEmbeddings/` (~88 MB) sentence-transformers'ın
+`all-MiniLM-L6-v2` model ağırlıklarını içerir; HuggingFace'ten yeniden
+indirilebilir, bu yüzden Faz 4'te git takibinden çıkarıldı.
+`repomix-output.xml` (statik bağlam dökümü) da aynı şekilde git dışı
+bırakıldı; gerektiğinde `repomix` ile yeniden üretilir.
 
 ## Yapılandırma (`config.py`, ortam değişkenleriyle geçersiz kılınabilir)
 - `EHSIM_LM_MODEL` → `MODEL_NAME` (varsayılan `google_gemma-3-4b-it`)
