@@ -15,14 +15,19 @@ from file_handler import read_tid_document, save_html_file, open_html_file
 from data_processor import (process_tid_data_batch, process_tid_data, create_tree_structure, create_flat_test_data)
 from html_generation import generate_advanced_html
 from config import OUTPUT_HTML_FILE, USE_BATCH_PROCESSING
-from rag_handler import RAGHandler
 
 def main():
     """Main program function"""
     print("🚀 IEEE 15288 LLM İzlenebilirlik Sistemi Başlatılıyor...")
 
-    rag = RAGHandler()
-    rag._load_existing_database()
+    # Faz 9 performans duzeltmesi: burada ayrica bir RAGHandler() olusturup
+    # _load_existing_database() cagirmak (~2s+ suren bir LM Studio baglanti
+    # testi + Chroma yuklemesi) tamamen gereksizdi - olusturulan nesne bir
+    # daha HIC kullanilmiyordu. Gercek RAG erisimi (get_rag_enhanced_context
+    # -> paylasilan rag_handler singleton'i) zaten kendi ic tembel yukleme
+    # mantigina sahip (bkz. rag_handler.py: get_enhanced_context, ilk
+    # cagrildiginda veritabanini kendisi yukluyor). Bkz.
+    # PERFORMANS_RAPORU_BASLANGIC.md (Faz 2) ve tests/test_rag_handler_singleton.py.
 
     print("\n📖 TİD dosyası okunuyor...")
     tid_df = read_tid_document()
