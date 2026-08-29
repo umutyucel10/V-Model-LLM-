@@ -68,11 +68,13 @@ donanim_kartlari/
                            tek dosya olarak taşınamayacak kadar büyük, bkz. not)
   karsilastirma_ui.py  <- donanim_kartlari_karsilastirma_ui.py
 
-donanim_detayli_inceleme/
-  __init__.py
-  inceleme.py           <- donanim_detayli_inceleme.py
-  raporlama.py           <- donanim_detayli_inceleme_raporlama.py
-  ui.py                 <- donanim_detayli_inceleme_ui.py
+donanim_detayli/              [GÜNCELLEME — Faz 7'de "donanim_detayli_inceleme/"
+  __init__.py                  yerine "donanim_detayli/" adı kullanıldı: paket
+  inceleme.py           <- donanim_detayli_inceleme.py            adı ile
+  raporlama.py          <- donanim_detayli_inceleme_raporlama.py  shim dosyası
+  ui.py                 <- donanim_detayli_inceleme_ui.py         donanim_detayli_inceleme.py
+                                aynı isimde olamayacağı için (paket dizini ile
+                                modül dosyası çakışır) yeniden adlandırıldı.
 
 hardware_liste/            (eski/basit donanım listesi — donanim_kartlari
   __init__.py               ailesinden BAĞIMSIZ, ayrı bir özellik; Faz 6
