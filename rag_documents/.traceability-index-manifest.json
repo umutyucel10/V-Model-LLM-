@@ -12,6 +12,12 @@
       "indexed_at": "2026-08-16T21:09:31+03:00",
       "traceability_revision": 17
     },
+    "fritoz-testi-e70857a6": {
+      "document_path": "C:\\Users\\umuty\\OneDrive\\Masaüstü\\staj Ehsim duplicated\\AI-V-Model-Tool-for-System-Engineers\\rag_documents\\existing_requirements\\traceability-fritoz-testi-e70857a6.txt",
+      "fingerprint": "bf0db3784998851e6bdc357e500e8677819812be72059f580c8586e10a889931",
+      "indexed_at": "2026-08-31T10:00:24+03:00",
+      "traceability_revision": 4
+    },
     "kahve-6009bb34": {
       "document_path": "/Users/aliyigitkoc/Downloads/gemma/rag_documents/existing_requirements/traceability-kahve-6009bb34.txt",
       "fingerprint": "0880a9f9613eb5440d44a4c9e5b25af2b4d499a7fb5fc3b5d82afbbde3d7cbe9",
@@ -26,5 +32,5 @@
     }
   },
   "schema_version": "1.0",
-  "updated_at": "2026-08-28T10:08:59+03:00"
+  "updated_at": "2026-08-31T10:00:24+03:00"
 }

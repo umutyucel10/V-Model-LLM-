@@ -1,0 +1,951 @@
+PROJE: fritoz Testi
+PROJE_KIMLIGI: fritoz-testi-e70857a6
+IZLENEBILIRLIK_SURUMU: 4
+KAYNAK: Belge üretimindeki yapılandırılmış Python verisi
+
+ID: DOC-AST
+TUR: Teknik belge
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: Alt Sistem Testi (Subsystem Test)
+ACIKLAMA: 15 yapılandırılmış madde içerir.
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: 
+---
+ID: SST-001
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-001
+ACIKLAMA: Kablosuz Haberleşme Birimi'nden Ana Kontrol Sistemi'ne bilinen ağ kimlik bilgileri içeren bir veri paketi gönderilir ve bu verinin doğru formatta iletilip iletilmediği doğrulanır; GEÇTİ KRİTERİ: İletilen tüm alanlar (SSID, Şifre vb.) beklenen değerlerle eşleşmelidir
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Kablosuz Haberleşme Birimi'nden Ana Kontrol Sistemi'ne bilinen ağ kimlik bilgileri içeren bir veri paketi gönderilir ve bu verinin doğru formatta iletilip iletilmediği doğrulanır; GEÇTİ KRİTERİ: İletilen tüm alanlar (SSID, Şifre vb.) beklenen değerlerle eşleşmelidir
+---
+ID: SST-002
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-002
+ACIKLAMA: Gövde Tasarım Birimi'nin tezgah yüzeyi ile arasındaki boşluk, hassas bir kumpas yardımıyla ölçülür ve bu ölçümün 5 milimetre olması gerektiği kontrol edilir; GEÇTİ KRİTERİ: Ölçülen minimum boşluk değeri >= 5 mm
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Gövde Tasarım Birimi'nin tezgah yüzeyi ile arasındaki boşluk, hassas bir kumpas yardımıyla ölçülür ve bu ölçümün 5 milimetre olması gerektiği kontrol edilir; GEÇTİ KRİTERİ: Ölçülen minimum boşluk değeri >= 5 mm
+---
+ID: SST-003
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-003
+ACIKLAMA: Güç Yönetim Ünitesi'ne tam yük koşullarında sürekli olarak nominal çalışma akımı enjekte edilirken çıkış güç tüketimi ölçülür; GEÇTİ KRİTERİ: Ölçülen maksimum güç tüketimi 1800W değerini geçmemelidir
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Güç Yönetim Ünitesi'ne tam yük koşullarında sürekli olarak nominal çalışma akımı enjekte edilirken çıkış güç tüketimi ölçülür; GEÇTİ KRİTERİ: Ölçülen maksimum güç tüketimi 1800W değerini geçmemelidir
+---
+ID: SST-004
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-004
+ACIKLAMA: Taşıyıcı Platform Birimi'ne sepet dahil olarak bilinen ağırlıkta (örneğin 5.0 kg) yük bağlanır ve platformun bu yüke altında herhangi bir yapısal deformasyon veya aşırı titreşim gözlemlenip gözlenmediği kontrol edilir; GEÇTİ KRİTERİ: Platform, test edilen yük altındaki maksimum eğilme momentini belirtilen limitin üzerinde göstermemelidir
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Taşıyıcı Platform Birimi'ne sepet dahil olarak bilinen ağırlıkta (örneğin 5.0 kg) yük bağlanır ve platformun bu yüke altında herhangi bir yapısal deformasyon veya aşırı titreşim gözlemlenip gözlenmediği kontrol edilir; GEÇTİ KRİTERİ: Platform, test edilen yük altındaki maksimum eğilme momentini belirtilen limitin üzerinde göstermemelidir
+---
+ID: SST-005
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-005
+ACIKLAMA: Rezistans Ünitesi'ne nominal çalışma voltajı uygulanır ve çıkış terminallerindeki enerji aktarımının Soğutma Ünitesi girişine ulaşan sıcaklığın DSB °C aralığında kaldığı ölçülür. GEÇTİ KRİTERİ: Aktarılan ısı enerjisi, belirlenen minimum kapasiteye ulaşmalı ve bu süreçte çıkış sıcaklığı DSB °C'yi geçmemelidir
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Rezistans Ünitesi'ne nominal çalışma voltajı uygulanır ve çıkış terminallerindeki enerji aktarımının Soğutma Ünitesi girişine ulaşan sıcaklığın DSB °C aralığında kaldığı ölçülür. GEÇTİ KRİTERİ: Aktarılan ısı enerjisi, belirlenen minimum kapasiteye ulaşmalı ve bu süreçte çıkış sıcaklığı DSB °C'yi geçmemelidir
+---
+ID: SST-006
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-006
+ACIKLAMA: Dokunmatik arayüz üzerinden üç farklı önceden tanımlanmış pişirme profili seçilerek Gösterge Paneli Sistemi'ne aktarılması istenir ve bu verilerin sistemde doğru bir şekilde göründüğü doğrulanır; GEÇTİ KRİTERİ: Aktarılan tüm profillerin isimleri ve ayarları, beklenen değerlerle birebir eşleşmelidir
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Dokunmatik arayüz üzerinden üç farklı önceden tanımlanmış pişirme profili seçilerek Gösterge Paneli Sistemi'ne aktarılması istenir ve bu verilerin sistemde doğru bir şekilde göründüğü doğrulanır; GEÇTİ KRİTERİ: Aktarılan tüm profillerin isimleri ve ayarları, beklenen değerlerle birebir eşleşmelidir
+---
+ID: SST-007
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-007
+ACIKLAMA: Üniteye aşırı akım yüklenmesi simüle edilirken, güç yönetim ünitesinin çıkış hatlarındaki voltaj düşüşünün herhangi bir bileşende 10% üzerinde olmayıp, tüm hatların birbirinden elektriksel olarak ayrıldığı gözlemlenir. GEÇTİ KRİTERİ: Tüm izole edilmiş hatlarda maksimum voltaj düşüşü %10'dan az olmalı ve arızalı hatlar diğer hatları etkilememelidir
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Üniteye aşırı akım yüklenmesi simüle edilirken, güç yönetim ünitesinin çıkış hatlarındaki voltaj düşüşünün herhangi bir bileşende 10% üzerinde olmayıp, tüm hatların birbirinden elektriksel olarak ayrıldığı gözlemlenir. GEÇTİ KRİTERİ: Tüm izole edilmiş hatlarda maksimum voltaj düşüşü %10'dan az olmalı ve arızalı hatlar diğer hatları etkilememelidir
+---
+ID: SST-008
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-008
+ACIKLAMA: Ölçülen prototipin dış boyutları dijital kumpas ile ölçülürken 30x25x10 cm sınırları içinde kalıp kalmadığı kontrol edilir ve yüzey pürüzlülüğü profilometre ile ölçülerek DSB mikron seviyesinde temizlenebilir olduğu doğrulanır. GEÇTİ KRİTERİ: Boyutlar en fazla 30x25x10 cm olmalı ve yüzey pürüzlülüğü değeri maksimum DSB mikron değerini aşmamalıdır
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Ölçülen prototipin dış boyutları dijital kumpas ile ölçülürken 30x25x10 cm sınırları içinde kalıp kalmadığı kontrol edilir ve yüzey pürüzlülüğü profilometre ile ölçülerek DSB mikron seviyesinde temizlenebilir olduğu doğrulanır. GEÇTİ KRİTERİ: Boyutlar en fazla 30x25x10 cm olmalı ve yüzey pürüzlülüğü değeri maksimum DSB mikron değerini aşmamalıdır
+---
+ID: SST-009
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-009
+ACIKLAMA: Hizalama Kontrol Birimi'nin iç hazne sıcaklığına bilinen farklı değerlerde (örneğin 20°C, 45°C ve 70°C) bir referans sensörü bağlanır; bu ölçülen verinin Ana Kontrol Sistemi'ne I2C arayüzü üzerinden iletilmesi sağlanır. GEÇTİ KRİTERİ: İletilen sıcaklık değerleri, girilen referans değere karşı en fazla 0.5°C sapma göstermelidir ve veri transferi kesintisiz olmalıdır
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Hizalama Kontrol Birimi'nin iç hazne sıcaklığına bilinen farklı değerlerde (örneğin 20°C, 45°C ve 70°C) bir referans sensörü bağlanır; bu ölçülen verinin Ana Kontrol Sistemi'ne I2C arayüzü üzerinden iletilmesi sağlanır. GEÇTİ KRİTERİ: İletilen sıcaklık değerleri, girilen referans değere karşı en fazla 0.5°C sapma göstermelidir ve veri transferi kesintisiz olmalıdır
+---
+ID: SST-010
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-010
+ACIKLAMA: Kullanıcı Arayüzü Birimi'nden Ana Kontrol Sistemi'ne bilinen sıcaklık ve zaman değerleri içeren bir veri paketi gönderilir; bu verilerin Seri Haberleşme Arayüzü üzerinden başarılı bir şekilde iletildiği doğrulanır. GEÇTİ KRİTERİ: Gönderilen tüm parametreler (sıcaklık, zaman) Ana Kontrol Sistemi tarafından hatasız alınmış olmalıdır
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Kullanıcı Arayüzü Birimi'nden Ana Kontrol Sistemi'ne bilinen sıcaklık ve zaman değerleri içeren bir veri paketi gönderilir; bu verilerin Seri Haberleşme Arayüzü üzerinden başarılı bir şekilde iletildiği doğrulanır. GEÇTİ KRİTERİ: Gönderilen tüm parametreler (sıcaklık, zaman) Ana Kontrol Sistemi tarafından hatasız alınmış olmalıdır
+---
+ID: SST-011
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-011
+ACIKLAMA: Uzaktan Erişim Birimi'nden Ana Kontrol Sistemi'ne pişirme tamamlanması sinyali gönderilirken, bu verinin MQTT protokolü üzerinden başarıyla yayınlandığı ve alıcı sistemde tespit edildiği ölçülür. GEÇTİ KRİTERİ: Veri paketi en az bir kez ve doğru formatta alınmış olmalıdır
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Uzaktan Erişim Birimi'nden Ana Kontrol Sistemi'ne pişirme tamamlanması sinyali gönderilirken, bu verinin MQTT protokolü üzerinden başarıyla yayınlandığı ve alıcı sistemde tespit edildiği ölçülür. GEÇTİ KRİTERİ: Veri paketi en az bir kez ve doğru formatta alınmış olmalıdır
+---
+ID: SST-012
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-012
+ACIKLAMA: Mobil uygulama arayüzünden Ana Kontrol Sistemi'ne gönderilen bilinen kontrol komutları için Kablosuz Haberleşme Birimi üzerinden başarılı bir bağlantı kurulup kurulmadığı ve komutun eksiksiz iletilip iletilmediği gözlemlenir. GEÇTİ KRİTERİ: Gönderilen tüm test komutlarının Ana Kontrol Sistemi tarafından doğru şekilde algılanması ve işlenmesi sağlanır
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Mobil uygulama arayüzünden Ana Kontrol Sistemi'ne gönderilen bilinen kontrol komutları için Kablosuz Haberleşme Birimi üzerinden başarılı bir bağlantı kurulup kurulmadığı ve komutun eksiksiz iletilip iletilmediği gözlemlenir. GEÇTİ KRİTERİ: Gönderilen tüm test komutlarının Ana Kontrol Sistemi tarafından doğru şekilde algılanması ve işlenmesi sağlanır
+---
+ID: SST-013
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-013
+ACIKLAMA: Örnek ışık kaynağı ile ürün yüzeyi arasında belirli açılardan (örneğin 30 derece, 45 derece ve 60 derece) farklı yoğunluklarda aydınlatma sağlanır; bu aydınlatma altında çekilen fotoğrafların renk sapması analizi yapılır. GEÇTİ KRİTERİ: Renk sapması ölçümü, belirlenen standart tolerans aralığı içinde kalmalıdır
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Örnek ışık kaynağı ile ürün yüzeyi arasında belirli açılardan (örneğin 30 derece, 45 derece ve 60 derece) farklı yoğunluklarda aydınlatma sağlanır; bu aydınlatma altında çekilen fotoğrafların renk sapması analizi yapılır. GEÇTİ KRİTERİ: Renk sapması ölçümü, belirlenen standart tolerans aralığı içinde kalmalıdır
+---
+ID: SST-014
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-014
+ACIKLAMA: Pişirme Profili Yönetimi Birimine bilinen geçerli parametreler (örneğin sıcaklık 150 derece ve süre 20 dakika) yüklenir ve bu verilerin Ana Kontrol Sistemi'nin beklenen seri iletişim protokolü üzerinden hatasız bir şekilde iletildiği doğrulanır. GEÇTİ KRİTERİ: Tüm parametreler eksiksiz ve doğru formatta iletilmelidir
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Pişirme Profili Yönetimi Birimine bilinen geçerli parametreler (örneğin sıcaklık 150 derece ve süre 20 dakika) yüklenir ve bu verilerin Ana Kontrol Sistemi'nin beklenen seri iletişim protokolü üzerinden hatasız bir şekilde iletildiği doğrulanır. GEÇTİ KRİTERİ: Tüm parametreler eksiksiz ve doğru formatta iletilmelidir
+---
+ID: SST-015
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-015
+ACIKLAMA: Taşıyıcı Sistem Birimi'ne sepet dahil yüklenerek ağırlık ölçümü yapılır; ölçülen toplam kütle 5.0 kg ile 6.0 kg arasında olmalıdır. GEÇTİ KRİTERİ: Ölçülen kütle >= 5.0 kg ve Ölçülen kütle <= 6.0 kg
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Taşıyıcı Sistem Birimi'ne sepet dahil yüklenerek ağırlık ölçümü yapılır; ölçülen toplam kütle 5.0 kg ile 6.0 kg arasında olmalıdır. GEÇTİ KRİTERİ: Ölçülen kütle >= 5.0 kg ve Ölçülen kütle <= 6.0 kg
+---
+ID: AT-001
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-001
+ACIKLAMA: Belirtilen Wi-Fi ağına bağlanma girişimi yapıldığında, uygulama arayüzünde bağlantı durumu 'Bağlandı' olarak güncellenmelidir
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Belirtilen Wi-Fi ağına bağlanma girişimi yapıldığında, uygulama arayüzünde bağlantı durumu 'Bağlandı' olarak güncellenmelidir
+---
+ID: AT-002
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-002
+ACIKLAMA: Tezgah üzerine yerleştirildiğinde ürünün çevreleyen yüzeylerle görsel bir uyum sergilediği doğrulanmalıdır
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Tezgah üzerine yerleştirildiğinde ürünün çevreleyen yüzeylerle görsel bir uyum sergilediği doğrulanmalıdır
+---
+ID: AT-003
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-003
+ACIKLAMA: Rezistans tam yükte çalışırken ölçülen güç tüketimi 1800W'ı aşmamalıdır
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Rezistans tam yükte çalışırken ölçülen güç tüketimi 1800W'ı aşmamalıdır
+---
+ID: AT-004
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-004
+ACIKLAMA: Sepet dahil toplam ağırlık ölçüldüğünde 5.5 kg'a yakın bir değerde olması doğrulanmalıdır
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Sepet dahil toplam ağırlık ölçüldüğünde 5.5 kg'a yakın bir değerde olması doğrulanmalıdır
+---
+ID: AT-005
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-005
+ACIKLAMA: Belirlenen bir pişirme döngüsünde, sistemin içerisindeki rezistans ve fan kombinasyonu ile ortam sıcaklığının en az 10 derece artırılarak homojen bir ısı dağılımı sağlanması doğrulanmalıdır
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Belirlenen bir pişirme döngüsünde, sistemin içerisindeki rezistans ve fan kombinasyonu ile ortam sıcaklığının en az 10 derece artırılarak homojen bir ısı dağılımı sağlanması doğrulanmalıdır
+---
+ID: AT-006
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-006
+ACIKLAMA: Hazır pişirme profillerinin seçilmesiyle, sistemin kullanıcıya en az 3 adımda ilgili ayarları sunması doğrulanmalıdır
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Hazır pişirme profillerinin seçilmesiyle, sistemin kullanıcıya en az 3 adımda ilgili ayarları sunması doğrulanmalıdır
+---
+ID: AT-007
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-007
+ACIKLAMA: Sistem, belirlenen maksimum çalışma sıcaklığı olan 85 derece Celsius altında sürekli operasyonel kalabilmelidir
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Sistem, belirlenen maksimum çalışma sıcaklığı olan 85 derece Celsius altında sürekli operasyonel kalabilmelidir
+---
+ID: AT-008
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-008
+ACIKLAMA: Cihazın yüzeyleri, standart temizlik bezleriyle silindiğinde herhangi bir yapışkan kalıntı bırakmaması ve tüm gövde parçalarının kolayca ayrılıp temizlenebilir olması doğrulanmalıdır
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Cihazın yüzeyleri, standart temizlik bezleriyle silindiğinde herhangi bir yapışkan kalıntı bırakmaması ve tüm gövde parçalarının kolayca ayrılıp temizlenebilir olması doğrulanmalıdır
+---
+ID: AT-009
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-009
+ACIKLAMA: Belirlenen minimum ve maksimum sıcaklık değerleri arasında sistemin stabil bir şekilde kalabildiği doğrulanmalıdır
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Belirlenen minimum ve maksimum sıcaklık değerleri arasında sistemin stabil bir şekilde kalabildiği doğrulanmalıdır
+---
+ID: AT-010
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-010
+ACIKLAMA: Kullanıcı arayüzünden manuel olarak belirlenen sıcaklık ve zaman değerlerinin sistem tarafından kabul edildiği doğrulanmalıdır
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Kullanıcı arayüzünden manuel olarak belirlenen sıcaklık ve zaman değerlerinin sistem tarafından kabul edildiği doğrulanmalıdır
+---
+ID: AT-011
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-011
+ACIKLAMA: IoT üzerinden gönderilen uzaktan kontrol komutlarının sistem tarafından anında algılanıp cihaza iletildiği doğrulanmalıdır
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: IoT üzerinden gönderilen uzaktan kontrol komutlarının sistem tarafından anında algılanıp cihaza iletildiği doğrulanmalıdır
+---
+ID: DOC-KMTD
+TUR: Teknik belge
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: Kabul Testi (Acceptance Test)
+ACIKLAMA: 11 yapılandırılmış madde içerir.
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: 
+---
+ID: DOC-SGD
+TUR: Teknik belge
+V_MODEL: Sistem gereksinimi
+BASLIK: Sistem Gereksinimi (System Requirements)
+ACIKLAMA: 15 yapılandırılmış madde içerir.
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: 
+---
+ID: SR-001
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-001
+ACIKLAMA: Sistem, evdeki Wi-Fi ağına bağlanarak mobil uygulama üzerinden uzaktan kontrol edilebilmelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, evdeki Wi-Fi ağına bağlanarak mobil uygulama üzerinden uzaktan kontrol edilebilmelidir
+---
+ID: SR-002
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-002
+ACIKLAMA: Ürün, mutfak tezgahında konumlandırılmaya uygun estetik ve derli toplu bir tasarıma sahip olmalıdır
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Ürün, mutfak tezgahında konumlandırılmaya uygun estetik ve derli toplu bir tasarıma sahip olmalıdır
+---
+ID: SR-003
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-003
+ACIKLAMA: Sistem rezistans tam yükte çalışırken maksimum güç tüketimini 1800W'ı geçmeyecek şekilde sınırlamalıdır
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem rezistans tam yükte çalışırken maksimum güç tüketimini 1800W'ı geçmeyecek şekilde sınırlamalıdır
+---
+ID: SR-004
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-004
+ACIKLAMA: Sistem, sepet dahil toplam ağırlığı 5.5 kg civarında tutabilmelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, sepet dahil toplam ağırlığı 5.5 kg civarında tutabilmelidir
+---
+ID: SR-005
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-005
+ACIKLAMA: Sistem rezistans ve güçlü fan kullanarak sıcak havayı sirküle ederek pişirme işlemini gerçekleştirebilmelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem rezistans ve güçlü fan kullanarak sıcak havayı sirküle ederek pişirme işlemini gerçekleştirebilmelidir
+---
+ID: SR-006
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-006
+ACIKLAMA: Sistem, son kullanıcıya önceden tanımlanmış pişirme profillerini sunarak kullanım kolaylığı sağlamalıdır
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, son kullanıcıya önceden tanımlanmış pişirme profillerini sunarak kullanım kolaylığı sağlamalıdır
+---
+ID: SR-007
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-007
+ACIKLAMA: Sistem, yüksek sıcaklıklarda çalışırken yanma ve yangın risklerini önlemek için donanımsal güvenlik önlemlerine sahip olmalıdır
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, yüksek sıcaklıklarda çalışırken yanma ve yangın risklerini önlemek için donanımsal güvenlik önlemlerine sahip olmalıdır
+---
+ID: SR-008
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-008
+ACIKLAMA: Sistem, ev içi kullanıma uygun estetik ve temizlenebilir bir formda olmalıdır
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, ev içi kullanıma uygun estetik ve temizlenebilir bir formda olmalıdır
+---
+ID: SR-009
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-009
+ACIKLAMA: Sistem iç hazne sıcaklığını 80°C ile 220°C arasında hassas bir şekilde kontrol edebilmelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem iç hazne sıcaklığını 80°C ile 220°C arasında hassas bir şekilde kontrol edebilmelidir
+---
+ID: SR-010
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-010
+ACIKLAMA: Sistem, kullanıcının belirlediği sıcaklık ve zaman ayarlarını kabul edip bu parametrelerle çalışma yapabilmelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, kullanıcının belirlediği sıcaklık ve zaman ayarlarını kabul edip bu parametrelerle çalışma yapabilmelidir
+---
+ID: SR-011
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-011
+ACIKLAMA: Sistem, IoT üzerinden uzaktan kontrol edilebilmeli ve pişirme tamamlandığında kullanıcıya bildirim gönderebilmelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, IoT üzerinden uzaktan kontrol edilebilmeli ve pişirme tamamlandığında kullanıcıya bildirim gönderebilmelidir
+---
+ID: SR-012
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-012
+ACIKLAMA: Sistem, Wi-Fi ağına bağlanarak mobil uygulama üzerinden uzaktan kontrol edilebilmelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, Wi-Fi ağına bağlanarak mobil uygulama üzerinden uzaktan kontrol edilebilmelidir
+---
+ID: SR-013
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-013
+ACIKLAMA: Sistem, ürünün mutfak tezgahında konumlandırılması için gerekli olan estetik ve derli toplu bir tasarıma sahip olmalıdır
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, ürünün mutfak tezgahında konumlandırılması için gerekli olan estetik ve derli toplu bir tasarıma sahip olmalıdır
+---
+ID: SR-014
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-014
+ACIKLAMA: Sistem, kullanıcı tarafından belirlenen ve sistemin desteklediği pişirme profillerini sunabilmelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, kullanıcı tarafından belirlenen ve sistemin desteklediği pişirme profillerini sunabilmelidir
+---
+ID: SR-015
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-015
+ACIKLAMA: Sistem, kullanıcıya sepet dahil 5.5 kg civarında bir ağırlıkta olmalıdır
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, kullanıcıya sepet dahil 5.5 kg civarında bir ağırlıkta olmalıdır
+---
+ID: DOC-SITET
+TUR: Teknik belge
+V_MODEL: Sistem doğrulaması
+BASLIK: Sistem Testi (System Test)
+ACIKLAMA: 15 yapılandırılmış madde içerir.
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: 
+---
+ID: SITET-001
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-001
+ACIKLAMA: Mobil uygulama üzerinden sisteme bağlanılırken, sistemin belirlenen Wi-Fi ağına başarılı bir şekilde eşleştiği doğrulanmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Mobil uygulama üzerinden sisteme bağlanılırken, sistemin belirlenen Wi-Fi ağına başarılı bir şekilde eşleştiği doğrulanmalıdır
+---
+ID: SITET-002
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-002
+ACIKLAMA: Tezgah üzerinde konumlandırılan ürünün görsel incelemesi yapıldığında, belirlenen estetik standartlara uygun ve derli toplu bir görünüm sergilediği doğrulanmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Tezgah üzerinde konumlandırılan ürünün görsel incelemesi yapıldığında, belirlenen estetik standartlara uygun ve derli toplu bir görünüm sergilediği doğrulanmalıdır
+---
+ID: SITET-003
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-003
+ACIKLAMA: Sistem rezistans tam yükte çalışırken ölçülen güç tüketiminin 1800W değerini aşmadığı doğrulanmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistem rezistans tam yükte çalışırken ölçülen güç tüketiminin 1800W değerini aşmadığı doğrulanmalıdır
+---
+ID: SITET-004
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-004
+ACIKLAMA: Sepete farklı ağırlıklarda eşyalar eklenerek sistemin sepet dahil toplam ağırlığı 5.5 kg civarında tutabildiği doğrulanmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sepete farklı ağırlıklarda eşyalar eklenerek sistemin sepet dahil toplam ağırlığı 5.5 kg civarında tutabildiği doğrulanmalıdır
+---
+ID: SITET-005
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-005
+ACIKLAMA: Sistem, rezistans ve fanlar eş zamanlı çalıştırıldığında belirlenen minimum hava akış hızını sağlayarak pişirme alanındaki sıcak havayı sürekli sirküle edebilmelidir
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistem, rezistans ve fanlar eş zamanlı çalıştırıldığında belirlenen minimum hava akış hızını sağlayarak pişirme alanındaki sıcak havayı sürekli sirküle edebilmelidir
+---
+ID: SITET-006
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-006
+ACIKLAMA: Kullanıcı arayüzü üzerinden seçilen her bir önceden tanımlanmış pişirme profili, sistem tarafından doğru parametrelerle eşleştirilerek gösterilebilmelidir
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Kullanıcı arayüzü üzerinden seçilen her bir önceden tanımlanmış pişirme profili, sistem tarafından doğru parametrelerle eşleştirilerek gösterilebilmelidir
+---
+ID: SITET-007
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-007
+ACIKLAMA: Sistem, belirlenen maksimum çalışma sıcaklığı olan 70 derece Celsius'ta operasyon sırasında yanma ve yangın riskini oluşturmayacak şekilde donanımsal güvenlik önlemlerini aktif olarak göstermelidir
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistem, belirlenen maksimum çalışma sıcaklığı olan 70 derece Celsius'ta operasyon sırasında yanma ve yangın riskini oluşturmayacak şekilde donanımsal güvenlik önlemlerini aktif olarak göstermelidir
+---
+ID: SITET-008
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-008
+ACIKLAMA: Cihazın belirlenen yüzeylere temas eden tüm kısımları ile standart temizlik malzemeleri kullanılarak kolayca silinebilir ve kurulabilir olmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Cihazın belirlenen yüzeylere temas eden tüm kısımları ile standart temizlik malzemeleri kullanılarak kolayca silinebilir ve kurulabilir olmalıdır
+---
+ID: SITET-009
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-009
+ACIKLAMA: Sistem, iç hazne sıcaklığını 80°C ile 220°C aralığında tuttuğunda bu sınırların dışında bir sapma gözlemlenmemelidir
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistem, iç hazne sıcaklığını 80°C ile 220°C aralığında tuttuğunda bu sınırların dışında bir sapma gözlemlenmemelidir
+---
+ID: SITET-010
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-010
+ACIKLAMA: Kullanıcı arayüzünden girilen farklı sıcaklık ve zaman değerleri ile sistemin belirlenen parametrelerde stabil bir şekilde çalışmaya devam ettiği doğrulanmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Kullanıcı arayüzünden girilen farklı sıcaklık ve zaman değerleri ile sistemin belirlenen parametrelerde stabil bir şekilde çalışmaya devam ettiği doğrulanmalıdır
+---
+ID: SITET-011
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-011
+ACIKLAMA: IoT üzerinden uzaktan komut gönderildiğinde sistemin pişirme tamamlanma durumunu algılayıp kullanıcıya bildirim göndermesi gerektiği doğrulanmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: IoT üzerinden uzaktan komut gönderildiğinde sistemin pişirme tamamlanma durumunu algılayıp kullanıcıya bildirim göndermesi gerektiği doğrulanmalıdır
+---
+ID: SITET-012
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-012
+ACIKLAMA: Mobil uygulama üzerinden sistemin belirlenen bir Wi-Fi ağına bağlanarak uzaktan kontrol edilebildiği doğrulanmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Mobil uygulama üzerinden sistemin belirlenen bir Wi-Fi ağına bağlanarak uzaktan kontrol edilebildiği doğrulanmalıdır
+---
+ID: SITET-013
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-013
+ACIKLAMA: Ürün tezgah üzerinde konumlandırıldığında, estetik ve derli toplu bir görünüm sergilemelidir
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Ürün tezgah üzerinde konumlandırıldığında, estetik ve derli toplu bir görünüm sergilemelidir
+---
+ID: SITET-014
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-014
+ACIKLAMA: Kullanıcı tarafından seçilen ve sistemin desteklediği tüm pişirme profillerinin arayüzde listelenip seçilebildiği doğrulanmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Kullanıcı tarafından seçilen ve sistemin desteklediği tüm pişirme profillerinin arayüzde listelenip seçilebildiği doğrulanmalıdır
+---
+ID: SITET-015
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-015
+ACIKLAMA: Sepete 5.5 kg ağırlığındaki bilinen bir nesne eklendiğinde sistemin toplam ağırlığı 5.5 kg civarında olmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sepete 5.5 kg ağırlığındaki bilinen bir nesne eklendiğinde sistemin toplam ağırlığı 5.5 kg civarında olmalıdır
+---
+ID: DOC-STT
+TUR: Teknik belge
+V_MODEL: Alt sistem gereksinimi
+BASLIK: Alt Sistem Gereksinimleri (Subsystem Requirements)
+ACIKLAMA: 15 yapılandırılmış madde içerir.
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: 
+---
+ID: SSR-001
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-001
+ACIKLAMA: Kablosuz Haberleşme Birimi, Wi-Fi protokolü üzerinden ağ kimlik bilgilerini Ana Kontrol Sistemi'ne iletmelidir
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Kablosuz Haberleşme Birimi, Wi-Fi protokolü üzerinden ağ kimlik bilgilerini Ana Kontrol Sistemi'ne iletmelidir
+---
+ID: SSR-002
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-002
+ACIKLAMA: Gövde Tasarım Birimi, estetik ve derli toplu bir tasarıma sahip olmalı ve tezgah yüzeyi ile en az 5 milimetre boşluk bırakmalıdır
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Gövde Tasarım Birimi, estetik ve derli toplu bir tasarıma sahip olmalı ve tezgah yüzeyi ile en az 5 milimetre boşluk bırakmalıdır
+---
+ID: SSR-003
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-003
+ACIKLAMA: Güç Yönetim Ünitesi, rezistans tam yükte çalışırken maksimum güç tüketimini 1800W'ı geçmeyecek şekilde sınırlamalıdır
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Güç Yönetim Ünitesi, rezistans tam yükte çalışırken maksimum güç tüketimini 1800W'ı geçmeyecek şekilde sınırlamalıdır
+---
+ID: SSR-004
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-004
+ACIKLAMA: Taşıyıcı Platform Birimi, sepet dahil toplam ağırlığı 5.5 kilogram civarında tutabilmelidir
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Taşıyıcı Platform Birimi, sepet dahil toplam ağırlığı 5.5 kilogram civarında tutabilmelidir
+---
+ID: SSR-005
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-005
+ACIKLAMA: Rezistans Ünitesi, pişirme işlemi için gerekli ısı enerjisini sağlayabilmeli ve bu enerjiyi Soğutma Ünitesi'ne aktarmalıdır
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Rezistans Ünitesi, pişirme işlemi için gerekli ısı enerjisini sağlayabilmeli ve bu enerjiyi Soğutma Ünitesi'ne aktarmalıdır
+---
+ID: SSR-006
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-006
+ACIKLAMA: Kullanıcı Arayüzü Birimi, önceden tanımlanmış pişirme profillerini Gösterge Paneli Sistemi'ne dokunmatik arayüz üzerinden aktarmalıdır
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Kullanıcı Arayüzü Birimi, önceden tanımlanmış pişirme profillerini Gösterge Paneli Sistemi'ne dokunmatik arayüz üzerinden aktarmalıdır
+---
+ID: SSR-007
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-007
+ACIKLAMA: Güç Yönetimi Ünitesi, sistemin tüm bileşenlerine yangın riskini önleyecek şekilde izole edilmiş güç hatları sağlamalıdır
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Güç Yönetimi Ünitesi, sistemin tüm bileşenlerine yangın riskini önleyecek şekilde izole edilmiş güç hatları sağlamalıdır
+---
+ID: SSR-008
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-008
+ACIKLAMA: Kasa Yapısı Birimi, fiziksel boyutları en fazla 30x25x10 cm olan ve yüzey pürüzlülüğü DSB mikron seviyesinde temizlenebilir bir formda olmalıdır
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Kasa Yapısı Birimi, fiziksel boyutları en fazla 30x25x10 cm olan ve yüzey pürüzlülüğü DSB mikron seviyesinde temizlenebilir bir formda olmalıdır
+---
+ID: SSR-009
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-009
+ACIKLAMA: Hizalama Kontrol Birimi, iç hazne sıcaklığını en az 50°C hassasiyetinde ölçmeli ve bu veriyi Ana Kontrol Sistemi'ne I2C arayüzü üzerinden iletmelidir
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Hizalama Kontrol Birimi, iç hazne sıcaklığını en az 50°C hassasiyetinde ölçmeli ve bu veriyi Ana Kontrol Sistemi'ne I2C arayüzü üzerinden iletmelidir
+---
+ID: SSR-010
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-010
+ACIKLAMA: Kullanıcı Arayüzü Birimi, belirlenen sıcaklık ve zaman parametrelerini Ana Kontrol Sistemi'ne Seri Haberleşme Arayüzü üzerinden iletmelidir
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Kullanıcı Arayüzü Birimi, belirlenen sıcaklık ve zaman parametrelerini Ana Kontrol Sistemi'ne Seri Haberleşme Arayüzü üzerinden iletmelidir
+---
+ID: SSR-011
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-011
+ACIKLAMA: Uzaktan Erişim Birimi, pişirme tamamlandığında kullanıcıya bildirim verisini Ana Kontrol Sistemi'ne MQTT protokolü üzerinden iletmelidir
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Uzaktan Erişim Birimi, pişirme tamamlandığında kullanıcıya bildirim verisini Ana Kontrol Sistemi'ne MQTT protokolü üzerinden iletmelidir
+---
+ID: SSR-012
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-012
+ACIKLAMA: Kablosuz Haberleşme Birimi, Wi-Fi protokolü üzerinden mobil uygulama arayüzünden gelen kontrol komutlarını Ana Kontrol Sistemi'ne iletmelidir
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Kablosuz Haberleşme Birimi, Wi-Fi protokolü üzerinden mobil uygulama arayüzünden gelen kontrol komutlarını Ana Kontrol Sistemi'ne iletmelidir
+---
+ID: SSR-013
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-013
+ACIKLAMA: Görsel Tasarım Birimi, ürünün mutfak tezgahına entegrasyonu için belirlenen estetik standartlara uygun bir yüzey bitişi sağlamalıdır
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Görsel Tasarım Birimi, ürünün mutfak tezgahına entegrasyonu için belirlenen estetik standartlara uygun bir yüzey bitişi sağlamalıdır
+---
+ID: SSR-014
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-014
+ACIKLAMA: Pişirme Profili Yönetimi Birimi, kullanıcıdan alınan pişirme profili parametrelerini Ana Kontrol Sistemi'ne seri iletişim arayüzü üzerinden iletmelidir
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Pişirme Profili Yönetimi Birimi, kullanıcıdan alınan pişirme profili parametrelerini Ana Kontrol Sistemi'ne seri iletişim arayüzü üzerinden iletmelidir
+---
+ID: SSR-015
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-015
+ACIKLAMA: Taşıyıcı Sistem Birimi, sepet dahil toplam ağırlığı en az 5.0 kg ve en fazla 6.0 kg aralığında sağlamalıdır
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Taşıyıcı Sistem Birimi, sepet dahil toplam ağırlığı en az 5.0 kg ve en fazla 6.0 kg aralığında sağlamalıdır
+---
+ID: DOC-TID
+TUR: Teknik belge
+V_MODEL: Müşteri gereksinimi
+BASLIK: Kullanıcı Gereksinimi (User Requirement)
+ACIKLAMA: 11 yapılandırılmış madde içerir.
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: 
+---
+ID: UR-001
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-001
+ACIKLAMA: Sistem, evdeki Wi-Fi ağına bağlanarak mobil uygulama üzerinden uzaktan kontrol edilebilmelidir
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem, evdeki Wi-Fi ağına bağlanarak mobil uygulama üzerinden uzaktan kontrol edilebilmelidir
+---
+ID: UR-002
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-002
+ACIKLAMA: Ürün, mutfak tezgahında konumlandırılmaya uygun estetik ve derli toplu bir tasarıma sahip olmalıdır
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Ürün, mutfak tezgahında konumlandırılmaya uygun estetik ve derli toplu bir tasarıma sahip olmalıdır
+---
+ID: UR-003
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-003
+ACIKLAMA: Sistemin maksimum güç tüketimi rezistans tam yükte çalışırken 1800W'ı geçmemelidir
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistemin maksimum güç tüketimi rezistans tam yükte çalışırken 1800W'ı geçmemelidir
+---
+ID: UR-004
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-004
+ACIKLAMA: Ağırlığı sepet dahil 5.5 kg civarında tutulmalıdır
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Ağırlığı sepet dahil 5.5 kg civarında tutulmalıdır
+---
+ID: UR-005
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-005
+ACIKLAMA: Sistem, içerisindeki rezistans ve güçlü fan yardımıyla sıcak havayı hızla sirküle ederek pişirme işlemini gerçekleştirmelidir
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem, içerisindeki rezistans ve güçlü fan yardımıyla sıcak havayı hızla sirküle ederek pişirme işlemini gerçekleştirmelidir
+---
+ID: UR-006
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-006
+ACIKLAMA: Sistem, son kullanıcıya hazır pişirme profilleri sunarak kolay kullanım sağlamalıdır
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem, son kullanıcıya hazır pişirme profilleri sunarak kolay kullanım sağlamalıdır
+---
+ID: UR-007
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-007
+ACIKLAMA: Sistem, yüksek sıcaklıklarda çalışacağı için yanma ve yangın risklerine karşı donanımsal güvenlik önlemlerine sahip olmalıdır
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem, yüksek sıcaklıklarda çalışacağı için yanma ve yangın risklerine karşı donanımsal güvenlik önlemlerine sahip olmalıdır
+---
+ID: UR-008
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-008
+ACIKLAMA: Sistem, ev içi kullanıma uygun estetik ve temizlenebilir bir formda olmalıdır
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem, ev içi kullanıma uygun estetik ve temizlenebilir bir formda olmalıdır
+---
+ID: UR-009
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-009
+ACIKLAMA: Sistem, iç hazne sıcaklığını 80°C ile 220°C arasında hassas bir şekilde kontrol edebilmelidir
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem, iç hazne sıcaklığını 80°C ile 220°C arasında hassas bir şekilde kontrol edebilmelidir
+---
+ID: UR-010
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-010
+ACIKLAMA: Kullanıcı, ön tanımlı modların dışında manuel olarak sıcaklık ve zaman ayarı yapabilmelidir
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Kullanıcı, ön tanımlı modların dışında manuel olarak sıcaklık ve zaman ayarı yapabilmelidir
+---
+ID: UR-011
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-011
+ACIKLAMA: Sistem, IoT üzerinden uzaktan kontrol edilebilmeli ve pişirme bildirimleri gönderebilmelidir
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem, IoT üzerinden uzaktan kontrol edilebilmeli ve pişirme bildirimleri gönderebilmelidir
+---
+ILISKILER
+SR-001 -> derives_from -> UR-001 | Kesin
+SR-002 -> derives_from -> UR-002 | Kesin
+SR-003 -> derives_from -> UR-003 | Kesin
+SR-004 -> derives_from -> UR-004 | Kesin
+SR-005 -> derives_from -> UR-005 | Kesin
+SR-006 -> derives_from -> UR-006 | Kesin
+SR-007 -> derives_from -> UR-007 | Kesin
+SR-008 -> derives_from -> UR-008 | Kesin
+SR-009 -> derives_from -> UR-009 | Kesin
+SR-010 -> derives_from -> UR-010 | Kesin
+SR-011 -> derives_from -> UR-011 | Kesin
+SR-012 -> derives_from -> UR-001 | Kesin
+SR-013 -> derives_from -> UR-002 | Kesin
+SR-014 -> derives_from -> UR-003 | Kesin
+SR-015 -> derives_from -> UR-004 | Kesin
+SSR-001 -> derives_from -> SR-001 | Kesin
+SSR-002 -> derives_from -> SR-002 | Kesin
+SSR-003 -> derives_from -> SR-003 | Kesin
+SSR-004 -> derives_from -> SR-004 | Kesin
+SSR-005 -> derives_from -> SR-005 | Kesin
+SSR-006 -> derives_from -> SR-006 | Kesin
+SSR-007 -> derives_from -> SR-007 | Kesin
+SSR-008 -> derives_from -> SR-008 | Kesin
+SSR-009 -> derives_from -> SR-009 | Kesin
+SSR-010 -> derives_from -> SR-010 | Kesin
+SSR-011 -> derives_from -> SR-011 | Kesin
+SSR-012 -> derives_from -> SR-012 | Kesin
+SSR-013 -> derives_from -> SR-013 | Kesin
+SSR-014 -> derives_from -> SR-014 | Kesin
+SSR-015 -> derives_from -> SR-015 | Kesin
+AT-001 -> documented_in -> DOC-KMTD | Kesin
+AT-002 -> documented_in -> DOC-KMTD | Kesin
+AT-003 -> documented_in -> DOC-KMTD | Kesin
+AT-004 -> documented_in -> DOC-KMTD | Kesin
+AT-005 -> documented_in -> DOC-KMTD | Kesin
+AT-006 -> documented_in -> DOC-KMTD | Kesin
+AT-007 -> documented_in -> DOC-KMTD | Kesin
+AT-008 -> documented_in -> DOC-KMTD | Kesin
+AT-009 -> documented_in -> DOC-KMTD | Kesin
+AT-010 -> documented_in -> DOC-KMTD | Kesin
+AT-011 -> documented_in -> DOC-KMTD | Kesin
+SITET-001 -> documented_in -> DOC-SITET | Kesin
+SITET-002 -> documented_in -> DOC-SITET | Kesin
+SITET-003 -> documented_in -> DOC-SITET | Kesin
+SITET-004 -> documented_in -> DOC-SITET | Kesin
+SITET-005 -> documented_in -> DOC-SITET | Kesin
+SITET-006 -> documented_in -> DOC-SITET | Kesin
+SITET-007 -> documented_in -> DOC-SITET | Kesin
+SITET-008 -> documented_in -> DOC-SITET | Kesin
+SITET-009 -> documented_in -> DOC-SITET | Kesin
+SITET-010 -> documented_in -> DOC-SITET | Kesin
+SITET-011 -> documented_in -> DOC-SITET | Kesin
+SITET-012 -> documented_in -> DOC-SITET | Kesin
+SITET-013 -> documented_in -> DOC-SITET | Kesin
+SITET-014 -> documented_in -> DOC-SITET | Kesin
+SITET-015 -> documented_in -> DOC-SITET | Kesin
+SR-001 -> documented_in -> DOC-SGD | Kesin
+SR-002 -> documented_in -> DOC-SGD | Kesin
+SR-003 -> documented_in -> DOC-SGD | Kesin
+SR-004 -> documented_in -> DOC-SGD | Kesin
+SR-005 -> documented_in -> DOC-SGD | Kesin
+SR-006 -> documented_in -> DOC-SGD | Kesin
+SR-007 -> documented_in -> DOC-SGD | Kesin
+SR-008 -> documented_in -> DOC-SGD | Kesin
+SR-009 -> documented_in -> DOC-SGD | Kesin
+SR-010 -> documented_in -> DOC-SGD | Kesin
+SR-011 -> documented_in -> DOC-SGD | Kesin
+SR-012 -> documented_in -> DOC-SGD | Kesin
+SR-013 -> documented_in -> DOC-SGD | Kesin
+SR-014 -> documented_in -> DOC-SGD | Kesin
+SR-015 -> documented_in -> DOC-SGD | Kesin
+SSR-001 -> documented_in -> DOC-STT | Kesin
+SSR-002 -> documented_in -> DOC-STT | Kesin
+SSR-003 -> documented_in -> DOC-STT | Kesin
+SSR-004 -> documented_in -> DOC-STT | Kesin
+SSR-005 -> documented_in -> DOC-STT | Kesin
+SSR-006 -> documented_in -> DOC-STT | Kesin
+SSR-007 -> documented_in -> DOC-STT | Kesin
+SSR-008 -> documented_in -> DOC-STT | Kesin
+SSR-009 -> documented_in -> DOC-STT | Kesin
+SSR-010 -> documented_in -> DOC-STT | Kesin
+SSR-011 -> documented_in -> DOC-STT | Kesin
+SSR-012 -> documented_in -> DOC-STT | Kesin
+SSR-013 -> documented_in -> DOC-STT | Kesin
+SSR-014 -> documented_in -> DOC-STT | Kesin
+SSR-015 -> documented_in -> DOC-STT | Kesin
+SST-001 -> documented_in -> DOC-AST | Kesin
+SST-002 -> documented_in -> DOC-AST | Kesin
+SST-003 -> documented_in -> DOC-AST | Kesin
+SST-004 -> documented_in -> DOC-AST | Kesin
+SST-005 -> documented_in -> DOC-AST | Kesin
+SST-006 -> documented_in -> DOC-AST | Kesin
+SST-007 -> documented_in -> DOC-AST | Kesin
+SST-008 -> documented_in -> DOC-AST | Kesin
+SST-009 -> documented_in -> DOC-AST | Kesin
+SST-010 -> documented_in -> DOC-AST | Kesin
+SST-011 -> documented_in -> DOC-AST | Kesin
+SST-012 -> documented_in -> DOC-AST | Kesin
+SST-013 -> documented_in -> DOC-AST | Kesin
+SST-014 -> documented_in -> DOC-AST | Kesin
+SST-015 -> documented_in -> DOC-AST | Kesin
+UR-001 -> documented_in -> DOC-TID | Kesin
+UR-002 -> documented_in -> DOC-TID | Kesin
+UR-003 -> documented_in -> DOC-TID | Kesin
+UR-004 -> documented_in -> DOC-TID | Kesin
+UR-005 -> documented_in -> DOC-TID | Kesin
+UR-006 -> documented_in -> DOC-TID | Kesin
+UR-007 -> documented_in -> DOC-TID | Kesin
+UR-008 -> documented_in -> DOC-TID | Kesin
+UR-009 -> documented_in -> DOC-TID | Kesin
+UR-010 -> documented_in -> DOC-TID | Kesin
+UR-011 -> documented_in -> DOC-TID | Kesin
+UR-001 -> validated_by -> AT-001 | Kesin
+UR-002 -> validated_by -> AT-002 | Kesin
+UR-003 -> validated_by -> AT-003 | Kesin
+UR-004 -> validated_by -> AT-004 | Kesin
+UR-005 -> validated_by -> AT-005 | Kesin
+UR-006 -> validated_by -> AT-006 | Kesin
+UR-007 -> validated_by -> AT-007 | Kesin
+UR-008 -> validated_by -> AT-008 | Kesin
+UR-009 -> validated_by -> AT-009 | Kesin
+UR-010 -> validated_by -> AT-010 | Kesin
+UR-011 -> validated_by -> AT-011 | Kesin
+SR-001 -> verified_by -> SITET-001 | Kesin
+SR-002 -> verified_by -> SITET-002 | Kesin
+SR-003 -> verified_by -> SITET-003 | Kesin
+SR-004 -> verified_by -> SITET-004 | Kesin
+SR-005 -> verified_by -> SITET-005 | Kesin
+SR-006 -> verified_by -> SITET-006 | Kesin
+SR-007 -> verified_by -> SITET-007 | Kesin
+SR-008 -> verified_by -> SITET-008 | Kesin
+SR-009 -> verified_by -> SITET-009 | Kesin
+SR-010 -> verified_by -> SITET-010 | Kesin
+SR-011 -> verified_by -> SITET-011 | Kesin
+SR-012 -> verified_by -> SITET-012 | Kesin
+SR-013 -> verified_by -> SITET-013 | Kesin
+SR-014 -> verified_by -> SITET-014 | Kesin
+SR-015 -> verified_by -> SITET-015 | Kesin
+SSR-001 -> verified_by -> SST-001 | Kesin
+SSR-002 -> verified_by -> SST-002 | Kesin
+SSR-003 -> verified_by -> SST-003 | Kesin
+SSR-004 -> verified_by -> SST-004 | Kesin
+SSR-005 -> verified_by -> SST-005 | Kesin
+SSR-006 -> verified_by -> SST-006 | Kesin
+SSR-007 -> verified_by -> SST-007 | Kesin
+SSR-008 -> verified_by -> SST-008 | Kesin
+SSR-009 -> verified_by -> SST-009 | Kesin
+SSR-010 -> verified_by -> SST-010 | Kesin
+SSR-011 -> verified_by -> SST-011 | Kesin
+SSR-012 -> verified_by -> SST-012 | Kesin
+SSR-013 -> verified_by -> SST-013 | Kesin
+SSR-014 -> verified_by -> SST-014 | Kesin
+SSR-015 -> verified_by -> SST-015 | Kesin

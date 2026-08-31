@@ -1,0 +1,161 @@
+EHSİM PROGRAMINI ÇALIŞTIRMA REHBERİ
+=====================================
+(Bilgisayarını her açıp kapattığında EHSİM'i yeniden başlatmak için
+bu adımları sırayla takip et.)
+
+
+ADIM 1 — LM STUDIO'YU AÇ
+-------------------------
+EHSİM, gereksinim/test dokümanlarını üretmek için yerel bir yapay zeka
+modeline ihtiyaç duyar. Bu model LM Studio programı üzerinden çalışır.
+
+1. LM Studio programını başlat.
+2. Sol taraftan (veya "My Models" sekmesinden) daha önce indirdiğin
+   modeli bul — şu an bilgisayarında yüklü olan modelin adı:
+
+        gemma-4-e4b-it
+
+   (Model listede farklı bir isimle görünüyorsa, o ismi not al — Adım 3'te
+   lazım olacak.)
+3. Modeli yükle (üzerine tıklayıp "Load" / "Yükle" de).
+4. LM Studio'da "Local Server" (Yerel Sunucu) sekmesine geç ve sunucuyu
+   BAŞLAT ("Start Server"). Adres genelde şu şekilde görünür:
+
+        http://localhost:1234
+
+   Bu adres yeşil/aktif görünene kadar bekle. LM Studio açık ve sunucu
+   çalışır durumda KALMALI — EHSİM'i kullandığın sürece LM Studio'yu
+   kapatma.
+
+
+ADIM 2 — TERMİNALİ (POWERSHELL) AÇ
+------------------------------------
+1. Görev çubuğundaki arama kutusuna "PowerShell" yaz ve aç.
+   (Mavi/siyah ekranlı bir pencere açılacak.)
+
+
+ADIM 3 — MODEL ADINI TERMİNALE TANIT
+---------------------------------------
+Açılan PowerShell penceresine şu satırı yaz ve Enter'a bas:
+
+    $env:EHSIM_LM_MODEL = "gemma-4-e4b-it"
+
+ÖNEMLİ: Tırnak içindeki isim, Adım 1'de LM Studio'da yüklediğin modelin
+ismiyle BİREBİR AYNI olmalı. Farklıysa (örn. ileride farklı bir model
+indirirsen), o ismi buraya yaz. Bu adımı atlarsan EHSİM yanlış model adı
+arar, hiçbir hata göstermeden BOŞ sonuçlar üretir (SGD/STT gibi bölümler
+boş çıkar).
+
+
+ADIM 3B — (OPSİYONEL) AI DONANIM GÖRSELİ İSTİYORSAN COMFYUI'Yİ AÇ
+--------------------------------------------------------------------
+Donanım Kartları ekranındaki "Toplu Al Görseli" / "Görsel Seç" özelliğini
+kullanmayacaksan bu adımı ATLA, direkt Adım 4'e geç.
+
+Kullanacaksan:
+1. Masaüstünde/Explorer'da şu klasöre git: C:\ComfyUI
+2. "run_nvidia_gpu.bat" dosyasına çift tıkla. Bir konsol penceresi açılıp
+   birkaç satır sonra "To see the GUI go to: http://127.0.0.1:8188" demeli.
+   Bu pencereyi kapatma, EHSİM açıkken arka planda çalışmaya devam etmeli.
+3. Aynı PowerShell penceresinde (ComfyUI'nin kendi penceresinde DEĞİL),
+   Adım 3'ten hemen sonra şu 4 satırı da yapıştır:
+
+    $env:EHSIM_IMAGE_PROVIDER = "comfyui"
+    $env:EHSIM_IMAGE_API_URL = "http://127.0.0.1:8188"
+    $env:EHSIM_IMAGE_MODEL = "v1-5-pruned-emaonly.safetensors"
+    $env:EHSIM_COMFYUI_WORKFLOW = "C:\ComfyUI\workflows\ehsim-api.json"
+
+ÖNEMLİ: Bu 4 satır da (Adım 3'teki $env:EHSIM_LM_MODEL gibi) yalnızca o
+PowerShell penceresine özel — yeni pencere açtığında hepsini tekrar
+yazman gerekir. Atlarsan "Toplu Al Görseli" sessizce devre dışı kalır
+(hata vermez, sadece görsel üretmez).
+
+
+ADIM 4 — PROJE KLASÖRÜNE GİT
+-------------------------------
+Aynı PowerShell penceresine şunu yaz ve Enter'a bas:
+
+    cd "C:\Users\umuty\OneDrive\Masaüstü\staj Ehsim duplicated\AI-V-Model-Tool-for-System-Engineers"
+
+
+ADIM 5 — PROGRAMI ÇALIŞTIR
+------------------------------
+Aynı pencereye şunu yaz ve Enter'a bas:
+
+    & "C:\Users\umuty\OneDrive\Masaüstü\staj Ehsim duplicated\.venv\Scripts\python.exe" "Arayüz.py"
+
+Birkaç saniye içinde "EHSİM" başlıklı program penceresi açılmalı.
+(Konsolda "PyMuPDF available", "SymSpell not available" gibi birkaç
+sarı/bilgi mesajı görürsen normaldir, hata değildir.)
+
+
+ADIM 6 — PROGRAMI KULLAN
+----------------------------
+- "Girdi Dosyaları" alanından PDF/TXT dosyanı seç.
+- "Proje İsmi" gir.
+- İstediğin doküman sayılarını (Kullanıcı Gereksinimi, Sistem Gereksinimi,
+  Alt Sistem Gereksinimleri vb.) ayarla.
+- "Dokümanları Üret" butonuna bas ve alt kısımdaki durum kutusunu izle.
+- Üretim bitince "Dokümanları İndir" ile PDF/Excel/Word/DOORS(CSV)
+  formatında dışa aktarabilirsin.
+- Excel dosyasını açtığında alt sekmelere (İzlenebilirlik Matrisi, TİD,
+  KMTD, SGD, SİTET, STT, AST) tıklayarak her belge türünü ayrı ayrı
+  görebilirsin — "Proje Bilgisi" sekmesi sadece özet bilgi içerir.
+
+
+ADIM 7 — PROGRAMI KAPATMA
+-----------------------------
+- EHSİM penceresini normal şekilde sağ üstteki X'e basarak kapatabilirsin.
+- İşin bittiyse LM Studio'daki sunucuyu da durdurup programı kapatabilirsin
+  (zorunlu değil, ama bilgisayarını yavaşlatmamak için önerilir).
+
+
+SIK KARŞILAŞILAN SORUNLAR
+=============================
+
+SORUN: Belge üretiyorum ama SGD/STT/SİTET gibi bölümler BOŞ geliyor,
+       süre de çok kısa (1-2 saniye) sürüyor.
+ÇÖZÜM: Adım 3'ü atlamışsındır veya yanlış model adı yazmışsındır.
+       LM Studio'da yüklü modelin TAM ismini kontrol et, terminali kapatıp
+       Adım 2'den itibaren tekrar başla.
+
+SORUN: Program "LM Studio'ya bağlanılamadı" diyor.
+ÇÖZÜM: LM Studio açık değil veya "Local Server" başlatılmamış. Adım 1'e
+       dön, sunucunun gerçekten çalıştığından emin ol.
+
+SORUN: "python Arayüz.py" yazınca "No module named ..." gibi bir hata
+       alıyorum.
+ÇÖZÜM: Adım 5'teki komutu TAM OLARAK (tırnak işaretleriyle birlikte) yaz.
+       Sistemdeki sade "python" değil, projeye özel kurulmuş
+       ".venv\Scripts\python.exe" kullanılmalı — komutu kısaltma.
+
+SORUN: Terminal penceresini kapatıp yeniden açtım, program artık
+       çalışmıyor / model bulunamıyor diyor.
+ÇÖZÜM: $env:EHSIM_LM_MODEL ayarı sadece açık olduğu PowerShell penceresine
+       özeldir. Yeni bir pencere açtığında Adım 3'ü tekrar yapman gerekir.
+
+SORUN: "Toplu Al Görseli" butonuna basıyorum, hiçbir hata yok ama görsel
+       de üretilmiyor / buton çalışmıyor gibi.
+ÇÖZÜM: Ya ComfyUI penceresi (run_nvidia_gpu.bat) kapalı, ya da Adım 3B'deki
+       4 $env: satırını bu PowerShell penceresinde yazmadın. İkisini de
+       kontrol et.
+
+SORUN: ComfyUI'yi çalıştırınca konsol "Windows fatal exception: access
+       violation" verip kapanıyor.
+ÇÖZÜM: NVIDIA sürücüsü güncel değil. NVIDIA App (nvidia.com/en-us/software/
+       nvidia-app) üzerinden GPU sürücüsünü güncelle, bilgisayarı yeniden
+       başlat, tekrar dene.
+
+
+ÖZET — HER SEFERİNDE YAPILACAKLAR (KISA VERSİYON)
+=====================================================
+1) LM Studio'yu aç, modeli yükle, sunucuyu başlat.
+2) PowerShell aç.
+3) $env:EHSIM_LM_MODEL = "gemma-4-e4b-it"
+3B) (AI görsel istiyorsan) C:\ComfyUI\run_nvidia_gpu.bat'ı çalıştır, sonra:
+    $env:EHSIM_IMAGE_PROVIDER = "comfyui"
+    $env:EHSIM_IMAGE_API_URL = "http://127.0.0.1:8188"
+    $env:EHSIM_IMAGE_MODEL = "v1-5-pruned-emaonly.safetensors"
+    $env:EHSIM_COMFYUI_WORKFLOW = "C:\ComfyUI\workflows\ehsim-api.json"
+4) cd "C:\Users\umuty\OneDrive\Masaüstü\staj Ehsim duplicated\AI-V-Model-Tool-for-System-Engineers"
+5) & "C:\Users\umuty\OneDrive\Masaüstü\staj Ehsim duplicated\.venv\Scripts\python.exe" "Arayüz.py"
