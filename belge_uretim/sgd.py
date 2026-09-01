@@ -112,7 +112,13 @@ def generate_sgd_batch(chunk_text, count, avoid_list=None):
         f"{avoid_block}\n"
         f"Metin:\n{chunk_text[:8000]}"
     )
-    response = call_gemma3_api(prompt, max_tokens=min(count * 60 + 100, 700))
+    # Not: eski tavan (700) count>10 için sabitleniyordu ve tek çağrıda
+    # üretilebilecek madde sayısını fiilen ~15'e kilitliyordu (bkz.
+    # MAX_CONTEXT_TOKENS=8192, girdi ~8000 karakter ≈ 2000-2600 token'lık
+    # bütçe bırakıyor). 4000 tavanı ~65 maddeye kadar tek çağrıda yer açar;
+    # daha büyük hedefler zaten çağıran taraf (run_generation_logic) tarafından
+    # alt-batch'lere bölünüyor.
+    response = call_gemma3_api(prompt, max_tokens=min(count * 60 + 100, 4000))
     if not response:
         return []
     META = ("işte", "aşağıda", "çıkarılmış", "çıkarılan", "gereksinimler:", "maddeler")
@@ -357,21 +363,36 @@ def run_generation_logic(
                 and s.lower().strip() not in [e.lower().strip() for e in existing_texts]
             )
 
-        # 1) ÖNCE TOPLU (tek çağrıda N farklı madde)
+        # 1) ÖNCE TOPLU — hedefi SUB_BATCH_SIZE'lık gruplara bölüp avoid_list ile
+        # tekrarları önleyerek birden fazla çağrıda topluyoruz. Tek çağrıda
+        # büyük bir hedef (>15-20) istemek hem generate_sgd_batch'in token
+        # bütçesini zorlar hem de model kalitesini düşürür.
         if status_callback:
             status_callback(f"SGD üretiliyor (hedef: {max_sgds} adet)...")
         top_text = "\n\n".join(
             all_chunks[sorted_indices[j % n] if len(sorted_indices) else (j % n)]
             for j in range(min(n, 3))
         )
-        for sgd in generate_sgd_batch(top_text, max_sgds):
+        SUB_BATCH_SIZE = 15
+        max_sub_batch_rounds = max((max_sgds // SUB_BATCH_SIZE) + 3, 4)
+        for _round in range(max_sub_batch_rounds):
             if len(sgd_list) >= max_sgds:
                 break
-            if _uygun(sgd):
-                sgd_list.append({"SGD_ID": f"SR-{len(sgd_list)+1:03d}", "SGD_Aciklama": sgd})
-                existing_texts.append(sgd)
-                if status_callback:
-                    status_callback(f"✅SGD üretildi: {sgd}")
+            before = len(sgd_list)
+            sub_count = min(SUB_BATCH_SIZE, max_sgds - len(sgd_list))
+            for sgd in generate_sgd_batch(top_text, sub_count, avoid_list=existing_texts):
+                if len(sgd_list) >= max_sgds:
+                    break
+                if _uygun(sgd):
+                    sgd_list.append({"SGD_ID": f"SR-{len(sgd_list)+1:03d}", "SGD_Aciklama": sgd})
+                    existing_texts.append(sgd)
+                    if status_callback:
+                        status_callback(f"✅SGD üretildi: {sgd}")
+            if len(sgd_list) == before:
+                # Bu turda hiç yeni/özgün madde alınamadı — kaynak muhtemelen
+                # tükendi, daha fazla tur denemenin faydası yok. Aşağıdaki
+                # tek-tek tamamlama adımı son bir şans olarak devam eder.
+                break
 
         # 2) EKSİK KALIRSA tek tek tamamla
         attempts = 0

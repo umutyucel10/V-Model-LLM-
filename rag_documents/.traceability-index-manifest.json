@@ -25,12 +25,12 @@
       "traceability_revision": 2
     },
     "kahve-testi-a2671e50": {
-      "document_path": "C:\\Users\\umuty\\OneDrive\\Masaüstü\\staj ehsim\\AI-V-Model-Tool-for-System-Engineers\\rag_documents\\existing_requirements\\traceability-kahve-testi-a2671e50.txt",
-      "fingerprint": "0f494e439ff939718b3ceb420081f32ec1a00d49c7f016d6b49def8b1ead97e6",
-      "indexed_at": "2026-08-28T10:08:59+03:00",
-      "traceability_revision": 4
+      "document_path": "C:\\Users\\umuty\\OneDrive\\Masaüstü\\staj Ehsim duplicated\\AI-V-Model-Tool-for-System-Engineers\\rag_documents\\existing_requirements\\traceability-kahve-testi-a2671e50.txt",
+      "fingerprint": "bee55cc8c6239e6fcf43340820bb0875da09ca40744e52b524386c2ef98c5288",
+      "indexed_at": "2026-08-31T13:44:09+03:00",
+      "traceability_revision": 9
     }
   },
   "schema_version": "1.0",
-  "updated_at": "2026-08-31T10:00:24+03:00"
+  "updated_at": "2026-08-31T13:44:09+03:00"
 }

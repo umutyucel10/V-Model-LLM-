@@ -1,42 +1,102 @@
-# Sanal ortam (1.6 GB — başka PC'de yeniden kurulur)
-.venv/
-
-# Python önbellek
+# Byte-compiled / optimized / DLL files
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments (Sanal Ortamlar)
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# Environment variables & secrets (Hassas Bilgiler)
+.env
+.env.local
+.env.*.local
+*.env
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.pyre/
+.pytest_cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Logs & Databases
+*.log
+*.sqlite3
+*.db
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Çıktılar ve geçici veriler
+outputs/
+output/
+tmp/
+context_files/*.txt
+
+# Vektör veri tabanı (ChromaDB)
+rag_chroma/
+rag_chroma_lms/
+chroma.sqlite3
+*.sqlite3
+
+# Belgeler hassas veya büyükse:
+# rag_documents/
 
 # Claude oturum/bellek
 .claude/
 
-# RAG / üretilen çıktılar
-rag_simple_db.txt
-rag_chroma/
-rag_chroma_lms/
-*.html
-
-# Geçici / üretilen dosyalar (gerekiyorsa bu satırları kaldır)
-context_files/*.txt
-
-
-.venv/
-.venv-macos/
-venv/
-env/
-__pycache__/
-*.pyc
-.env
-
-outputs/
-output/
-tmp/
-.coverage
-
 # Yerel embedding model ağırlıkları (~88 MB, HuggingFace'ten indirilir;
-# bkz. CLAUDE.md "Yapılandırma" bölümü)
+# bkz. CLAUDE.md "Yapılandırma" bölümü) — Faz 4'te bilinçli olarak
+# izlemeden çıkarıldı, tekrar eklenmemeli.
 HuggingFaceEmbeddings/
 
 # repomix ile üretilen statik bağlam dökümü (gerektiğinde yeniden üretilir)
 repomix-output.xml
 
-._*
+# RAG basit metin veritabanı (üretilen dosya)
+rag_simple_db.txt

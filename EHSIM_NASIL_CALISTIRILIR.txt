@@ -159,3 +159,15 @@ SORUN: ComfyUI'yi çalıştırınca konsol "Windows fatal exception: access
     $env:EHSIM_COMFYUI_WORKFLOW = "C:\ComfyUI\workflows\ehsim-api.json"
 4) cd "C:\Users\umuty\OneDrive\Masaüstü\staj Ehsim duplicated\AI-V-Model-Tool-for-System-Engineers"
 5) & "C:\Users\umuty\OneDrive\Masaüstü\staj Ehsim duplicated\.venv\Scripts\python.exe" "Arayüz.py"
+
+
+$env:EHSIM_LM_MODEL = "gemma-4-e4b-it"
+$env:EHSIM_IMAGE_PROVIDER = "comfyui"
+$env:EHSIM_IMAGE_API_URL = "http://127.0.0.1:8188"
+$env:EHSIM_IMAGE_MODEL = "v1-5-pruned-emaonly.safetensors"
+$env:EHSIM_COMFYUI_WORKFLOW = "C:\ComfyUI\workflows\ehsim-api.json"
+cd "C:\Users\umuty\OneDrive\Masaüstü\staj Ehsim duplicated\AI-V-Model-Tool-for-System-Engineers"
+& "C:\Users\umuty\OneDrive\Masaüstü\staj Ehsim duplicated\.venv\Scripts\python.exe" "Arayüz.py"
+
+
+

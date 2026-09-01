@@ -1,0 +1,1254 @@
+PROJE: Kahve Testi
+PROJE_KIMLIGI: kahve-testi-a2671e50
+IZLENEBILIRLIK_SURUMU: 9
+KAYNAK: Belge üretimindeki yapılandırılmış Python verisi
+
+ID: DOC-AST
+TUR: Teknik belge
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: Alt Sistem Testi (Subsystem Test)
+ACIKLAMA: 17 yapılandırılmış madde içerir.
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: 
+---
+ID: SST-001
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-001
+ACIKLAMA: Farklı kahve türleri (espresso, filtre, americano) için önceden belirlenmiş sıcaklık ve basınç değerleri sırayla sisteme girilirken, Kahve Hazırlama Birimi'nin Ana Kontrol Sistemi'ne her bir parametreyi doğru formatta dijital sinyal ile bildirdiği doğrulanır. GEÇTİ KRİTERİ: Bildirilen tüm kahve türlerinin sıcaklık ve basınç değerleri için beklenen dijital sinyallerin %100 oranında ve hatasız alınması
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Farklı kahve türleri (espresso, filtre, americano) için önceden belirlenmiş sıcaklık ve basınç değerleri sırayla sisteme girilirken, Kahve Hazırlama Birimi'nin Ana Kontrol Sistemi'ne her bir parametreyi doğru formatta dijital sinyal ile bildirdiği doğrulanır. GEÇTİ KRİTERİ: Bildirilen tüm kahve türlerinin sıcaklık ve basınç değerleri için beklenen dijital sinyallerin %100 oranında ve hatasız alınması
+---
+ID: SST-002
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-002
+ACIKLAMA: Bir test istemcisi kullanılarak Kullanıcı Arayüzü Birimi'nden rastgele kullanıcı etkileşim verileri gönderilir ve Ana Kontrol Sistemi'nin bu verileri başarıyla alıp işlemesi beklenir; GEÇTİ KRİTERİ: Tüm gönderilen veri paketleri için sistemden hata kodu alınmaması
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Bir test istemcisi kullanılarak Kullanıcı Arayüzü Birimi'nden rastgele kullanıcı etkileşim verileri gönderilir ve Ana Kontrol Sistemi'nin bu verileri başarıyla alıp işlemesi beklenir; GEÇTİ KRİTERİ: Tüm gönderilen veri paketleri için sistemden hata kodu alınmaması
+---
+ID: SST-003
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-003
+ACIKLAMA: Güvenlik Yönetim Birimi'ne bilinen güvenlik ihlali vektörleri içeren zorlayıcı girdiler verilerek sistemin tüm kritik fonksiyonları boyunca izlenmesi ve bu süreçte herhangi bir yetkisiz erişim veya veri sızıntısı yaşanıp yaşanmadığı kontrol edilir; GEÇTİ KRİTERİ: Hiçbir güvenlik standardı ihlali tespit edilmemelidir
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Güvenlik Yönetim Birimi'ne bilinen güvenlik ihlali vektörleri içeren zorlayıcı girdiler verilerek sistemin tüm kritik fonksiyonları boyunca izlenmesi ve bu süreçte herhangi bir yetkisiz erişim veya veri sızıntısı yaşanıp yaşanmadığı kontrol edilir; GEÇTİ KRİTERİ: Hiçbir güvenlik standardı ihlali tespit edilmemelidir
+---
+ID: SST-004
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-004
+ACIKLAMA: Bakım Tespit Birimi'nden üretilen bilinen bakım ihtiyacı verisi, CAN bus arayüzü üzerinden Kullanıcı Arayüzü Sistemi'ne başarıyla iletilir ve bu veri alıcı sistemde doğrulanabilir olmalıdır. GEÇTİ KRİTERİ: Veri paketinin bütünlüğü korunmuş ve hedef sistem tarafından başarılı bir şekilde okunabilmiş olması
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Bakım Tespit Birimi'nden üretilen bilinen bakım ihtiyacı verisi, CAN bus arayüzü üzerinden Kullanıcı Arayüzü Sistemi'ne başarıyla iletilir ve bu veri alıcı sistemde doğrulanabilir olmalıdır. GEÇTİ KRİTERİ: Veri paketinin bütünlüğü korunmuş ve hedef sistem tarafından başarılı bir şekilde okunabilmiş olması
+---
+ID: SST-005
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-005
+ACIKLAMA: Güç Yönetim Ünitesi'ne sürekli olarak nominal yük altında elektrik enerjisi verilir; sistemin bu koşulda kesintisiz olarak en az 72 saat boyunca çalışmaya devam ettiği gözlemlenir. GEÇTİ KRİTERİ: Sistem, belirtilen süre sonunda herhangi bir kapanma veya performans düşüşü göstermemelidir
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Güç Yönetim Ünitesi'ne sürekli olarak nominal yük altında elektrik enerjisi verilir; sistemin bu koşulda kesintisiz olarak en az 72 saat boyunca çalışmaya devam ettiği gözlemlenir. GEÇTİ KRİTERİ: Sistem, belirtilen süre sonunda herhangi bir kapanma veya performans düşüşü göstermemelidir
+---
+ID: SST-006
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-006
+ACIKLAMA: Üniteye sırasıyla espresso, filtre ve latte kahve türleri için önceden tanımlanmış parametre setleri (sıcaklık, basınç, süre) gönderilir ve Ana Kontrol Sistemi'nin bu üç farklı parametre setini dijital sinyal arayüzü üzerinden başarıyla okuduğu doğrulanır. GEÇTİ KRİTERİ: Üç farklı kahve türünün tüm ilgili parametreleri hatasız bir şekilde iletilmelidir
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Üniteye sırasıyla espresso, filtre ve latte kahve türleri için önceden tanımlanmış parametre setleri (sıcaklık, basınç, süre) gönderilir ve Ana Kontrol Sistemi'nin bu üç farklı parametre setini dijital sinyal arayüzü üzerinden başarıyla okuduğu doğrulanır. GEÇTİ KRİTERİ: Üç farklı kahve türünün tüm ilgili parametreleri hatasız bir şekilde iletilmelidir
+---
+ID: SST-007
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-007
+ACIKLAMA: Isıtma ünitesine farklı başlangıç sıcaklıklarında süt örnekleri verilerek, çıkış verisinin sürekli olarak 59 santigrat derece ile 61 santigrat derece aralığında kaldığı ölçülür. GEÇTİ KRİTERİ: Ölçülen tüm sıcaklık değerleri arasında en düşük 58.5 santigrat derece ve en yüksek 61.5 santigrat derece bulunmamalıdır
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Isıtma ünitesine farklı başlangıç sıcaklıklarında süt örnekleri verilerek, çıkış verisinin sürekli olarak 59 santigrat derece ile 61 santigrat derece aralığında kaldığı ölçülür. GEÇTİ KRİTERİ: Ölçülen tüm sıcaklık değerleri arasında en düşük 58.5 santigrat derece ve en yüksek 61.5 santigrat derece bulunmamalıdır
+---
+ID: SST-008
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-008
+ACIKLAMA: Isı Yönetim Ünitesi'nin çıkış suyu sıcaklığı, nominal çalışma koşullarında sürekli olarak ölçülür; GEÇTİ KRİTERİ: Ölçülen su sıcaklığının minimum değeri DSB derece içinde tamamlanmalıdır
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Isı Yönetim Ünitesi'nin çıkış suyu sıcaklığı, nominal çalışma koşullarında sürekli olarak ölçülür; GEÇTİ KRİTERİ: Ölçülen su sıcaklığının minimum değeri DSB derece içinde tamamlanmalıdır
+---
+ID: SST-009
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-009
+ACIKLAMA: Kullanıcı Arayüzü Birimi'nden Ana Kontrol Sistemi'ne küçük, orta ve büyük boyutları temsil eden üç ayrı dijital sinyal gönderilir; bu sinyallerin tamamının Ana Kontrol Sistemi tarafından doğru bir şekilde algılandığı doğrulanır. GEÇTİ KRİTERİ: Gönderilen her boyuta karşılık gelen sinyal, sistem tarafından beklenen dijital seviye (YÜKSEK veya DÜŞÜK) ile eşleşmelidir
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Kullanıcı Arayüzü Birimi'nden Ana Kontrol Sistemi'ne küçük, orta ve büyük boyutları temsil eden üç ayrı dijital sinyal gönderilir; bu sinyallerin tamamının Ana Kontrol Sistemi tarafından doğru bir şekilde algılandığı doğrulanır. GEÇTİ KRİTERİ: Gönderilen her boyuta karşılık gelen sinyal, sistem tarafından beklenen dijital seviye (YÜKSEK veya DÜŞÜK) ile eşleşmelidir
+---
+ID: SST-010
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-010
+ACIKLAMA: Su Haznesi Birimi'nin boşaltılması için kullanılan ölçüm kabı ile hacmi belirlenir; bu hacmin en az 2 litre olduğu doğrulanır. GEÇTİ KRİTERİ: Ölçülen minimum kapasite ≥ 2 litre
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Su Haznesi Birimi'nin boşaltılması için kullanılan ölçüm kabı ile hacmi belirlenir; bu hacmin en az 2 litre olduğu doğrulanır. GEÇTİ KRİTERİ: Ölçülen minimum kapasite ≥ 2 litre
+---
+ID: SST-011
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-011
+ACIKLAMA: Öğütücü Birimi'nden Ana Depolama Sistemi'ne kontrollü bir kahve tanesi akışı başlatılır; bu akışın mekanik bağlantı üzerinden kesintisiz ve belirlenen DSB ml/s kapasitede aktarıldığı gözlemlenir. GEÇTİ KRİTERİ: Akış, belirtilen minimum debi değerini korumalıdır
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Öğütücü Birimi'nden Ana Depolama Sistemi'ne kontrollü bir kahve tanesi akışı başlatılır; bu akışın mekanik bağlantı üzerinden kesintisiz ve belirlenen DSB ml/s kapasitede aktarıldığı gözlemlenir. GEÇTİ KRİTERİ: Akış, belirtilen minimum debi değerini korumalıdır
+---
+ID: SST-012
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-012
+ACIKLAMA: Dokunmatik ekran arayüzünden rastgele kullanıcı girdileri (örneğin buton tıklamaları) ardışık olarak sisteme verilir ve bu girdilerin Ana Kontrol Sistemi'ne I2C protokolü üzerinden başarıyla iletildiği doğrulanır; GEÇTİ KRİTERİ: Tüm girdi paketleri, belirlenen I2C adresine hatasız bir şekilde ulaşmalıdır
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Dokunmatik ekran arayüzünden rastgele kullanıcı girdileri (örneğin buton tıklamaları) ardışık olarak sisteme verilir ve bu girdilerin Ana Kontrol Sistemi'ne I2C protokolü üzerinden başarıyla iletildiği doğrulanır; GEÇTİ KRİTERİ: Tüm girdi paketleri, belirlenen I2C adresine hatasız bir şekilde ulaşmalıdır
+---
+ID: SST-013
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-013
+ACIKLAMA: Acil Durdurma Butonu Birimi'ne fiziksel olarak basılması tetikleyici sinyalin Ana Kontrol Sistemi'ndeki ilgili dijital giriş pininde algılanması ve bu durumun sisteme iletilmesi ölçülür; GEÇTİ KRİTERİ: Sinyal, butona basıldığı an itibarıyla sistem tarafından algılanır
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Acil Durdurma Butonu Birimi'ne fiziksel olarak basılması tetikleyici sinyalin Ana Kontrol Sistemi'ndeki ilgili dijital giriş pininde algılanması ve bu durumun sisteme iletilmesi ölçülür; GEÇTİ KRİTERİ: Sinyal, butona basıldığı an itibarıyla sistem tarafından algılanır
+---
+ID: SST-014
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-014
+ACIKLAMA: Güç Giriş Birimi'ne standart elektrik bağlantı arayüzü üzerinden belirlenen nominal voltajda (örneğin 230 V AC) sürekli bir yük bağlanır ve bu sırada çıkış geriliminin sapması ölçülür. GEÇTİ KRİTERİ: Çıkış gerilimi, nominal değerden %5'ten fazla sapma göstermemelidir
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Güç Giriş Birimi'ne standart elektrik bağlantı arayüzü üzerinden belirlenen nominal voltajda (örneğin 230 V AC) sürekli bir yük bağlanır ve bu sırada çıkış geriliminin sapması ölçülür. GEÇTİ KRİTERİ: Çıkış gerilimi, nominal değerden %5'ten fazla sapma göstermemelidir
+---
+ID: SST-015
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-015
+ACIKLAMA: Su Seviye Sensörü Birimi'nden Ana Kontrol Sistemi'ne rastgele değişen üç farklı su seviyesi (minimum, orta ve maksimum) sinyali I2C arayüzü üzerinden başarıyla iletildiği doğrulanır. GEÇTİ KRİTERİ: Tüm test edilen seviyeler için veri paketinin bütünlüğü korunmalı ve Ana Kontrol Sistemi tarafından başarılı bir şekilde okunduğu teyit edilmelidir
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Su Seviye Sensörü Birimi'nden Ana Kontrol Sistemi'ne rastgele değişen üç farklı su seviyesi (minimum, orta ve maksimum) sinyali I2C arayüzü üzerinden başarıyla iletildiği doğrulanır. GEÇTİ KRİTERİ: Tüm test edilen seviyeler için veri paketinin bütünlüğü korunmalı ve Ana Kontrol Sistemi tarafından başarılı bir şekilde okunduğu teyit edilmelidir
+---
+ID: SST-016
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-016
+ACIKLAMA: Kullanıcı Arayüzü Birimi'nden belirlenen farklı kahve sertliği ayar değerleri (örneğin 1, 5 ve en yüksek değer) sırasıyla Ana Kontrol Sistemi'ne Dijital Haberleşme Protokolü üzerinden gönderilir ve bu verilerin sistem tarafından doğru bir şekilde alındığı doğrulanır. GEÇTİ KRİTERİ: Gönderilen her ayar değeri için Ana Kontrol Sistemi'nde beklenen dijital sinyal seviyesi tespit edilir
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Kullanıcı Arayüzü Birimi'nden belirlenen farklı kahve sertliği ayar değerleri (örneğin 1, 5 ve en yüksek değer) sırasıyla Ana Kontrol Sistemi'ne Dijital Haberleşme Protokolü üzerinden gönderilir ve bu verilerin sistem tarafından doğru bir şekilde alındığı doğrulanır. GEÇTİ KRİTERİ: Gönderilen her ayar değeri için Ana Kontrol Sistemi'nde beklenen dijital sinyal seviyesi tespit edilir
+---
+ID: SST-017
+TUR: Entegrasyon testi
+V_MODEL: Alt sistem entegrasyon testi
+BASLIK: SST-017
+ACIKLAMA: Kahve Hazırlama Birimi'ne sırasıyla espresso, filtre ve latte hazırlığı için komutlar gönderilir; Ana Kontrol Sistemi tarafından alınan dijital sinyallerin her birinin belirtilen üç parametre (su sıcaklığı, basınç ve demleme süresi) değerlerini başarıyla ilettiği doğrulanır. GEÇTİ KRİTERİ: Üç kahve türü için de ilgili tüm parametreler beklenen nominal aralıklarda sinyalleştirilmiştir
+KAYNAK_BELGE: Alt Sistem Testi (Subsystem Test)
+BOLUM: 
+KANIT: Kahve Hazırlama Birimi'ne sırasıyla espresso, filtre ve latte hazırlığı için komutlar gönderilir; Ana Kontrol Sistemi tarafından alınan dijital sinyallerin her birinin belirtilen üç parametre (su sıcaklığı, basınç ve demleme süresi) değerlerini başarıyla ilettiği doğrulanır. GEÇTİ KRİTERİ: Üç kahve türü için de ilgili tüm parametreler beklenen nominal aralıklarda sinyalleştirilmiştir
+---
+ID: AT-001
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-001
+ACIKLAMA: Sistem, en az 5 farklı kahve türünü başarıyla hazırlayabilmelidir
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Sistem, en az 5 farklı kahve türünü başarıyla hazırlayabilmelidir
+---
+ID: AT-002
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-002
+ACIKLAMA: Ana menüden herhangi bir işlevselliğe ulaşmak için en fazla 3 tıklama yeterli olmalıdır
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Ana menüden herhangi bir işlevselliğe ulaşmak için en fazla 3 tıklama yeterli olmalıdır
+---
+ID: AT-003
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-003
+ACIKLAMA: Sistem, tanımlanan güvenlik protokollerine uygun olarak tüm kritik fonksiyonları hatasız bir şekilde yerine getirmelidir
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Sistem, tanımlanan güvenlik protokollerine uygun olarak tüm kritik fonksiyonları hatasız bir şekilde yerine getirmelidir
+---
+ID: AT-004
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-004
+ACIKLAMA: Sistem, tanımlanan periyotlarda ve anlık tetikleyicilerle bakım gereksinimlerini tespit ederek kullanıcı arayüzünde bildirim göstermelidir
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Sistem, tanımlanan periyotlarda ve anlık tetikleyicilerle bakım gereksinimlerini tespit ederek kullanıcı arayüzünde bildirim göstermelidir
+---
+ID: AT-005
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-005
+ACIKLAMA: Sistem, en az 7 gün boyunca belirlenen yük altında kesintisiz ve kararlı bir şekilde hizmet verebilmelidir
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Sistem, en az 7 gün boyunca belirlenen yük altında kesintisiz ve kararlı bir şekilde hizmet verebilmelidir
+---
+ID: AT-006
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-006
+ACIKLAMA: Sistem, belirlenen tariflere uygun olarak espresso çekirdeklerini kullanarak kabul edilebilir bir basınçta kahve hazırlamalıdır
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Sistem, belirlenen tariflere uygun olarak espresso çekirdeklerini kullanarak kabul edilebilir bir basınçta kahve hazırlamalıdır
+---
+ID: AT-007
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-007
+ACIKLAMA: Sistem, tek başına sıcak süt hazırlarken belirlenen 60 derecelik ideal sıcaklığı koruyarak süreci tamamlamalıdır
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Sistem, tek başına sıcak süt hazırlarken belirlenen 60 derecelik ideal sıcaklığı koruyarak süreci tamamlamalıdır
+---
+ID: AT-008
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-008
+ACIKLAMA: Kullanıcı tarafından seçilen herhangi bir sıvı için sistemin 90 dereceye kadar sıcak su sağlayabildiği doğrulanmalıdır
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Kullanıcı tarafından seçilen herhangi bir sıvı için sistemin 90 dereceye kadar sıcak su sağlayabildiği doğrulanmalıdır
+---
+ID: AT-009
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-009
+ACIKLAMA: Kullanıcı arayüzünden kahve boyutu seçimi yapıldığında, sistemin mevcut tüm seçenekleri (örneğin Küçük, Orta, Büyük) listelemesi ve bu seçimlerin anında güncellenmesi doğrulanmalıdır
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Kullanıcı arayüzünden kahve boyutu seçimi yapıldığında, sistemin mevcut tüm seçenekleri (örneğin Küçük, Orta, Büyük) listelemesi ve bu seçimlerin anında güncellenmesi doğrulanmalıdır
+---
+ID: AT-010
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-010
+ACIKLAMA: Sistem, dahili su haznesinin seviyesi %10'un altına düştüğünde otomatik olarak bir uyarı sinyali üretmelidir
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Sistem, dahili su haznesinin seviyesi %10'un altına düştüğünde otomatik olarak bir uyarı sinyali üretmelidir
+---
+ID: AT-011
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-011
+ACIKLAMA: Öğütücüden gelen kahve çekirdeği akışının hazneye minimum 10 gram/saniye hızla ulaştığı doğrulanmalıdır
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Öğütücüden gelen kahve çekirdeği akışının hazneye minimum 10 gram/saniye hızla ulaştığı doğrulanmalıdır
+---
+ID: AT-012
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-012
+ACIKLAMA: Dokunmatik ekran üzerinden en az 10 farklı etkileşim noktasına başarılı bir şekilde dokunulabilmesi ve bu etkileşimlerin her biri için geri bildirim sağlanması doğrulanmalıdır
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Dokunmatik ekran üzerinden en az 10 farklı etkileşim noktasına başarılı bir şekilde dokunulabilmesi ve bu etkileşimlerin her biri için geri bildirim sağlanması doğrulanmalıdır
+---
+ID: AT-013
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-013
+ACIKLAMA: Sistem arayüzünde her zaman görünür ve tek dokunuşla etkinleştirilebilen bir acil durdurma butonu bulunmalıdır
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Sistem arayüzünde her zaman görünür ve tek dokunuşla etkinleştirilebilen bir acil durdurma butonu bulunmalıdır
+---
+ID: AT-014
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-014
+ACIKLAMA: Sistem, belirtilen standart elektrik bağlantı arayüzüne fiziksel olarak bağlanabilmeli ve bu bağlantıyı kullanarak nominal voltajda güç alabilmelidir
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Sistem, belirtilen standart elektrik bağlantı arayüzüne fiziksel olarak bağlanabilmeli ve bu bağlantıyı kullanarak nominal voltajda güç alabilmelidir
+---
+ID: AT-015
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-015
+ACIKLAMA: Sistem, belirlenen aralıklarla su seviyesini okuyarak en fazla 10 saniye gecikmeyle güncel veriyi görüntüleyebilmelidir
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Sistem, belirlenen aralıklarla su seviyesini okuyarak en fazla 10 saniye gecikmeyle güncel veriyi görüntüleyebilmelidir
+---
+ID: AT-016
+TUR: Müşteri kabul/geçerleme testi
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: AT-016
+ACIKLAMA: Kullanıcı arayüzünden seçilen sertlik derecesinin sistem tarafından doğru bir şekilde algılandığı ve kahve makinesinde uygulanabilir olduğu doğrulanmalıdır
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: Kullanıcı arayüzünden seçilen sertlik derecesinin sistem tarafından doğru bir şekilde algılandığı ve kahve makinesinde uygulanabilir olduğu doğrulanmalıdır
+---
+ID: DOC-KMTD
+TUR: Teknik belge
+V_MODEL: Müşteri kabulü ve geçerleme
+BASLIK: Kabul Testi (Acceptance Test)
+ACIKLAMA: 16 yapılandırılmış madde içerir.
+KAYNAK_BELGE: Kabul Testi (Acceptance Test)
+BOLUM: 
+KANIT: 
+---
+ID: DOC-SGD
+TUR: Teknik belge
+V_MODEL: Sistem gereksinimi
+BASLIK: Sistem Gereksinimi (System Requirements)
+ACIKLAMA: 22 yapılandırılmış madde içerir.
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: 
+---
+ID: SR-001
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-001
+ACIKLAMA: Sistem farklı kahve türlerini hazırlayabilmelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem farklı kahve türlerini hazırlayabilmelidir
+---
+ID: SR-002
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-002
+ACIKLAMA: Sistem, kullanıcı arayüzü ve deneyimini kullanıcının kolayca anlayabileceği ve etkileşime girebileceği şekilde tasarlamalıdır
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, kullanıcı arayüzü ve deneyimini kullanıcının kolayca anlayabileceği ve etkileşime girebileceği şekilde tasarlamalıdır
+---
+ID: SR-003
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-003
+ACIKLAMA: Sistem, tüm çalışma süreçlerinde belirlenen güvenlik standartlarına uygun ve güvenli bir şekilde çalışmalıdır
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, tüm çalışma süreçlerinde belirlenen güvenlik standartlarına uygun ve güvenli bir şekilde çalışmalıdır
+---
+ID: SR-004
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-004
+ACIKLAMA: Sistem, belirlenen periyotlarda ve anlık olarak bakım ihtiyaçlarını tespit ederek kullanıcıya bildirim yapabilmelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, belirlenen periyotlarda ve anlık olarak bakım ihtiyaçlarını tespit ederek kullanıcıya bildirim yapabilmelidir
+---
+ID: SR-005
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-005
+ACIKLAMA: Sistem, kesintisiz ve kararlı bir hizmet sağlamalıdır
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, kesintisiz ve kararlı bir hizmet sağlamalıdır
+---
+ID: SR-006
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-006
+ACIKLAMA: Sistem kullanıcıya farklı kahve türleri hazırlayabilme imkanı sunmalıdır
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem kullanıcıya farklı kahve türleri hazırlayabilme imkanı sunmalıdır
+---
+ID: SR-007
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-007
+ACIKLAMA: Sistem, sütü 60 santigrat dereceye kadar ısıtabilmelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, sütü 60 santigrat dereceye kadar ısıtabilmelidir
+---
+ID: SR-008
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-008
+ACIKLAMA: Sistem, çay ve benzeri kullanımlar için harici olarak DSB derece sıcak su sağlayabilmelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, çay ve benzeri kullanımlar için harici olarak DSB derece sıcak su sağlayabilmelidir
+---
+ID: SR-009
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-009
+ACIKLAMA: Sistem kullanıcı tarafından seçilen kahve boyutlarını (küçük, orta, büyük) desteklemelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem kullanıcı tarafından seçilen kahve boyutlarını (küçük, orta, büyük) desteklemelidir
+---
+ID: SR-010
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-010
+ACIKLAMA: Sistem dahili bir su haznesi kapasitesi 2 litre olacak şekilde çalışabilmelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem dahili bir su haznesi kapasitesi 2 litre olacak şekilde çalışabilmelidir
+---
+ID: SR-011
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-011
+ACIKLAMA: Sistem çekirdek kahve haznesini ve entegre öğütücüyü kullanabilmelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem çekirdek kahve haznesini ve entegre öğütücüyü kullanabilmelidir
+---
+ID: SR-012
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-012
+ACIKLAMA: Sistem, kullanıcı arayüzü olarak bir dokunmatik ekran barındırmalıdır
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, kullanıcı arayüzü olarak bir dokunmatik ekran barındırmalıdır
+---
+ID: SR-013
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-013
+ACIKLAMA: Sistem üzerinde acil durumlarda müdahale için erişilebilir bir acil durdurma butonu bulunmalıdır
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem üzerinde acil durumlarda müdahale için erişilebilir bir acil durdurma butonu bulunmalıdır
+---
+ID: SR-014
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-014
+ACIKLAMA: Sistem, enerji alabilmek için standart bir elektrik bağlantı arayüzüne sahip olmalıdır
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, enerji alabilmek için standart bir elektrik bağlantı arayüzüne sahip olmalıdır
+---
+ID: SR-015
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-015
+ACIKLAMA: Sistem su seviyesini anlık ve sürekli olarak izleyebilmelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem su seviyesini anlık ve sürekli olarak izleyebilmelidir
+---
+ID: SR-016
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-016
+ACIKLAMA: Sistem, kahve sertliğini kullanıcı tarafından ayarlanabilmelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, kahve sertliğini kullanıcı tarafından ayarlanabilmelidir
+---
+ID: SR-017
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-017
+ACIKLAMA: Sistem, farklı kahve türlerini hazırlayabilme kabiliyetine sahip olmalıdır
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, farklı kahve türlerini hazırlayabilme kabiliyetine sahip olmalıdır
+---
+ID: SR-018
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-018
+ACIKLAMA: Sistem, kullanıcı arayüzü üzerinden kahve hazırlığı için gerekli tüm adımları adım adım yönlendirmelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, kullanıcı arayüzü üzerinden kahve hazırlığı için gerekli tüm adımları adım adım yönlendirmelidir
+---
+ID: SR-019
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-019
+ACIKLAMA: Sistem, çalışma süreçlerinde belirlenen güvenlik protokollerine uygun ve güvenli bir şekilde çalışabilmelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, çalışma süreçlerinde belirlenen güvenlik protokollerine uygun ve güvenli bir şekilde çalışabilmelidir
+---
+ID: SR-020
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-020
+ACIKLAMA: Sistem, belirlenen periyodik bakım zaman aralıklarını hesaplayarak ve anlık sensör verilerini analiz ederek kullanıcıya bildirim yapabilmelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, belirlenen periyodik bakım zaman aralıklarını hesaplayarak ve anlık sensör verilerini analiz ederek kullanıcıya bildirim yapabilmelidir
+---
+ID: SR-021
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-021
+ACIKLAMA: Sistem, sütü istenen sıcaklığa kadar ısıtabilmelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, sütü istenen sıcaklığa kadar ısıtabilmelidir
+---
+ID: SR-022
+TUR: Sistem gereksinimi
+V_MODEL: Sistem gereksinimi
+BASLIK: SR-022
+ACIKLAMA: Sistem, çay ve benzeri kullanımlar için harici olarak sıcak su verebilmelidir
+KAYNAK_BELGE: Sistem Gereksinimi (System Requirements)
+BOLUM: 
+KANIT: Sistem, çay ve benzeri kullanımlar için harici olarak sıcak su verebilmelidir
+---
+ID: DOC-SITET
+TUR: Teknik belge
+V_MODEL: Sistem doğrulaması
+BASLIK: Sistem Testi (System Test)
+ACIKLAMA: 22 yapılandırılmış madde içerir.
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: 
+---
+ID: SITET-001
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-001
+ACIKLAMA: Sistem, en az 5 farklı kahve türünü başarıyla hazırlayabilmelidir
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistem, en az 5 farklı kahve türünü başarıyla hazırlayabilmelidir
+---
+ID: SITET-002
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-002
+ACIKLAMA: Kullanıcı arayüzü üzerinden gerçekleştirilen temel görev akışlarının en az üç farklı kullanıcı profili tarafından hatasız bir şekilde tamamlanabildiği doğrulanmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Kullanıcı arayüzü üzerinden gerçekleştirilen temel görev akışlarının en az üç farklı kullanıcı profili tarafından hatasız bir şekilde tamamlanabildiği doğrulanmalıdır
+---
+ID: SITET-003
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-003
+ACIKLAMA: Sistem, belirlenen güvenlik standartlarına uygunluğu doğrulamak amacıyla en az üç farklı senaryoda başarılı bir şekilde çalışmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistem, belirlenen güvenlik standartlarına uygunluğu doğrulamak amacıyla en az üç farklı senaryoda başarılı bir şekilde çalışmalıdır
+---
+ID: SITET-004
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-004
+ACIKLAMA: Sistem, belirlenen aralıklarla ve manuel tetiklemelerle bakım ihtiyacı tespit edildiğinde kullanıcı arayüzünde anında bildirim göstermelidir
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistem, belirlenen aralıklarla ve manuel tetiklemelerle bakım ihtiyacı tespit edildiğinde kullanıcı arayüzünde anında bildirim göstermelidir
+---
+ID: SITET-005
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-005
+ACIKLAMA: Sistem, belirlenen yük altında kesintisiz olarak en az 4 saat süreyle hizmet vermeli ve tüm temel fonksiyonları sorunsuz çalıştırmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistem, belirlenen yük altında kesintisiz olarak en az 4 saat süreyle hizmet vermeli ve tüm temel fonksiyonları sorunsuz çalıştırmalıdır
+---
+ID: SITET-006
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-006
+ACIKLAMA: Sistem arayüzünden seçilen en az üç farklı kahve türünün başarıyla hazırlanarak kullanıcıya sunulması doğrulanmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistem arayüzünden seçilen en az üç farklı kahve türünün başarıyla hazırlanarak kullanıcıya sunulması doğrulanmalıdır
+---
+ID: SITET-007
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-007
+ACIKLAMA: Sistem, başlangıç sıcaklığı 20 santigrat derece olan sütü, ısıtma döngüsü sonunda 60 santigrat dereceye ulaşmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistem, başlangıç sıcaklığı 20 santigrat derece olan sütü, ısıtma döngüsü sonunda 60 santigrat dereceye ulaşmalıdır
+---
+ID: SITET-008
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-008
+ACIKLAMA: Sistemden sağlanan suyun sıcaklığı DSB dereceye ulaşmalı ve bu sıcaklığın çay demleme süresince korunabildiği doğrulanmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistemden sağlanan suyun sıcaklığı DSB dereceye ulaşmalı ve bu sıcaklığın çay demleme süresince korunabildiği doğrulanmalıdır
+---
+ID: SITET-009
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-009
+ACIKLAMA: Kullanıcı arayüzünden küçük, orta ve büyük boyut seçenekleri tek tek seçilerek sistemin her bir boyutu başarıyla kabul ettiği doğrulanmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Kullanıcı arayüzünden küçük, orta ve büyük boyut seçenekleri tek tek seçilerek sistemin her bir boyutu başarıyla kabul ettiği doğrulanmalıdır
+---
+ID: SITET-010
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-010
+ACIKLAMA: Sistem, su haznesine tam olarak 2 litre sıvı dolum yapabilmeli ve bu seviyeyi koruyabildiği doğrulanmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistem, su haznesine tam olarak 2 litre sıvı dolum yapabilmeli ve bu seviyeyi koruyabildiği doğrulanmalıdır
+---
+ID: SITET-011
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-011
+ACIKLAMA: Sistem, hem çekirdek kahve haznesini hem de entegre öğütücüyü başarılı bir şekilde kullanarak belirlenen kahve demleme sürecini tamamlayabilmelidir
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistem, hem çekirdek kahve haznesini hem de entegre öğütücüyü başarılı bir şekilde kullanarak belirlenen kahve demleme sürecini tamamlayabilmelidir
+---
+ID: SITET-012
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-012
+ACIKLAMA: Sistemin ana ekranının bir dokunmatik arayüz üzerinden erişilebilir olması ve temel menü öğelerinin bu arayüzde gösterilmesi doğrulanmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistemin ana ekranının bir dokunmatik arayüz üzerinden erişilebilir olması ve temel menü öğelerinin bu arayüzde gösterilmesi doğrulanmalıdır
+---
+ID: SITET-013
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-013
+ACIKLAMA: Sistemde herhangi bir kritik hata durumunda acil durdurma butonuna basıldığında sistemin tüm fonksiyonları derhal ve geri döndürülemez şekilde durması doğrulanmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistemde herhangi bir kritik hata durumunda acil durdurma butonuna basıldığında sistemin tüm fonksiyonları derhal ve geri döndürülemez şekilde durması doğrulanmalıdır
+---
+ID: SITET-014
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-014
+ACIKLAMA: Sistem, standart bir elektrik bağlantı arayüzüne fiziksel olarak bağlanabilmeli ve bu bağlantıyı kurduktan sonra sistemin güç kaynağını algılama süresi 1 saniyeyi geçmemelidir
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistem, standart bir elektrik bağlantı arayüzüne fiziksel olarak bağlanabilmeli ve bu bağlantıyı kurduktan sonra sistemin güç kaynağını algılama süresi 1 saniyeyi geçmemelidir
+---
+ID: SITET-015
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-015
+ACIKLAMA: Sistem, farklı su seviyeleri için belirlenen aralıkları sürekli olarak algılayıp bu veriyi güncel bir gösterge paneline yansıtmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistem, farklı su seviyeleri için belirlenen aralıkları sürekli olarak algılayıp bu veriyi güncel bir gösterge paneline yansıtmalıdır
+---
+ID: SITET-016
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-016
+ACIKLAMA: Kullanıcı arayüzünden seçilen farklı sertlik seviyelerinin sistem tarafından doğru bir şekilde algılanıp uygulanabildiği doğrulanmalıdır
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Kullanıcı arayüzünden seçilen farklı sertlik seviyelerinin sistem tarafından doğru bir şekilde algılanıp uygulanabildiği doğrulanmalıdır
+---
+ID: SITET-017
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-017
+ACIKLAMA: Sistem, en az 5 farklı kahve türünü başarıyla hazırlayabilmelidir
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistem, en az 5 farklı kahve türünü başarıyla hazırlayabilmelidir
+---
+ID: SITET-018
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-018
+ACIKLAMA: Kullanıcı arayüzü üzerinden kahve hazırlığı sürecinin tüm adımları sırasıyla ve eksiksiz bir şekilde gösterilmelidir
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Kullanıcı arayüzü üzerinden kahve hazırlığı sürecinin tüm adımları sırasıyla ve eksiksiz bir şekilde gösterilmelidir
+---
+ID: SITET-019
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-019
+ACIKLAMA: Sistem, belirlenen güvenlik protokollerinin tüm adımlarını sırasıyla uygulayarak operasyonel bütünlüğünü koruduğunu göstermelidir
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistem, belirlenen güvenlik protokollerinin tüm adımlarını sırasıyla uygulayarak operasyonel bütünlüğünü koruduğunu göstermelidir
+---
+ID: SITET-020
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-020
+ACIKLAMA: Sistem, belirlenen periyodik bakım zaman aralıklarını hesaplayıp anlık sensör verilerini analiz ettiğinde kullanıcıya bildirim yapabilmelidir
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistem, belirlenen periyodik bakım zaman aralıklarını hesaplayıp anlık sensör verilerini analiz ettiğinde kullanıcıya bildirim yapabilmelidir
+---
+ID: SITET-021
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-021
+ACIKLAMA: Sistem, başlangıç sıcaklığından istenen son sıcaklığa kadar suyu 10 derecelik artışlarla kademeli olarak ısıtabilmelidir
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistem, başlangıç sıcaklığından istenen son sıcaklığa kadar suyu 10 derecelik artışlarla kademeli olarak ısıtabilmelidir
+---
+ID: SITET-022
+TUR: Sistem doğrulama testi
+V_MODEL: Sistem doğrulaması
+BASLIK: SITET-022
+ACIKLAMA: Sistem, belirlenen sıcaklığa kadar su akışını sağlayabilmelidir. GEÇTİ KRİTERİ: Su çıkış sıcaklığı 80 derece Celsius'ı geçmemelidir
+KAYNAK_BELGE: Sistem Testi (System Test)
+BOLUM: 
+KANIT: Sistem, belirlenen sıcaklığa kadar su akışını sağlayabilmelidir. GEÇTİ KRİTERİ: Su çıkış sıcaklığı 80 derece Celsius'ı geçmemelidir
+---
+ID: DOC-STT
+TUR: Teknik belge
+V_MODEL: Alt sistem gereksinimi
+BASLIK: Alt Sistem Gereksinimleri (Subsystem Requirements)
+ACIKLAMA: 17 yapılandırılmış madde içerir.
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: 
+---
+ID: SSR-001
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-001
+ACIKLAMA: Kahve Hazırlama Birimi, farklı kahve türlerinin gerektirdiği sıcaklık ve basınç parametrelerini Ana Kontrol Sistemi'ne dijital sinyal ile bildirmelidir
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Kahve Hazırlama Birimi, farklı kahve türlerinin gerektirdiği sıcaklık ve basınç parametrelerini Ana Kontrol Sistemi'ne dijital sinyal ile bildirmelidir
+---
+ID: SSR-002
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-002
+ACIKLAMA: Kullanıcı Arayüzü Birimi, kullanıcı etkileşim verisini Ana Kontrol Sistemi'ne RESTful API arayüzü üzerinden iletmelidir
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Kullanıcı Arayüzü Birimi, kullanıcı etkileşim verisini Ana Kontrol Sistemi'ne RESTful API arayüzü üzerinden iletmelidir
+---
+ID: SSR-003
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-003
+ACIKLAMA: Güvenlik Yönetim Birimi, tüm çalışma süreçlerinde belirlenen güvenlik standartlarına uygun ve güvenli bir şekilde çalışmasını sağlamalıdır
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Güvenlik Yönetim Birimi, tüm çalışma süreçlerinde belirlenen güvenlik standartlarına uygun ve güvenli bir şekilde çalışmasını sağlamalıdır
+---
+ID: SSR-004
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-004
+ACIKLAMA: Bakım Tespit Birimi, tespit edilen bakım ihtiyaç verisini Kullanıcı Arayüzü Sistemi'ne CAN bus arayüzü üzerinden iletmelidir
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Bakım Tespit Birimi, tespit edilen bakım ihtiyaç verisini Kullanıcı Arayüzü Sistemi'ne CAN bus arayüzü üzerinden iletmelidir
+---
+ID: SSR-005
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-005
+ACIKLAMA: Güç Yönetim Ünitesi, sistemin en az 72 saat boyunca kesintisiz çalışmasını sağlamalıdır
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Güç Yönetim Ünitesi, sistemin en az 72 saat boyunca kesintisiz çalışmasını sağlamalıdır
+---
+ID: SSR-006
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-006
+ACIKLAMA: Kahve Hazırlama Ünitesi, en az üç farklı kahve türünün (espresso, filtre, latte) hazırlama parametrelerini Ana Kontrol Sistemi'ne dijital sinyal arayüzü üzerinden bildirmelidir
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Kahve Hazırlama Ünitesi, en az üç farklı kahve türünün (espresso, filtre, latte) hazırlama parametrelerini Ana Kontrol Sistemi'ne dijital sinyal arayüzü üzerinden bildirmelidir
+---
+ID: SSR-007
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-007
+ACIKLAMA: Isıtma Ünitesi, sütü en az 59 santigrat derece ile 61 santigrat derece aralığında tutarak ısıtmalıdır
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Isıtma Ünitesi, sütü en az 59 santigrat derece ile 61 santigrat derece aralığında tutarak ısıtmalıdır
+---
+ID: SSR-008
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-008
+ACIKLAMA: Isı Yönetim Ünitesi, en az DSB derece sıcak su sağlamalıdır
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Isı Yönetim Ünitesi, en az DSB derece sıcak su sağlamalıdır
+---
+ID: SSR-009
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-009
+ACIKLAMA: Kullanıcı Arayüzü Birimi, seçilen kahve boyutunu (küçük, orta, büyük) Ana Kontrol Sistemi'ne dijital sinyal arayüzü üzerinden iletmelidir
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Kullanıcı Arayüzü Birimi, seçilen kahve boyutunu (küçük, orta, büyük) Ana Kontrol Sistemi'ne dijital sinyal arayüzü üzerinden iletmelidir
+---
+ID: SSR-010
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-010
+ACIKLAMA: Su Haznesi Birimi, minimum 2 litre kapasiteye sahip olmalıdır
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Su Haznesi Birimi, minimum 2 litre kapasiteye sahip olmalıdır
+---
+ID: SSR-011
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-011
+ACIKLAMA: Öğütücü Birimi, çekirdek kahve haznesinden öğütülmüş kahve taneciklerini Ana Depolama Sistemi'ne mekanik bağlantı üzerinden aktarmalıdır
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Öğütücü Birimi, çekirdek kahve haznesinden öğütülmüş kahve taneciklerini Ana Depolama Sistemi'ne mekanik bağlantı üzerinden aktarmalıdır
+---
+ID: SSR-012
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-012
+ACIKLAMA: Kullanıcı Arayüzü Birimi, dokunmatik ekran arayüzünü kullanarak kullanıcı girdilerini Ana Kontrol Sistemi'ne I2C protokolü üzerinden iletmelidir
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Kullanıcı Arayüzü Birimi, dokunmatik ekran arayüzünü kullanarak kullanıcı girdilerini Ana Kontrol Sistemi'ne I2C protokolü üzerinden iletmelidir
+---
+ID: SSR-013
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-013
+ACIKLAMA: Acil Durdurma Butonu Birimi, fiziksel bir sinyali Ana Kontrol Sistemi'ne dijital giriş pini üzerinden iletmelidir
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Acil Durdurma Butonu Birimi, fiziksel bir sinyali Ana Kontrol Sistemi'ne dijital giriş pini üzerinden iletmelidir
+---
+ID: SSR-014
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-014
+ACIKLAMA: Güç Giriş Birimi, standart elektrik bağlantı arayüzü üzerinden nominal voltajda enerji sağlamalıdır
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Güç Giriş Birimi, standart elektrik bağlantı arayüzü üzerinden nominal voltajda enerji sağlamalıdır
+---
+ID: SSR-015
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-015
+ACIKLAMA: Su Seviye Sensörü Birimi, su seviyesi verisini Ana Kontrol Sistemi'ne I2C arayüzü üzerinden iletmelidir
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Su Seviye Sensörü Birimi, su seviyesi verisini Ana Kontrol Sistemi'ne I2C arayüzü üzerinden iletmelidir
+---
+ID: SSR-016
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-016
+ACIKLAMA: Kullanıcı Arayüzü Birimi, kahve sertliği ayar değerini Ana Kontrol Sistemi'ne Dijital Haberleşme Protokolü üzerinden iletmelidir
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Kullanıcı Arayüzü Birimi, kahve sertliği ayar değerini Ana Kontrol Sistemi'ne Dijital Haberleşme Protokolü üzerinden iletmelidir
+---
+ID: SSR-017
+TUR: Alt sistem gereksinimi
+V_MODEL: Alt sistem gereksinimi
+BASLIK: SSR-017
+ACIKLAMA: Kahve Hazırlama Birimi, en az üç farklı kahve türünün (espresso, filtre, latte) hazırlama parametrelerini (su sıcaklığı, basınç ve demleme süresi) Ana Kontrol Sistemi'ne dijital sinyal olarak iletmelidir
+KAYNAK_BELGE: Alt Sistem Gereksinimleri (Subsystem Requirements)
+BOLUM: 
+KANIT: Kahve Hazırlama Birimi, en az üç farklı kahve türünün (espresso, filtre, latte) hazırlama parametrelerini (su sıcaklığı, basınç ve demleme süresi) Ana Kontrol Sistemi'ne dijital sinyal olarak iletmelidir
+---
+ID: DOC-TID
+TUR: Teknik belge
+V_MODEL: Müşteri gereksinimi
+BASLIK: Kullanıcı Gereksinimi (User Requirement)
+ACIKLAMA: 16 yapılandırılmış madde içerir.
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: 
+---
+ID: UR-001
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-001
+ACIKLAMA: Sistem farklı kahve türlerini hazırlayabilme kabiliyetine sahip olmalıdır
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem farklı kahve türlerini hazırlayabilme kabiliyetine sahip olmalıdır
+---
+ID: UR-002
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-002
+ACIKLAMA: Sistem son kullanıcı için kullanıcı dostu bir arayüz ve deneyim sunmalıdır
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem son kullanıcı için kullanıcı dostu bir arayüz ve deneyim sunmalıdır
+---
+ID: UR-003
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-003
+ACIKLAMA: Sistem çalışma süreçlerinde yüksek güvenlik standartlarına uygun ve güvenli bir şekilde çalışmalıdır
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem çalışma süreçlerinde yüksek güvenlik standartlarına uygun ve güvenli bir şekilde çalışmalıdır
+---
+ID: UR-004
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-004
+ACIKLAMA: Sistem periyodik veya anlık bakım ihtiyaçlarını tespit ederek kullanıcıya bildirebilmelidir
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem periyodik veya anlık bakım ihtiyaçlarını tespit ederek kullanıcıya bildirebilmelidir
+---
+ID: UR-005
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-005
+ACIKLAMA: Sistem uzun süre boyunca kesintisiz ve kararlı bir şekilde hizmet verebilmelidir
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem uzun süre boyunca kesintisiz ve kararlı bir şekilde hizmet verebilmelidir
+---
+ID: UR-006
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-006
+ACIKLAMA: Sistem Espresso hazırlayabilme özelliğine sahip olmalıdır
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem Espresso hazırlayabilme özelliğine sahip olmalıdır
+---
+ID: UR-007
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-007
+ACIKLAMA: Sistem tek başına sıcak süt hazırlayabilmelidir
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem tek başına sıcak süt hazırlayabilmelidir
+---
+ID: UR-008
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-008
+ACIKLAMA: Sistem çay ve benzeri kullanımlar için harici olarak sıcak su verebilmelidir
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem çay ve benzeri kullanımlar için harici olarak sıcak su verebilmelidir
+---
+ID: UR-009
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-009
+ACIKLAMA: Kullanıcı tarafından hazırlanacak kahvenin boyutu seçilebilmelidir
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Kullanıcı tarafından hazırlanacak kahvenin boyutu seçilebilmelidir
+---
+ID: UR-010
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-010
+ACIKLAMA: Sistem dahili bir su haznesi yardımıyla çalışabilmelidir
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem dahili bir su haznesi yardımıyla çalışabilmelidir
+---
+ID: UR-011
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-011
+ACIKLAMA: Sistem çekirdek kahve haznesini ve entegre öğütücüyü kullanabilmelidir
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem çekirdek kahve haznesini ve entegre öğütücüyü kullanabilmelidir
+---
+ID: UR-012
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-012
+ACIKLAMA: Sistem görsel etkileşim için bir dokunmatik ekran barındırmalıdır
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem görsel etkileşim için bir dokunmatik ekran barındırmalıdır
+---
+ID: UR-013
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-013
+ACIKLAMA: Sistem üzerinde acil durumlarda müdahale için erişilebilir bir acil durdurma butonu bulunmalıdır
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem üzerinde acil durumlarda müdahale için erişilebilir bir acil durdurma butonu bulunmalıdır
+---
+ID: UR-014
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-014
+ACIKLAMA: Sistem, enerji alabilmek için standart bir elektrik bağlantısı arayüzüne sahip olmalıdır
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem, enerji alabilmek için standart bir elektrik bağlantısı arayüzüne sahip olmalıdır
+---
+ID: UR-015
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-015
+ACIKLAMA: Sistem su seviyesini anlık ve sürekli olarak izleyebilmelidir
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Sistem su seviyesini anlık ve sürekli olarak izleyebilmelidir
+---
+ID: UR-016
+TUR: Müşteri/paydaş gereksinimi
+V_MODEL: Müşteri gereksinimi
+BASLIK: UR-016
+ACIKLAMA: Kullanıcı tarafından kahvenin sertlik derecesi ayarlanabilmelidir
+KAYNAK_BELGE: Kullanıcı Gereksinimi (User Requirement)
+BOLUM: 
+KANIT: Kullanıcı tarafından kahvenin sertlik derecesi ayarlanabilmelidir
+---
+ILISKILER
+SR-001 -> derives_from -> UR-001 | Kesin
+SR-002 -> derives_from -> UR-002 | Kesin
+SR-003 -> derives_from -> UR-003 | Kesin
+SR-004 -> derives_from -> UR-004 | Kesin
+SR-005 -> derives_from -> UR-005 | Kesin
+SR-006 -> derives_from -> UR-006 | Kesin
+SR-007 -> derives_from -> UR-007 | Kesin
+SR-008 -> derives_from -> UR-008 | Kesin
+SR-009 -> derives_from -> UR-009 | Kesin
+SR-010 -> derives_from -> UR-010 | Kesin
+SR-011 -> derives_from -> UR-011 | Kesin
+SR-012 -> derives_from -> UR-012 | Kesin
+SR-013 -> derives_from -> UR-013 | Kesin
+SR-014 -> derives_from -> UR-014 | Kesin
+SR-015 -> derives_from -> UR-015 | Kesin
+SR-016 -> derives_from -> UR-016 | Kesin
+SR-017 -> derives_from -> UR-001 | Kesin
+SR-018 -> derives_from -> UR-002 | Kesin
+SR-019 -> derives_from -> UR-003 | Kesin
+SR-020 -> derives_from -> UR-004 | Kesin
+SR-021 -> derives_from -> UR-007 | Kesin
+SR-022 -> derives_from -> UR-008 | Kesin
+SSR-001 -> derives_from -> SR-001 | Kesin
+SSR-002 -> derives_from -> SR-002 | Kesin
+SSR-003 -> derives_from -> SR-003 | Kesin
+SSR-004 -> derives_from -> SR-004 | Kesin
+SSR-005 -> derives_from -> SR-005 | Kesin
+SSR-006 -> derives_from -> SR-006 | Kesin
+SSR-007 -> derives_from -> SR-007 | Kesin
+SSR-008 -> derives_from -> SR-008 | Kesin
+SSR-009 -> derives_from -> SR-009 | Kesin
+SSR-010 -> derives_from -> SR-010 | Kesin
+SSR-011 -> derives_from -> SR-011 | Kesin
+SSR-012 -> derives_from -> SR-012 | Kesin
+SSR-013 -> derives_from -> SR-013 | Kesin
+SSR-014 -> derives_from -> SR-014 | Kesin
+SSR-015 -> derives_from -> SR-015 | Kesin
+SSR-016 -> derives_from -> SR-016 | Kesin
+SSR-017 -> derives_from -> SR-017 | Kesin
+AT-001 -> documented_in -> DOC-KMTD | Kesin
+AT-002 -> documented_in -> DOC-KMTD | Kesin
+AT-003 -> documented_in -> DOC-KMTD | Kesin
+AT-004 -> documented_in -> DOC-KMTD | Kesin
+AT-005 -> documented_in -> DOC-KMTD | Kesin
+AT-006 -> documented_in -> DOC-KMTD | Kesin
+AT-007 -> documented_in -> DOC-KMTD | Kesin
+AT-008 -> documented_in -> DOC-KMTD | Kesin
+AT-009 -> documented_in -> DOC-KMTD | Kesin
+AT-010 -> documented_in -> DOC-KMTD | Kesin
+AT-011 -> documented_in -> DOC-KMTD | Kesin
+AT-012 -> documented_in -> DOC-KMTD | Kesin
+AT-013 -> documented_in -> DOC-KMTD | Kesin
+AT-014 -> documented_in -> DOC-KMTD | Kesin
+AT-015 -> documented_in -> DOC-KMTD | Kesin
+AT-016 -> documented_in -> DOC-KMTD | Kesin
+SITET-001 -> documented_in -> DOC-SITET | Kesin
+SITET-002 -> documented_in -> DOC-SITET | Kesin
+SITET-003 -> documented_in -> DOC-SITET | Kesin
+SITET-004 -> documented_in -> DOC-SITET | Kesin
+SITET-005 -> documented_in -> DOC-SITET | Kesin
+SITET-006 -> documented_in -> DOC-SITET | Kesin
+SITET-007 -> documented_in -> DOC-SITET | Kesin
+SITET-008 -> documented_in -> DOC-SITET | Kesin
+SITET-009 -> documented_in -> DOC-SITET | Kesin
+SITET-010 -> documented_in -> DOC-SITET | Kesin
+SITET-011 -> documented_in -> DOC-SITET | Kesin
+SITET-012 -> documented_in -> DOC-SITET | Kesin
+SITET-013 -> documented_in -> DOC-SITET | Kesin
+SITET-014 -> documented_in -> DOC-SITET | Kesin
+SITET-015 -> documented_in -> DOC-SITET | Kesin
+SITET-016 -> documented_in -> DOC-SITET | Kesin
+SITET-017 -> documented_in -> DOC-SITET | Kesin
+SITET-018 -> documented_in -> DOC-SITET | Kesin
+SITET-019 -> documented_in -> DOC-SITET | Kesin
+SITET-020 -> documented_in -> DOC-SITET | Kesin
+SITET-021 -> documented_in -> DOC-SITET | Kesin
+SITET-022 -> documented_in -> DOC-SITET | Kesin
+SR-001 -> documented_in -> DOC-SGD | Kesin
+SR-002 -> documented_in -> DOC-SGD | Kesin
+SR-003 -> documented_in -> DOC-SGD | Kesin
+SR-004 -> documented_in -> DOC-SGD | Kesin
+SR-005 -> documented_in -> DOC-SGD | Kesin
+SR-006 -> documented_in -> DOC-SGD | Kesin
+SR-007 -> documented_in -> DOC-SGD | Kesin
+SR-008 -> documented_in -> DOC-SGD | Kesin
+SR-009 -> documented_in -> DOC-SGD | Kesin
+SR-010 -> documented_in -> DOC-SGD | Kesin
+SR-011 -> documented_in -> DOC-SGD | Kesin
+SR-012 -> documented_in -> DOC-SGD | Kesin
+SR-013 -> documented_in -> DOC-SGD | Kesin
+SR-014 -> documented_in -> DOC-SGD | Kesin
+SR-015 -> documented_in -> DOC-SGD | Kesin
+SR-016 -> documented_in -> DOC-SGD | Kesin
+SR-017 -> documented_in -> DOC-SGD | Kesin
+SR-018 -> documented_in -> DOC-SGD | Kesin
+SR-019 -> documented_in -> DOC-SGD | Kesin
+SR-020 -> documented_in -> DOC-SGD | Kesin
+SR-021 -> documented_in -> DOC-SGD | Kesin
+SR-022 -> documented_in -> DOC-SGD | Kesin
+SSR-001 -> documented_in -> DOC-STT | Kesin
+SSR-002 -> documented_in -> DOC-STT | Kesin
+SSR-003 -> documented_in -> DOC-STT | Kesin
+SSR-004 -> documented_in -> DOC-STT | Kesin
+SSR-005 -> documented_in -> DOC-STT | Kesin
+SSR-006 -> documented_in -> DOC-STT | Kesin
+SSR-007 -> documented_in -> DOC-STT | Kesin
+SSR-008 -> documented_in -> DOC-STT | Kesin
+SSR-009 -> documented_in -> DOC-STT | Kesin
+SSR-010 -> documented_in -> DOC-STT | Kesin
+SSR-011 -> documented_in -> DOC-STT | Kesin
+SSR-012 -> documented_in -> DOC-STT | Kesin
+SSR-013 -> documented_in -> DOC-STT | Kesin
+SSR-014 -> documented_in -> DOC-STT | Kesin
+SSR-015 -> documented_in -> DOC-STT | Kesin
+SSR-016 -> documented_in -> DOC-STT | Kesin
+SSR-017 -> documented_in -> DOC-STT | Kesin
+SST-001 -> documented_in -> DOC-AST | Kesin
+SST-002 -> documented_in -> DOC-AST | Kesin
+SST-003 -> documented_in -> DOC-AST | Kesin
+SST-004 -> documented_in -> DOC-AST | Kesin
+SST-005 -> documented_in -> DOC-AST | Kesin
+SST-006 -> documented_in -> DOC-AST | Kesin
+SST-007 -> documented_in -> DOC-AST | Kesin
+SST-008 -> documented_in -> DOC-AST | Kesin
+SST-009 -> documented_in -> DOC-AST | Kesin
+SST-010 -> documented_in -> DOC-AST | Kesin
+SST-011 -> documented_in -> DOC-AST | Kesin
+SST-012 -> documented_in -> DOC-AST | Kesin
+SST-013 -> documented_in -> DOC-AST | Kesin
+SST-014 -> documented_in -> DOC-AST | Kesin
+SST-015 -> documented_in -> DOC-AST | Kesin
+SST-016 -> documented_in -> DOC-AST | Kesin
+SST-017 -> documented_in -> DOC-AST | Kesin
+UR-001 -> documented_in -> DOC-TID | Kesin
+UR-002 -> documented_in -> DOC-TID | Kesin
+UR-003 -> documented_in -> DOC-TID | Kesin
+UR-004 -> documented_in -> DOC-TID | Kesin
+UR-005 -> documented_in -> DOC-TID | Kesin
+UR-006 -> documented_in -> DOC-TID | Kesin
+UR-007 -> documented_in -> DOC-TID | Kesin
+UR-008 -> documented_in -> DOC-TID | Kesin
+UR-009 -> documented_in -> DOC-TID | Kesin
+UR-010 -> documented_in -> DOC-TID | Kesin
+UR-011 -> documented_in -> DOC-TID | Kesin
+UR-012 -> documented_in -> DOC-TID | Kesin
+UR-013 -> documented_in -> DOC-TID | Kesin
+UR-014 -> documented_in -> DOC-TID | Kesin
+UR-015 -> documented_in -> DOC-TID | Kesin
+UR-016 -> documented_in -> DOC-TID | Kesin
+UR-001 -> validated_by -> AT-001 | Kesin
+UR-002 -> validated_by -> AT-002 | Kesin
+UR-003 -> validated_by -> AT-003 | Kesin
+UR-004 -> validated_by -> AT-004 | Kesin
+UR-005 -> validated_by -> AT-005 | Kesin
+UR-006 -> validated_by -> AT-006 | Kesin
+UR-007 -> validated_by -> AT-007 | Kesin
+UR-008 -> validated_by -> AT-008 | Kesin
+UR-009 -> validated_by -> AT-009 | Kesin
+UR-010 -> validated_by -> AT-010 | Kesin
+UR-011 -> validated_by -> AT-011 | Kesin
+UR-012 -> validated_by -> AT-012 | Kesin
+UR-013 -> validated_by -> AT-013 | Kesin
+UR-014 -> validated_by -> AT-014 | Kesin
+UR-015 -> validated_by -> AT-015 | Kesin
+UR-016 -> validated_by -> AT-016 | Kesin
+SR-001 -> verified_by -> SITET-001 | Kesin
+SR-002 -> verified_by -> SITET-002 | Kesin
+SR-003 -> verified_by -> SITET-003 | Kesin
+SR-004 -> verified_by -> SITET-004 | Kesin
+SR-005 -> verified_by -> SITET-005 | Kesin
+SR-006 -> verified_by -> SITET-006 | Kesin
+SR-007 -> verified_by -> SITET-007 | Kesin
+SR-008 -> verified_by -> SITET-008 | Kesin
+SR-009 -> verified_by -> SITET-009 | Kesin
+SR-010 -> verified_by -> SITET-010 | Kesin
+SR-011 -> verified_by -> SITET-011 | Kesin
+SR-012 -> verified_by -> SITET-012 | Kesin
+SR-013 -> verified_by -> SITET-013 | Kesin
+SR-014 -> verified_by -> SITET-014 | Kesin
+SR-015 -> verified_by -> SITET-015 | Kesin
+SR-016 -> verified_by -> SITET-016 | Kesin
+SR-017 -> verified_by -> SITET-017 | Kesin
+SR-018 -> verified_by -> SITET-018 | Kesin
+SR-019 -> verified_by -> SITET-019 | Kesin
+SR-020 -> verified_by -> SITET-020 | Kesin
+SR-021 -> verified_by -> SITET-021 | Kesin
+SR-022 -> verified_by -> SITET-022 | Kesin
+SSR-001 -> verified_by -> SST-001 | Kesin
+SSR-002 -> verified_by -> SST-002 | Kesin
+SSR-003 -> verified_by -> SST-003 | Kesin
+SSR-004 -> verified_by -> SST-004 | Kesin
+SSR-005 -> verified_by -> SST-005 | Kesin
+SSR-006 -> verified_by -> SST-006 | Kesin
+SSR-007 -> verified_by -> SST-007 | Kesin
+SSR-008 -> verified_by -> SST-008 | Kesin
+SSR-009 -> verified_by -> SST-009 | Kesin
+SSR-010 -> verified_by -> SST-010 | Kesin
+SSR-011 -> verified_by -> SST-011 | Kesin
+SSR-012 -> verified_by -> SST-012 | Kesin
+SSR-013 -> verified_by -> SST-013 | Kesin
+SSR-014 -> verified_by -> SST-014 | Kesin
+SSR-015 -> verified_by -> SST-015 | Kesin
+SSR-016 -> verified_by -> SST-016 | Kesin
+SSR-017 -> verified_by -> SST-017 | Kesin
