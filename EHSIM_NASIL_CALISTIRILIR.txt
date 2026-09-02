@@ -82,7 +82,7 @@ ADIM 5 — PROGRAMI ÇALIŞTIR
 ------------------------------
 Aynı pencereye şunu yaz ve Enter'a bas:
 
-    & "C:\Users\umuty\OneDrive\Masaüstü\staj Ehsim duplicated\.venv\Scripts\python.exe" "Arayüz.py"
+    & "C:\Users\umuty\OneDrive\Masaüstü\staj Ehsim duplicated\AI-V-Model-Tool-for-System-Engineers\.venv\Scripts\python.exe" "Arayüz.py"
 
 Birkaç saniye içinde "EHSİM" başlıklı program penceresi açılmalı.
 (Konsolda "PyMuPDF available", "SymSpell not available" gibi birkaç
@@ -158,7 +158,7 @@ SORUN: ComfyUI'yi çalıştırınca konsol "Windows fatal exception: access
     $env:EHSIM_IMAGE_MODEL = "v1-5-pruned-emaonly.safetensors"
     $env:EHSIM_COMFYUI_WORKFLOW = "C:\ComfyUI\workflows\ehsim-api.json"
 4) cd "C:\Users\umuty\OneDrive\Masaüstü\staj Ehsim duplicated\AI-V-Model-Tool-for-System-Engineers"
-5) & "C:\Users\umuty\OneDrive\Masaüstü\staj Ehsim duplicated\.venv\Scripts\python.exe" "Arayüz.py"
+5) & "C:\Users\umuty\OneDrive\Masaüstü\staj Ehsim duplicated\AI-V-Model-Tool-for-System-Engineers\.venv\Scripts\python.exe" "Arayüz.py"
 
 
 $env:EHSIM_LM_MODEL = "gemma-4-e4b-it"
@@ -167,7 +167,7 @@ $env:EHSIM_IMAGE_API_URL = "http://127.0.0.1:8188"
 $env:EHSIM_IMAGE_MODEL = "v1-5-pruned-emaonly.safetensors"
 $env:EHSIM_COMFYUI_WORKFLOW = "C:\ComfyUI\workflows\ehsim-api.json"
 cd "C:\Users\umuty\OneDrive\Masaüstü\staj Ehsim duplicated\AI-V-Model-Tool-for-System-Engineers"
-& "C:\Users\umuty\OneDrive\Masaüstü\staj Ehsim duplicated\.venv\Scripts\python.exe" "Arayüz.py"
+& "C:\Users\umuty\OneDrive\Masaüstü\staj Ehsim duplicated\AI-V-Model-Tool-for-System-Engineers\.venv\Scripts\python.exe" "Arayüz.py"
 
 
 
